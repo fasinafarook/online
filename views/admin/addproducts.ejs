@@ -1,0 +1,305 @@
+<%- include('../layouts/header.ejs') -%>
+
+    <div class="screen-overlay"></div>
+    <aside class="navbar-aside" id="offcanvas_aside">
+        <div class="aside-top">
+            <a href="index.html" class="brand-wrap">
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+            <div>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-aside">
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/home"> <i class="icon material-icons md-home"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item has-submenu  active">
+                    <a class="menu-link" href="/admin/products"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Products</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/products">Product List</a>
+                        <!-- <a href="page-products-grid.html">Product grid</a> -->
+                        <!-- <a href="page-products-grid-2.html">Product grid 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="/admin/category"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Categories</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/category">Category List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-orders-1.html"> <i class="icon material-icons md-shopping_cart"></i>
+                        <span class="text">Orders</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/order">Order List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-sellers-cards.html"> <i class="icon material-icons md-store"></i>
+                        <span class="text">Sellers</span>
+                    </a>
+                    <div class="submenu">
+                        <!-- <a href="page-sellers-cards.html">Sellers cards</a> -->
+                        <a href="/admin/users">Sellers list</a>
+                        <!-- <a href="page-seller-detail.html">Seller profile</a> -->
+                    </div>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                        <span class="text">Coupen</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/coupon">Coupen Management</a>
+                        <!-- <a href="page-transactions-2.html">Transaction 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="#"> <i class="icon material-icons md-person"></i>
+                        <span class="text">Offer</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/offer">Offer Management</a>
+                       
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/banner"> <i class="icon material-icons md-comment"></i>
+                        <span class="text">Banner</span>
+                    </a>
+                </li>
+                
+            </ul>
+            <hr>
+            <ul class="menu-aside">
+               
+            <li class="menu-item">
+                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                    <span class="text"> Logout </span>
+                </a>
+            </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+    </aside>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+
+                    <li class="dropdown nav-item">
+                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                     
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="row">
+                <div class="col-9">
+                    <div class="content-header">
+                        <h2 class="content-title">Add New Product</h2>
+                        
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row gx-5">
+                               
+                                <div class="col-lg-9">
+                                    <section class="content-body p-xl-4">
+                                        <form action="/admin/addproducts" method="POST" enctype="multipart/form-data" id="productForm">
+                                            <% if(typeof message !== 'undefined'){ %> 
+                                                <div class="alert  bg-white text-danger" role="alert" style="text-align: center;">
+                                                    <%=message %>
+                                                </div>
+                                            <% } %> 
+                                            <label for="name">Product Name:</label>
+                                            <input type="text" id="product_name" placeholder="Type here" name="name" >
+                                            <span id="pnameError" class="text-danger"></span>
+                                            <br>
+                                        
+                                            <label for="author">Author Name:</label>
+                                            <input type="text" placeholder="Type here"  id="author" name="author" >
+                                            <span id="authorError" class="text-danger"></span>
+                                            <br>
+
+                                        
+                                            <label for="discription">Discription:</label>
+                                           
+                                            <textarea placeholder="Type here" name="discription" id="description" class="form-control" rows="4"></textarea>
+                                            <span id="descriptionError" class="text-danger"></span>
+                                            <br>
+                                        
+                                            <label for="publisher">Publisher:</label>
+                                            <input type="text" placeholder="Type here" id="publisher" name="publisher" >
+                                            <span id="publisherError" class="text-danger"></span>
+                                            <br>
+                                        
+                                            <label for="About_author">About Author:</label>
+                                            
+                                            <textarea placeholder="Type here" class="form-control" name="About_author" id="aabout" rows="4"></textarea>
+                                            <span id="aaboutError" class="text-danger"></span>
+                                            <br>
+                                        
+                                            <label for="language">Language:</label>
+                                            <input type="text" placeholder="Type here" id="language" name="language" >
+                                            <span id="language-error" class="error"></span>
+                                            <br>
+                                        
+                                            <label for="country">Country of Origin:</label>
+                                            <select name="country" class="form-select" id="country">
+                                                <option value="" selected disabled>Choose a country</option>
+                                                <option>America</option>
+                                                <option>India</option>
+                                                <option>Russia</option>
+                                                <option>China</option>
+                                            </select>
+                                            <span id="countryError" class="text-danger"></span>
+                                            
+                                            <br>
+                                        
+                                            <label for="item_weight">Item Weight:</label>
+                                            <input type="text" placeholder="Number" id="bweight" name="item_weight"  title="Please enter a valid number">
+                                            <span id="bweightError" class="text-danger"></span>
+                                            <br>
+                                        
+                                            <label for="paperback">Paperback:</label>
+                                            <input type="text" placeholder="Number"id="pages" name="paperback" >
+                                            <span id="pagesError" class="text-danger"></span>
+                                            <br><br>
+                                            <div id="imagePreviewContainer"></div><br>
+                                            <input type="file" class="form-control-file" id="image" name="image" required multiple onchange="handleImageSelection(event)"><br>
+                                            <span id="imageError" class="text-danger"></span><br>
+                                        
+                                            <label for="category">Category:</label>
+                                            <select id="category" name="category">
+                                                <% categories.forEach(category => { %>
+                                                    <option value="<%= category._id %>"><%= category.name %></option>
+                                                <% }); %>
+                                            </select>
+
+                                            <label class="form-label">Quantity</label>
+                                            <input placeholder="Number" type="text" name="Quantity" id="Quantity">
+                                            <span id="quantityError" class="text-danger"></span>
+
+
+                                        
+                                            <label for="price">Price:</label>
+                                           
+                                            <input type="text" placeholder="₹" id="price" name="price" >
+                                            <span id="ppriceError" class="text-danger"></span>
+                                            <br>
+                                            <label for="price">Sale Price:</label>
+                                           
+                                            <input type="text" placeholder="₹" id="sprice" name="Saleprice" >
+                                            <span id="spriceError" class="text-danger"></span>
+                                           
+                                            
+                                            <br><br>
+                                        
+                                            <button type="submit">Add Product</button>
+                                        </form>
+                                        
+                                        
+                                    </section> <!-- content-body .// -->
+                                </div> <!-- col.// -->
+                            </div> <!-- row.// -->
+                        </div> <!-- card body end// -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, BookStore - online book shop .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        function handleImageSelection(event) {
+            const imageContainer = document.getElementById('imagePreviewContainer');
+            const files = event.target.files;
+    
+            if (files.length > 4) {
+                document.getElementById('imageError').innerText = 'Please select  4 or less than 4 images.';
+                event.target.value = ''; 
+                return;
+            } else {
+                document.getElementById('imageError').innerText = '';
+            }
+    
+            imageContainer.innerHTML = '';
+    
+            for (let i = 0; i < files.length; i++) {
+                const reader = new FileReader();
+                const img = document.createElement('img');
+                img.className = 'img-fluid rounded';
+                img.style.width = '20%';
+    
+                reader.onload = function (e) {
+                    img.src = e.target.result;
+                };
+    
+                reader.readAsDataURL(files[i]);
+    
+                imageContainer.appendChild(img);
+    
+                const deleteButton = document.createElement('button');
+                deleteButton.type = 'button';
+                deleteButton.className = 'btn btn-danger btn-sm';
+                deleteButton.textContent = 'Delete';
+                deleteButton.onclick = function () {
+                    imageContainer.removeChild(img);
+                    imageContainer.removeChild(deleteButton);
+                    event.target.value = ''; 
+                };
+    
+                imageContainer.appendChild(deleteButton);
+            }
+        }
+    
+    </script>
+    
+    
+    <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin-assets/js/vendors/select2.min.js"></script>
+    <script src="/admin-assets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="/admin-assets/js/main.js" type="text/javascript"></script>
+    <script src="/admin-assets/js/form.js" type="text/javascript"></script>
+
+    <%- include('../layouts/footer.ejs') -%>

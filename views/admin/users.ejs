@@ -1,0 +1,254 @@
+<%- include('../layouts/header.ejs') -%>
+
+    <div class="screen-overlay"></div>
+    <aside class="navbar-aside" id="offcanvas_aside">
+        <div class="aside-top">
+            <a href="index.html" class="brand-wrap">
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
+            <div>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-aside">
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/home"> <i class="icon material-icons md-home"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="/admin/products"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Products</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/products">Product List</a>
+                        <!-- <a href="/admin/products">Product grid</a> -->
+                        <!-- <a href="/admin/products">Product grid 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="/admin/category"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Categories</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/category">Category List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-orders-1.html"> <i class="icon material-icons md-shopping_cart"></i>
+                        <span class="text">Orders</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/order">Order List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu active">
+                    <a class="menu-link" href="page-sellers-cards.html"> <i class="icon material-icons md-store"></i>
+                        <span class="text">Sellers</span>
+                    </a>
+                    <div class="submenu">
+                        <!-- <a href="page-sellers-cards.html">Sellers cards</a> -->
+                        <a href="/admin/users" class="active">Sellers list</a>
+                        <!-- <a href="page-seller-detail.html">Seller profile</a> -->
+                    </div>
+                </li>
+            
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                        <span class="text">Coupen</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/coupon">Coupen Management</a>
+                        <!-- <a href="page-transactions-2.html">Transaction 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="#"> <i class="icon material-icons md-person"></i>
+                        <span class="text">Offer</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/offer">Offer Management</a>
+                       
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/banner"> <i class="icon material-icons md-comment"></i>
+                        <span class="text">Banner</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <ul class="menu-aside">
+               
+            <li class="menu-item">
+                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                    <span class="text"> Logout </span>
+                </a>
+            </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+    </aside>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                       
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="content-header">
+                <h2 class="content-title">Sellers list</h2>
+               
+            </div>
+            <div class="card mb-4">
+                <header class="card-header">
+                    <div class="row gx-3">
+                        <form class="form-inline">
+                            <input type="text" class="form-control mr-2" name="search" placeholder="Search">
+                            <button type="submit" class="btn form-control mr-2">Search</button>
+                        </form>
+                        <!-- <div class="col-lg-2 col-md-3 col-6">
+                            <select class="form-select">
+                                <option>Status</option>
+                                <option>Active</option>
+                                <option>Disabled</option>
+                                <option>Show all</option>
+                            </select>
+                        </div>  -->
+                     
+                </header> <!-- card-header end// -->
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <!-- Include SweetAlert2 library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (users.length > 0) {
+            for (let i = 0; i < users.length; i++) { %>
+                <tr>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].mobile %></td>
+                    <td>
+                        <% if (users[i].is_verified == 0) { %>
+                            <span class="badge rounded-pill alert-danger">Inactive</span>
+                        <% } else { %>
+                            <span class="badge rounded-pill alert-success">Active</span>
+                        <% } %>
+                    </td>
+                    <td>
+                        <div>
+                            <% if (users[i].is_verified == 0) { %>
+                                <button type="button" onclick="toggleUserStatus('<%= users[i]._id %>', 'unblock')" class="badge badge-sm alert-success toggleButton" data-user-id="<%= users[i]._id %>">
+                                    Unblock
+                                </button>
+                            <% } else { %>
+                                <button type="button" onclick="toggleUserStatus('<%= users[i]._id %>', 'block')" class="badge badge-sm alert-danger toggleButton" data-user-id="<%= users[i]._id %>">
+                                    Block
+                                </button>
+                            <% } %>
+                        </div>
+                    </td>
+                </tr>
+            <% }
+        } else { %>
+            <tr>
+                <td colspan="5">Users Not Found</td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+
+<script>
+  document.querySelectorAll('.toggleButton').forEach(button => {
+    button.addEventListener('click', function() {
+        const userId = this.dataset.userId;
+        toggleUserStatus(userId, this.textContent.trim().toLowerCase());
+    });
+});
+
+
+    async function toggleUserStatus(userId, action) {
+        const confirmation = await Swal.fire({
+            title: 'Confirmation',
+            text: `Are you sure you want to ${action === 'block' ? 'block' : 'unblock'} the user?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'OK',
+            cancelButtonText: 'Cancel',
+        });
+
+        if (confirmation.isConfirmed) {
+            const response = await fetch(`/admin/users/toggleUserStatus/${String(userId)}`, { method: 'POST' });
+            const result = await response.json();
+
+            if (result) {
+                const button = document.querySelector(`.toggleButton[data-user-id="${userId}"][data-action="${action}"]`);
+                window.location.reload();
+                button.innerText = result.is_verified === 1 ? 'Unblock' : 'Block';
+                
+            } else {
+                Swal.fire('Error', result.message || 'Failed to toggle user status.', 'error');
+            }
+        }
+    }
+</script>
+            
+                    </div>
+                </div> <!-- card-body end// -->
+            </div> <!-- card end// -->
+        </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, BookStore - online book shop .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin-assets/js/vendors/select2.min.js"></script>
+    <script src="/admin-assets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="/admin-assets/js/main.js" type="text/javascript"></script>
+    <script src="/admin-assets/js/script.js"></script>
+    <%- include('../layouts/footer.ejs') -%>

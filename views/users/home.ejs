@@ -1,0 +1,869 @@
+<%- include('../layouts/header.ejs') -%>
+
+
+    <!-- Quick view -->
+    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">              
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="detail-gallery">
+                                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+                                <!-- MAIN SLIDES -->
+                                <div class="product-image-slider">
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-2.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-1.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-3.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-4.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-5.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-6.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-7.jpg" alt="product image">
+                                    </figure>
+                                </div>
+                                <!-- THUMBNAILS -->
+                                <div class="slider-nav-thumbnails pl-15 pr-15">
+                                    <div><img src="assets/imgs/shop/thumbnail-3.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-4.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-5.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-6.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-7.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-8.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-9.jpg" alt="product image"></div>
+                                </div>
+                            </div>
+                            <!-- End Gallery -->
+                          
+                        </div>
+              
+                            <!-- Detail Info -->
+                        </div>
+                    </div>
+                </div>        
+        </div>
+        </div>
+    </div>
+    <header class="header-area header-style-4 header-height-2">
+        <div class="header-top header-top-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info">
+                            <ul>
+                                <li><i class="fi-rs-smartphone"></i> <a href="#">(+01) - 2345 - 6789</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-4">
+                        <div class="text-center">
+                            <div id="news-flash" class="d-inline-block">
+                                <ul>
+                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a></li>
+                                    <li>Supper Value Deals - Save more with coupons</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info header-info-right">
+                            <ul>
+                                <li>
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
+                                    <ul class="language-dropdown">
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a></li>
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-dt.png" alt="">Deutsch</a></li>
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-ru.png" alt="">Pусский</a></li>
+                                    </ul>
+                                </li>
+                                <li><!-- In your navigation bar or header section -->
+                                    
+                                        <% if (user) { %>
+                                            <!-- If user is logged in, show logout button -->
+                                            <li><a href="/logout">Logout</a></li>
+                                        <% } else { %>
+                                            <!-- If user is not logged in, show login button -->
+                                            <li><a href="/login">Log In / Sign Up</a></li>
+                                        <% } %>
+                                    
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-middle header-middle-ptb-1 d-none d-lg-block"  style="background: white;">
+            <div class="container">
+                <div class="container" >
+                <div class="header-wrap">
+                    <div class="logo logo-width-1">
+                        <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                        <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
+                    </div>
+                    <div class="header-right">
+                        <div class="search-style-2" >
+                            <form class="d-flex justify-content-between" >
+                                <!-- This input field is initially hidden -->
+                                <input type="text" name="search" class="form-control" id="search_input" placeholder="Search Here" style="display: none;">
+                                <!-- <input type="submit"> -->
+                                <span id="close_search" title="Close Search"></span>
+                            </form>
+                        </div>
+                        <div class="header-action-right">
+                            <div class="header-action-2">
+                                <div class="header-action-icon-2">
+                                    <a href="/wishlist">
+                                        <img class="svgInject" alt="Evara" src="assets/imgs/theme/icons/icon-heart.svg">
+                                    </a>
+                                </div>
+                                <div class="header-action-icon-2">
+                                    <a class="mini-cart-icon" href="/cart">
+                                        <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                    </a>
+                         
+                                </div>
+                                <div class="nav-item "><a class="nav-link" href="/account" ><i class="fas fa-user"></i></a></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
+            <div class="container" >
+                <div class="header-wrap header-space-between position-relative">
+                    <div class="logo logo-width-1 d-block d-lg-none">
+                        <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="header-nav d-none d-lg-flex">
+                     
+                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block" style="margin-left: 300px;">
+                            <nav>
+                                <ul>
+                                    <li><a class="active" href="/">Home </a>
+                                    </li>
+                                    <li>
+                                        <a  href="/product">All Books</a>
+                                    </li>
+                                    <li><a href="shop-grid-right.html">Shop</i></a>
+                                        
+                                    </li>
+                                    <!-- <li class="position-static"><a href="#">All Categories </a>
+                                        
+                                    </li> -->
+                                    <li><a href="/account">Account</a>
+                                        
+                                    </li>
+                                    <li><a href="#"> About  </a>
+                                        
+                                    </li>
+                                    <li>
+                                        <a href="page-contact.html">Contact Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="page-contact.html">Privacy-policy</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-header-active mobile-header-wrapper-style">
+        <div class="mobile-header-wrapper-inner">
+            <div class="mobile-header-top">
+                <div class="mobile-header-logo">
+                    <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                </div>
+                <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                    <!-- <button class="close-style search-close">
+                        <i class="icon-top"></i>
+                        <i class="icon-bottom"></i>
+                    </button> -->
+                </div>
+            </div>
+            <div class="mobile-header-content-area">
+                <div class="mobile-search search-style-3 mobile-header-border">
+                    <!-- <form action="#">
+                        <input type="text" placeholder="Search for items…">
+                        <button type="submit"><i class="fi-rs-search"></i></button>
+                    </form> -->
+                </div>
+                <div class="mobile-menu-wrap mobile-header-border">
+                   
+                    <!-- mobile menu start -->
+                    <nav>
+                        <ul class="mobile-menu">
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/">Home</a>
+                               
+                            </li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop-grid-right.html">shop</a>
+                               
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                           
+                            
+                      
+                           
+                        </ul>
+                    </nav>
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-header-info-wrap mobile-header-border">
+                    
+                    <div class="single-mobile-header-info">
+                        <a href="page-login-register.html">Log In / Sign Up </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="#">(+01) - 2345 - 6789 </a>
+                    </div>
+                </div>
+                <div class="mobile-social-icon">
+                    <h5 class="mb-15 text-grey-4">Follow Us</h5>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+
+        <section class="home-slider position-relative mb-30">
+            <div class="container">
+                <div class="home-slide-cover bg-grey-10 mt-30">
+                    <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
+                        <% if (bannerHome1) { %>
+                        <div class="single-hero-slider single-animation-wrap">
+                            <div class="container">
+                                <div class="row align-items-center slider-animated-1">
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="hero-slider-content-2">
+                                            <h3 class="animated fw-900"><%= bannerHome1.Text %></h3>
+                                            <a class="animated btn btn-brush btn-brush-3" href="<%= bannerHome1.Target %>" tabindex="0"> Shop Now </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-6">
+                                        <div class="single-slider-img single-slider-img-1">
+                                            <% bannerHome1.Image.forEach(image => { %>
+                                            <img class="animated" src="/bannerimages/<%= bannerHome1.Image[0]  %>" alt="<%= bannerHome1.Name %>" style="width: 1500px;height: 500px;">
+                                            <% }) %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                            <% } %>
+
+                        <% if (bannerHome1) { %>
+                            <div class="single-hero-slider single-animation-wrap">
+                                <div class="container">
+                                    <div class="row align-items-center slider-animated-1">
+                                        <div class="col-lg-5 col-md-6">
+                                            <div class="hero-slider-content-2">
+                                                <h3 class="animated fw-900"><%= bannerHome1.Text %></h3>
+                                                <a class="animated btn btn-brush btn-brush-3" href="<%= bannerHome1.Target %>" tabindex="0"> Shop Now </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 col-md-6">
+                                            <div class="single-slider-img single-slider-img-1">
+                                                <% bannerHome1.Image.forEach(image => { %>
+                                                <img class="animated" src="/bannerimages/<%= bannerHome1.Image[1]  %>" alt="<%= bannerHome1.Name %>" style="width: 1500px;height: 500px;">
+                                                <% }) %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } else { %>
+                                <div class="single-hero-slider single-animation-wrap">
+                                    <div class="container">
+                                        <div class="row align-items-center slider-animated-1">
+                                            <div class="col-lg-5 col-md-6">
+                                                <div class="hero-slider-content-2">
+                                                    <h3 class="animated fw-900 text-white">Best Mega Sales</h3>
+                                                    <p class="animated fw-500 text-white">Discover amazing deals on a wide range of products!</p>
+                                                    <a class="animated btn btn-brush btn-brush-3" href="/product" tabindex="0"> Shop Now </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7 col-md-6">
+                                                <div class="single-slider-img single-slider-img-1">
+                                                    <img class="animated img-fluid" src="assets/imgs/slider/Home Page_125.png" alt="Best Mega Sales Image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <% } %>
+            
+                       
+                    </div>
+                    <div class="slider-arrow hero-slider-1-arrow"></div> 
+                </div>
+            </div>
+        </section>
+        <!-- <section class="banners mb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner-img wow fadeIn animated">
+                            <img src="assets/imgs/banner/banner-1.png" alt="">
+                            <div class="banner-text">
+                                <span>Smart Offer</span>
+                                <h4>Save 20% on <br>Woman Bag</h4>
+                                <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner-img wow fadeIn animated">
+                            <img src="assets/imgs/banner/banner-2.png" alt="">
+                            <div class="banner-text">
+                                <span>Sale off</span>
+                                <h4>Great Summer <br>Collection</h4>
+                                <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-md-none d-lg-flex">
+                        <div class="banner-img wow fadeIn animated  mb-sm-0">
+                            <img src="assets/imgs/banner/banner-3.png" alt="">
+                            <div class="banner-text">
+                                <span>New Arrivals</span>
+                                <h4>Shop Today’s <br>Deals & Offers</h4>
+                                <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="popular-categories section-padding mt-15">
+            <div class="container wow fadeIn animated">
+                <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
+                <div class="carausel-6-columns-cover position-relative">
+                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                    <div class="carausel-6-columns" id="carausel-6-columns">
+                        <% if(categories.length > 0) { %>
+                            <% for(let i=0; i<categories.length; i++) { %>
+                                <% let category = categories[i]; %>
+                        <div class="card-1">
+                            <figure class=" img-hover-scale overflow-hidden">
+                                <a href="/product?id=<%= encodeURIComponent(categories[i]._id) %>&sortdata=<%= sortdata || '' %><% if (productData && productData.length > 0) { %>&search=<%= encodeURIComponent(search) %><% } %>"><img src="/categoryimages/<%= category.image %>" alt=""></a>
+                            </figure>
+                            
+                            <h5><a href="shop-grid-right.html"><%= category.name %></a></h5>
+                        </div>
+                        <% } %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section class="product-tabs pt-25 pb-20 wow fadeIn animated">
+            <div class="container">
+                <div class="row">
+                   
+                    <div class="col-lg-12">
+                        <div class="tab-header">
+                            <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">Featured</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="nav-tab-two" data-bs-toggle="tab" data-bs-target="#tab-two" type="button" role="tab" aria-controls="tab-two" aria-selected="false">Popular</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">New added</button>
+                                </li>
+                            </ul> -->
+                            <a href="/product" class="view-more d-none d-md-flex">View More<i class="fi-rs-angle-double-small-right"></i></a>
+                        </div>
+                        <!--End nav-tabs-->
+                        
+                        <div class="tab-content wow fadeIn animated" id="myTabContent">
+                            <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
+                                <div class="row product-grid-4">
+                                    <% if(products.length > 0) { %>
+                                        <% for(let i=0; i < Math.min(8, products.length); i++) { %>
+                                            <% let product = products[i]; %> 
+                                            <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                                                <div class="product-cart-wrap mb-30">
+                                                    <div class="product-img-action-wrap">
+                                                        <div class="product-img product-img-zoom">
+                                                            <a href="/productDetails/<%= product._id %>">
+                                                                <% if (product.image && product.image.length > 0) { %>
+                                                                    <img src="/productimages/<%= product.image[0] %>" alt="<%= product.name %>" >
+                                                                <% } else { %>
+                                                                    <p>No Image</p>
+                                                                <% } %>
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-action-1">
+                                                            
+                                                                <a aria-label="Add To Wishlist" class="action-btn hover-up" href="#"  onclick="addToWishlist('<%= product._id %>', event)">
+                                                                    <i class="fi-rs-heart"></i>
+                                                                </a>
+                                                           
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="product-content-wrap">
+                                                        <div class="product-category">
+                                                            <a href="shop-grid-right.html"><%= product.category.name %></a>
+                                                        </div>
+                                                        <h2><a href="/productDetails/<%= product._id %>"><%= product.name %></a></h2>
+                                                        <div>
+                                                            <span>
+                                                                <% if (product.offer ) { %>
+                                                                    <%= product.offer.percentage %>% Off <!-- Check if product.offer exists -->
+                                                                <% } else { %>
+                                                                   0%
+                                                                <% } %>                                       
+                                                              </span>
+                                                        </div>
+                                                        
+                                                        <div class="product-price">
+                                                            <% if (product.offer) { %>
+                                                                <% 
+                                                                    const discountedPrice = product.price - (product.price * product.offer.percentage / 100);
+                                                                %>
+                                                                <span>off Price: <%= discountedPrice.toFixed(2) %></span>
+                                                                <span class="old-price">Price: <%= product.price %></span>
+                                                            <% } else { %>
+                                                                <span>Price: <%= product.price %></span>
+                                                            <% } %>
+                                                        </div>
+                                                          
+                                                       
+                                                        
+                                                        <div class="product-action-1 show">
+                                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="#" onclick="sendToCart('<%= product._id %>', event)">
+                                                                <i class="fi-rs-shopping-bag-add"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    <% } else { %>
+                                        <div class="col-12">
+                                            <p>Product Not Found</p>
+                                        </div>
+                                    <% } %>
+                                </div>
+                                <!-- End product-grid-4 -->
+                            </div>
+                        </div>
+                        
+                          
+                            <!--En tab one (Featured)-->
+                        
+                            <!--En tab two (Popular)-->
+                     
+                            <!--En tab three (New added)-->
+                        </div>
+                        <!--End tab-content-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner-2 section-padding pb-0" >
+            <div class="container" style="background-color: #d8f4e2;">
+                <div class="banner-img banner-big wow fadeIn animated f-none">
+                    <% if (bannerHome2) { %>
+                        <div class="single-hero-slider single-animation-wrap">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="hero-slider-content-2">
+                                            <h3 class="animated fw-900"><%= bannerHome2.Text %></h3>
+                                            <a class="animated btn btn-brush btn-brush-3" href="<%= bannerHome2.Target %>" tabindex="0"> Shop Now </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="banner-image">
+                                            <% bannerHome2.Image.forEach(image => { %>
+                                                <img class="animated" src="/bannerimages/<%= image %>" alt="<%= bannerHome2.Name %>" style="width: 100%;">
+                                            <% }) %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                            <div class="single-hero-slider single-animation-wrap">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="hero-slider-content-2">
+                                                <h3 class="animated fw-900">Best Offers here</h3>
+                                                <a class="animated btn btn-brush btn-brush-3" href="/product" tabindex="0"> Shop Now </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="banner-image">
+                                                    <img class="animated" src="assets/imgs/slider/Home Page_124.png" alt="" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <% } %>
+                </div>
+            </div>
+        </section>
+        
+    
+
+        <section class="pt-25 pb-15">
+            <div class="container wow fadeIn animated">
+                <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
+                <div class="carausel-6-columns-cover position-relative">
+                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"></div>
+                    <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
+                        <% if(products.length > 0) { %>
+                            <% for(let i=0; i < Math.min(8, products.length); i++) { %>
+                                <% let product = products[i]; %> 
+                        <div class="product-cart-wrap small hover-up">
+                            
+                            <div class="product-img-action-wrap">
+                                <div class="product-img product-img-zoom">
+                                    <a href="/productDetails/<%= product._id %>">
+                                        <% if (product.image && product.image.length > 0) { %>
+                                            <img src="/productimages/<%= product.image[0] %>" alt="<%= product.name %>" style="width: 500px;">
+                                        <% } else { %>
+                                            <p>No Image</p>
+                                        <% } %>
+                                    </a>
+                                </div>
+
+                                <div class="product-action-1 show">
+                                    <a aria-label="Add To Cart" class="action-btn hover-up" href="#" onclick="sendToCart('<%= product._id %>', event)">
+                                        <i class="fi-rs-shopping-bag-add"></i>
+                                    </a>
+                                </div>
+                                
+                                
+                                <div class="product-action-1">
+                                                            
+                                    <a aria-label="Add To Wishlist" class="action-btn hover-up" href="#"  onclick="addToWishlist('<%= product._id %>', event)">
+                                        <i class="fi-rs-heart"></i>
+                                    </a>
+                               
+                                
+                            </div>
+                                
+                            </div>
+                            <div class="product-content-wrap">
+                                <h2><a href="/productDetails/<%= product._id %>"><%= product.name %></a></h2>
+                                
+                                <div>
+                                    <span>
+                                        <% if (product.offer ) { %>
+                                            <%= product.offer.percentage %>% Off <!-- Check if product.offer exists -->
+                                        <% } else { %>
+                                           0 %
+                                        <% } %>                                                            </span>
+                                </div>
+                                
+                                <div class="product-price">
+                                    <% if (product.offer) { %>
+                                        <% 
+                                            const discountedPrice = product.price - (product.price * product.offer.percentage / 100);
+                                        %>
+                                        <span>off Price: <%= discountedPrice.toFixed(2) %></span>
+                                        <span class="old-price">Price: <%= product.price %></span>
+                                    <% } else { %>
+                                        <span>Price: <%= product.price %></span>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                        <% } %>
+                        <!--End product-cart-wrap-2-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+  
+        
+       
+        <section class="featured section-padding">
+            <div class="container pb-25">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-1.png" alt="">
+                            <h4 class="bg-1">Free Shipping</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-2.png" alt="">
+                            <h4 class="bg-3">Online Order</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-3.png" alt="">
+                            <h4 class="bg-2">Save Money</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-4.png" alt="">
+                            <h4 class="bg-4">Promotions</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-5.png" alt="">
+                            <h4 class="bg-5">Happy Sell</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                        <div class="banner-features wow fadeIn animated hover-up">
+                            <img src="assets/imgs/theme/icons/feature-6.png" alt="">
+                            <h4 class="bg-6">24/7 Support</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main">
+        <section class="newsletter p-30 text-white wow fadeIn animated">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-md-3 mb-lg-0">
+                        <div class="row align-items-center">
+                            <div class="col flex-horizontal-center">
+                                <img class="icon-email" src="assets/imgs/theme/icons/icon-email.svg" alt="">
+                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
+                            </div>
+                            <div class="col my-4 my-md-0 des">
+                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first shopping.</strong></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- Subscribe Form -->
+                        <form class="form-subcriber d-flex wow fadeIn animated">
+                            <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
+                            <button class="btn bg-dark text-white" type="submit">Subscribe</button>
+                        </form>
+                        <!-- End Subscribe Form -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding footer-mid" style="background-color: white;">
+            <div class="container pt-15 pb-20">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-about font-md mb-md-5 mb-lg-0">
+                            <div class="logo logo-width-1 wow fadeIn animated">
+                                <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                            </div>
+                            <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
+                          
+                            <p class="wow fadeIn animated">
+                                <strong>Phone: </strong>+01 2222 365 /(+91) 01 2345 6789
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
+                            </p>
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">About</h5>
+                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Support Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
+                        <ul class="footer-list wow fadeIn animated">
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">View Cart</a></li>
+                            <li><a href="#">My Wishlist</a></li>
+                            <li><a href="#">Track My Order</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Order</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container pb-20 wow fadeIn animated">
+            <div class="row">
+                <div class="col-12 mb-20">
+                    <div class="footer-bottom"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong class="text-brand">Booktore</strong> - online book shop </p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-lg-end text-start font-sm text-muted mb-0">
+                        Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+		function sendToCart(parameter, event) {
+			event.preventDefault(); 
+	
+			function sendGetRequest(param) {
+				const url = '/addtocart?' + new URLSearchParams({ id: param });
+				
+				fetch(url, {
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				
+				.then(response =>  response.json()) 
+				.then(data =>{
+					console.log(data)
+					showMessage(data.message)
+				})
+				.catch(error => {
+					console.error('Error sending GET request with parameter:', error);
+				});
+			}
+	
+			sendGetRequest(parameter);
+		}
+		function showMessage(message) {
+			const messageElement = document.createElement('div');
+			messageElement.textContent = message;
+			messageElement.classList.add('added-message');
+			document.body.appendChild(messageElement);
+	
+			setTimeout(() => {
+				messageElement.style.display = 'none';
+			}, 2000);
+		}
+	</script>
+
+<script>
+   function addToWishlist(parameter, event) {
+    event.preventDefault(); 
+
+    function sendPostRequest(param) {
+        const url = '/addTowish';
+        const data = { productId: param };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json()) 
+        .then(data => {
+            console.log(data);
+            showMessage(data.message);
+        })
+        .catch(error => {
+            console.error('Error sending POST request:', error);
+        });
+    }
+
+    sendPostRequest(parameter);
+}
+
+    function showMessage(message) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = message;
+        messageElement.classList.add('added-message');
+        document.body.appendChild(messageElement);
+
+        setTimeout(() => {
+            messageElement.style.display = 'none';
+        }, 2000);
+    }
+</script>
+
+
+  
+	<style>
+		.added-message {
+			position: fixed;
+			top: 50px; 
+			right: 20px; 
+			background-color: #fa6f05;
+			color: white; 
+			padding: 10px;
+			border-radius: 5px;
+			z-index: 9999;
+		}
+	</style>
+   
+    
+    <%- include('../layouts/footer.ejs') -%>

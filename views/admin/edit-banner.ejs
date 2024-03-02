@@ -1,0 +1,321 @@
+<%- include('../layouts/header.ejs') -%>
+
+    <div class="screen-overlay"></div>
+    <aside class="navbar-aside" id="offcanvas_aside">
+        <div class="aside-top">
+            <a href="index.html" class="brand-wrap">
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
+            <div>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-aside">
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/home"> <i class="icon material-icons md-home"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="/admin/products"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Products</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/products">Product List</a>
+                        <!-- <a href="/admin/products">Product grid</a> -->
+                        <!-- <a href="/admin/products">Product grid 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="/admin/category"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Categories</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/category">Category List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-orders-1.html"> <i class="icon material-icons md-shopping_cart"></i>
+                        <span class="text">Orders</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/order">Order List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu ">
+                    <a class="menu-link" href="page-sellers-cards.html"> <i class="icon material-icons md-store"></i>
+                        <span class="text">Sellers</span>
+                    </a>
+                    <div class="submenu">
+                        <!-- <a href="page-sellers-cards.html">Sellers cards</a> -->
+                        <a href="/admin/users" class="active">Sellers list</a>
+                        <!-- <a href="page-seller-detail.html">Seller profile</a> -->
+                    </div>
+                </li>
+            
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                        <span class="text">Coupen</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/coupon">Coupen Management</a>
+                        <!-- <a href="page-transactions-2.html">Transaction 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="#"> <i class="icon material-icons md-person"></i>
+                        <span class="text">Offer</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/offer">Offer Management</a>
+                       
+                    </div>
+                </li>
+                <li class="menu-item active">
+                    <a class="menu-link" href="page-reviews.html"> <i class="icon material-icons md-comment"></i>
+                        <span class="text">Banner</span>
+                    </a>
+                </li>
+               
+            </ul>
+            <hr>
+            <ul class="menu-aside">
+               
+            <li class="menu-item">
+                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                    <span class="text"> Logout </span>
+                </a>
+            </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+    </aside>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                       
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <form  id="myForm" action="/admin/edit-banner" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="content-header">
+                            <h2 class="content-title">Add New Banner</h2>
+                            <div>
+                                <button type="submit"  class="btn btn-md rounded font-sm hover-up">Submit</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4>Books Details</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <label for="product_name" class="form-label">Banner Name</label>
+                                    <input  type="text" placeholder="Type here" name="name" value="<%= bannerData.Name %>" class="form-control" id="bannername" readonly>
+                                    <span id="bannerError" class="text-danger"></span>
+                                </div>
+                                <% if(typeof message !== 'undefined') { %>
+                                    <p style="color:green"><%= message %></p>
+                                <% } %>
+                                <div class="mb-4">
+                                    <input type="hidden" value="<%= bannerData._id %>" name="id">
+                                    <label for="product_name" class="form-label">Target</label>
+                                    <input type="text" placeholder="Type here" value="<%= bannerData.Target %>" name="target" class="form-control" id="target">
+                                    <span id="targetError" class="text-danger"></span>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="product_name" class="form-label">Date</label>
+                                    <%const newDate = new Date(bannerData.expiryDate)%>
+                                    <%const year = newDate.getFullYear()%>
+                                    <%const month = newDate.getMonth()+1%>
+                                    <%const day = newDate.getDate()%>
+                                    <%const formattedDate = `${year}-${month<10?0:''}${month}-${day<10?0:''}${day}`%>
+                                    <input type="Date" placeholder="Type here" value="<%=formattedDate%>" name="date" class="form-control" id="date">
+                                    <span id="dateError" class="text-danger"></span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" value="yes" id="tickOption" name="tickOption">
+                                    <label for="tickOption">Crop Images</label>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Text</label>
+                                    <textarea placeholder="Type here" name="text" class="form-control"  rows="4"><%= bannerData.Text %></textarea>
+                                    <span id="descriptionError" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4>Media</h4>
+                            </div>
+                                <div class="card-body">
+                                    <% if (Array.isArray(bannerData.Image) && bannerData.Image.length > 0) { %>
+                                        <% for (let i = 0; i < bannerData.Image.length; i++) { %>
+                                          <div class="input-upload position-relative mb-3" style="max-width: 300px;">
+                                            <div style="position: relative;">
+                                              <img src="/bannerimages/<%= bannerData.Image[i] %>" alt="" class="img-fluid rounded" style="width: 100%;">
+                                              <button type="button" class="btn btn-danger btn-sm position-absolute bottom-0 start-50 translate-middle-x" style="transform: translateX(-50%);" onclick="handleRemove('<%= bannerData.Image[i] %>')">Remove</button>
+                                            </div>
+                                           
+                                          </div>
+                                        <% } %>
+                                      <% } %>                                      
+                                    <input class="form-control mt-3" accept="image/*" name="image" id="imageInput" type="file" multiple onchange="displaySelectedImages(event)">
+                                    <input type="hidden" name="removedImages" id="removedImagesInput">
+                                    <div class="input-upload position-relative mb-3" style="max-width: 300px;">
+                                        <div id="selectedImagesContainer" style="position: relative;"></div>
+                                    </div>
+                                    <% if(typeof imgMessage !== 'undefined') { %>
+                                        <p style="color:red"><%= imgMessage %></p>
+                                    <% } %>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, BookStore - online book shop .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin-assets/js/vendors/select2.min.js"></script>
+    <script src="/admin-assets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="/admin-assets/js/main.js" type="text/javascript"></script>
+    <script src="/admin-assets/js/script.js"></script>
+
+    <script>
+        const form = document.getElementById('myForm')
+         form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const bannername = document.getElementById('bannername').value;
+            const target = document.getElementById('target').value;
+            const date = document.getElementById('date').value;
+            const text = document.querySelector('textarea[name="text"]').value
+            document.querySelectorAll('.text-danger').forEach(element => element.textContent = '');
+
+            if (bannername.trim() === '') {
+            document.getElementById('bannerError').textContent = 'Banner Name is required.';
+            return false;
+            }
+
+            if (target.trim() === '') {
+            document.getElementById('targetError').textContent = 'Target is required.';
+            return false;
+            }
+
+            if (date.trim() === '') {
+            document.getElementById('dateError').textContent = 'Date is required.';
+            return false;
+            }
+
+            if (text.trim() === '') {
+            document.getElementById('textError').textContent = 'Text is required.';
+            return false;
+            }
+            this.submit();
+    })
+    </script>
+
+     <script>
+        function displaySelectedImages(event) {
+            const selectedImagesContainer = document.getElementById('selectedImagesContainer');
+            selectedImagesContainer.innerHTML = ''; 
+    
+            const files = event.target.files;
+    
+            if (files && files.length > 0) {
+                for (let i = 0; i < files.length; i++) {
+                    const reader = new FileReader();
+                    const img = document.createElement('img');
+                    img.className = 'img-fluid rounded';
+                    img.style.width = '100%';
+    
+                    reader.onload = function (e) {
+                        img.src = e.target.result;
+                    };
+    
+                    reader.readAsDataURL(files[i]);
+    
+                    selectedImagesContainer.appendChild(img);
+                    
+                    
+                    const lineBreak = document.createElement('br');
+                    selectedImagesContainer.appendChild(lineBreak);
+                }
+            }
+        }
+    
+    </script>
+
+     <!-- ====================== end of Displaying img in frontend====================== -->
+
+
+    <!-- ====================sending image to backend================ -->
+
+    <script>
+        const removedImages = [];
+    
+        function handleRemove(imageURL) {
+        removedImages.push(imageURL);
+        console.log('Removed Image URL:', imageURL);
+        console.log('Removed Images Array:', removedImages);
+        const imageElements = document.querySelectorAll(`img[src="/bannerimages/${imageURL}"]`);
+        imageElements.forEach(image => {
+            const parentDiv = image.parentNode.parentNode;
+            parentDiv.remove();
+        });
+        submitForm()
+        }
+        function submitForm() {
+            const hiddenInput = document.getElementById('removedImagesInput');
+            hiddenInput.value = JSON.stringify(removedImages);
+            const form = document.getElementById('myForm');
+            // form.submit();
+        }
+    </script>
+
+    
+    <!-- ====================sending image to backend================ -->
+    <%- include('../layouts/footer.ejs') -%>

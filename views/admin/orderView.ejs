@@ -1,0 +1,340 @@
+<%- include('../layouts/header.ejs') -%>
+
+    <div class="screen-overlay"></div>
+    <aside class="navbar-aside" id="offcanvas_aside">
+        <div class="aside-top">
+            <a href="index.html" class="brand-wrap">
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+            <div>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-aside">
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/home"> <i class="icon material-icons md-home"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="/admin/products"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Products</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/products">Product List</a>
+                        <!-- <a href="page-products-grid.html">Product grid</a> -->
+                        <!-- <a href="page-products-grid-2.html">Product grid 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="/admin/category"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Categories</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/category">Category List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu active">
+                    <a class="menu-link" href="page-orders-1.html"> <i class="icon material-icons md-shopping_cart"></i>
+                        <span class="text">Orders</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/order">Order List</a>
+                        
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-sellers-cards.html"> <i class="icon material-icons md-store"></i>
+                        <span class="text">Sellers</span>
+                    </a>
+                    <div class="submenu">
+                        <!-- <a href="page-sellers-cards.html">Sellers cards</a> -->
+                        <a href="/admin/users">Sellers list</a>
+                        <!-- <a href="page-seller-detail.html">Seller profile</a> -->
+                    </div>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                        <span class="text">Coupen</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/coupon">Coupen Management</a>
+                        <!-- <a href="page-transactions-2.html">Transaction 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="#"> <i class="icon material-icons md-person"></i>
+                        <span class="text">Offer</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/offer">Offer Management</a>
+                       
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/banner"> <i class="icon material-icons md-comment"></i>
+                        <span class="text">Banner</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <ul class="menu-aside">
+               
+            <li class="menu-item">
+                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                    <span class="text"> Logout </span>
+                </a>
+            </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+    </aside>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+
+                    <li class="dropdown nav-item">
+                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                     
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="content-header">
+                <div>
+                    <h2 class="content-title card-title">Order detail</h2>
+                </div>
+            </div>
+            <div class="card">
+                <header class="card-header">
+                    
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 mb-lg-0 mb-15">
+                            <span>
+                                <i class="material-icons md-calendar_today"></i> <b><%= new Date(orderData.currentData).toLocaleString() %></b>
+                            </span> <br>
+                            <small class="text-muted">Order ID: # <%=orderData.items[0].productId._id%></small>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ms-auto text-md-end">
+                            <a class="btn btn-primary" onclick="downloadFile()" href="#"><i class="icon material-icons md-print"></i>Save</a>
+                        </div>
+                    </div>
+                </header> 
+                <div class="card-body">
+                    <div class="row mb-50 mt-20 order-info-wrap">
+                        <div class="col-md-4">
+                            <article class="icontext align-items-start">
+                                <span class="icon icon-sm rounded-circle bg-primary-light">
+                                    <i class="text-primary material-icons md-person"></i>
+                                </span>
+                                <div class="text">
+                                    <h6 class="mb-1">Customer</h6>
+                                    <p class="mb-1">
+                                        <%=orderData.address[0].firstName%>  <br>    <template class="__cf_email__" data-cfemail="e2838e879aa2879a838f928e87cc818d8f">[email&#160;protected]</template> <br> 
+                                    </p>
+                                </div>
+                            </article>
+                        </div> 
+                        <div class="col-md-4">
+                            <article class="icontext align-items-start">
+                                <span class="icon icon-sm rounded-circle bg-primary-light">
+                                    <i class="text-primary material-icons md-local_shipping"></i>
+                                </span>
+                                <div class="text">
+                                    <h6 class="mb-1">Order info</h6>
+                                    <p class="mb-1">
+                                        Shipping: Fargo express <br> Pay method: <%=orderData.paymentMethod%><br>
+                                        <% const productItem = orderData.items.find(item => item.productId.toString() === productData._id.toString()); %>
+                                        <!-- Display the product item if found -->
+                                        <% if (productItem) { %>
+                                        Status: <%=productItem.status%>
+                                        <% } %>
+                                    </p>
+                                </div>
+                            </article>
+                        </div> 
+                        <div class="col-md-4">
+                            <article class="icontext align-items-start">
+                                <span class="icon icon-sm rounded-circle bg-primary-light">
+                                    <i class="text-primary material-icons md-place"></i>
+                                </span>
+                                <div class="text">
+                                    <h6 class="mb-1">Deliver to</h6>
+                                    <p class="mb-1">
+                                        City: <%=orderData.address[0].City%>, <%=orderData.address[0].District%> <br>,<%=orderData.address[0].State%> <%=orderData.address[0].Pincode%> <br> 
+                                    </p>
+                                </div>
+                            </article>
+                        </div> 
+                    </div> 
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th width="40%">Product</th>
+                                            <th width="20%">Unit Price</th>
+                                            <th width="20%">Quantity</th>
+                                            <th width="20%" class="text-end">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Display the product item if found -->
+                                        <% if (productItem) { %>
+                                            <tr>
+                                                <td>
+                                                    <a class="itemside" href="#">
+                                                        <div class="left">
+                                                            <img src="/productimages/<%= productData.image[0] %>" class="img-xs" alt="Item">
+                                                        </div>
+                                                        <div class="info"> <%= productData.name %> </div>
+                                                    </a>
+                                                </td>
+                                                <td> ₹<%= offerPrice ?offerPrice:productData.price %> </td>
+                                                <td> <%= productItem.quantity %></td> <!-- Display quantity for the specific product item -->
+                                                <td class="text-end"> ₹<%=offerPrice? offerPrice * productItem.quantity :productData.price * productItem.quantity %></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-4">
+                            <div class="h-25 pt-4">
+                                <!-- Display the status for the specific product item -->
+                                <% if (productItem) { %>
+                                    <% if (productItem.status === 'Delivered') { %>
+                                        <td>
+                                            <h2 style="color: green;">Delivered</h2>
+                                        </td>
+                                    <% } else if (productItem.status === 'Returned') { %>
+                                        <td>
+                                            <h2 style="color: red;">Returned</h2>
+                                        </td>
+                                    <% } else if (productItem.status !== 'Cancelled') { %>
+                                        <td>
+                                            <button onclick="confirmCancellation('<%= orderData._id %>', '<%= productItem.productId %>')" style="background-color: red; border: none; color: white; font-size: 16px;">Cancel</button>
+                                        </td>
+                                    <% } else { %>
+                                        <td>
+                                            <h2 style="color: red;">Cancelled</h2>
+                                        </td>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section> 
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, BookStore - online book shop .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        function downloadFile() {
+         window.print();
+        }
+    </script>
+    <script>
+        const productPrices = document.querySelectorAll(".text-end");
+      
+        let totalPrice = 0;
+      
+        productPrices.forEach((priceElement) => {
+          const price = parseFloat(priceElement.textContent.replace(/[^\d.-]/g, ''));
+          if (!isNaN(price)) {
+            totalPrice += price;
+          }
+        });
+        const subtotalElement = document.getElementById('subtotal');
+        if (subtotalElement) {
+          subtotalElement.textContent = `₹${totalPrice.toFixed(2)}`;
+        }
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        function confirmCancellation(orderId,productId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'This action cannot be undone!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'red',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Yes, cancel it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.showLoading(); 
+                    fetch('/admin/orderstatus', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ orderId: orderId ,productId:productId})
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            Swal.fire({
+                                title: 'Cancelled!',
+                                text: 'Order has been cancelled.',
+                                icon: 'success'
+                            }).then(() => {
+                                window.location.href = '/admin/order';
+                            });
+                        } else {
+                            throw new Error('Failed to cancel order');
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Failed to cancel order.',
+                            icon: 'error'
+                        });
+                    });
+                }
+            });
+        }
+    </script>                
+    
+    <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin-assets/js/vendors/select2.min.js"></script>
+    <script src="/admin-assets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="/admin-assets/js/main.js" type="text/javascript"></script>
+    <script src="/admin-assets/js/form.js" type="text/javascript"></script>
+
+    <%- include('../layouts/footer.ejs') -%>

@@ -1,0 +1,713 @@
+<%- include('../layouts/header.ejs') -%>
+
+
+    <!-- Quick view -->
+    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">              
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="detail-gallery">
+                                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+                                <!-- MAIN SLIDES -->
+                                <div class="product-image-slider">
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-2.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-1.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-3.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-4.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-5.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-6.jpg" alt="product image">
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="assets/imgs/shop/product-16-7.jpg" alt="product image">
+                                    </figure>
+                                </div>
+                                <!-- THUMBNAILS -->
+                                <div class="slider-nav-thumbnails pl-15 pr-15">
+                                    <div><img src="assets/imgs/shop/thumbnail-3.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-4.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-5.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-6.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-7.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-8.jpg" alt="product image"></div>
+                                    <div><img src="assets/imgs/shop/thumbnail-9.jpg" alt="product image"></div>
+                                </div>
+                            </div>
+                            <!-- End Gallery -->
+                          
+                        </div>
+              
+                            <!-- Detail Info -->
+                        </div>
+                    </div>
+                </div>        
+        </div>
+        </div>
+    </div>
+    <header class="header-area header-style-4 header-height-2">
+        <div class="header-top header-top-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info">
+                            <ul>
+                                <li><i class="fi-rs-smartphone"></i> <a href="#">(+01) - 2345 - 6789</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-4">
+                        <div class="text-center">
+                            <div id="news-flash" class="d-inline-block">
+                                <ul>
+                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a></li>
+                                    <li>Supper Value Deals - Save more with coupons</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info header-info-right">
+                            <ul>
+                                <li>
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
+                                    <ul class="language-dropdown">
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a></li>
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-dt.png" alt="">Deutsch</a></li>
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-ru.png" alt="">Pусский</a></li>
+                                    </ul>
+                                </li>
+                                <li><!-- In your navigation bar or header section -->
+                                    
+                                        <% if (user) { %>
+                                            <!-- If user is logged in, show logout button -->
+                                            <li><a href="/logout">Logout</a></li>
+                                        <% } else { %>
+                                            <!-- If user is not logged in, show login button -->
+                                            <li><a href="/login">Log In / Sign Up</a></li>
+                                        <% } %>
+                                    
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-middle header-middle-ptb-1 d-none d-lg-block"  style="background: white;">
+            <div class="container">
+                <div class="container" >
+                <div class="header-wrap">
+                    <div class="logo logo-width-1">
+                        <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                        <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
+                    </div>
+                    <div class="header-right">
+                        <div class="search-style-2">
+                            <form class="d-flex justify-content-between">
+                                <input type="text" name="search" class="form-control" id="search_input" placeholder="Search Here">
+                                <!-- <input type="submit" > -->
+                                <span  id="close_search" title="Close Search"></span>
+                            </form>                 
+                               </div>
+                        <div class="header-action-right">
+                            <div class="header-action-2">
+                                <div class="header-action-icon-2">
+                                    <a href="/wishlist">
+                                        <img class="svgInject" alt="Evara" src="assets/imgs/theme/icons/icon-heart.svg">
+                                    </a>
+                                </div>
+                                <div class="header-action-icon-2">
+                                    <a class="mini-cart-icon" href="/cart">
+                                        <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                    </a>
+                         
+                                </div>
+                                <div class="nav-item "><a class="nav-link" href="/account" ><i class="fas fa-user"></i></a></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
+            <div class="container" >
+                <div class="header-wrap header-space-between position-relative">
+                    <div class="logo logo-width-1 d-block d-lg-none">
+                        <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="header-nav d-none d-lg-flex">
+                      
+                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block" style="margin-left: 300px;">
+                            <nav>
+                                <ul>
+                                    <li><a  href="/">Home </a>
+                                    </li>
+                                    <li>
+                                        <a class="active" href="/product">All Books</a>
+                                    </li>
+                                    <li><a href="shop-grid-right.html">Shop</i></a>
+                                        
+                                    </li>
+                                    <!-- <li class="position-static"><a href="#">All Categories </a>
+                                        
+                                    </li> -->
+                                    <li><a href="/account">Account</a>
+                                        
+                                    </li>
+                                    <li><a href="#"> About  </a>
+                                        
+                                    </li>
+                                    <li>
+                                        <a href="page-contact.html">Contact Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="page-contact.html">Privacy-policy</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-header-active mobile-header-wrapper-style">
+        <div class="mobile-header-wrapper-inner">
+            <div class="mobile-header-top">
+                <div class="mobile-header-logo">
+                    <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                </div>
+                <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                    <!-- <button class="close-style search-close">
+                        <i class="icon-top"></i>
+                        <i class="icon-bottom"></i>
+                    </button> -->
+                </div>
+            </div>
+            <div class="mobile-header-content-area">
+                <div class="mobile-search search-style-3 mobile-header-border">
+                    <!-- <form action="#">
+                        <input type="text" placeholder="Search for items…">
+                        <button type="submit"><i class="fi-rs-search"></i></button>
+                    </form> -->
+                </div>
+                <div class="mobile-menu-wrap mobile-header-border">
+                    
+                    <!-- mobile menu start -->
+                    <nav>
+                        <ul class="mobile-menu">
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/">Home</a>
+                               
+                            </li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop-grid-right.html">shop</a>
+                               
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                           
+                            
+                      
+                           
+                        </ul>
+                    </nav>
+                    <!-- mobile menu end -->
+                </div>
+                <div class="mobile-header-info-wrap mobile-header-border">
+                    
+                    <div class="single-mobile-header-info">
+                        <a href="page-login-register.html">Log In / Sign Up </a>
+                    </div>
+                    <div class="single-mobile-header-info">
+                        <a href="#">(+01) - 2345 - 6789 </a>
+                    </div>
+                </div>
+                <div class="mobile-social-icon">
+                    <h5 class="mb-15 text-grey-4">Follow Us</h5>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/" rel="nofollow">Home</a>
+                    <span></span> All Product
+                </div>
+            </div>
+        </div>
+        <section class="mt-50 mb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        
+                       <!-- Cart Modal -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Shopping Cart</h2>
+      <div id="cartItems"></div>
+      <button id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+  
+  <% if(productData.length > 0) { %>
+    <div class="product-list mb-50">
+      <% for(let i=0; i< productData.length; i++) { %>
+        <div class="product-cart-wrap">
+          <% let product =  productData[i]; %>
+          <div class="product-img-action-wrap">
+            <div class="product-img product-img-zoom">
+              <div class="product-img-inner">
+                <a href="/productDetails/<%= product._id %>">
+                  <% if (product.image && product.image.length > 0) { %>
+                    <img src="/productimages/<%= product.image[0] %>" alt="<%= product.name %>" >
+                  <% } else { %>
+                    <p>No Image</p>
+                  <% } %>
+                </a>
+              </div>
+            </div>
+            <div class="product-action-1">
+              <a aria-label="Add To Wishlist" class="action-btn hover-up" href="#"  onclick="addToWishlist('<%= product._id %>', event)">
+                <i class="fi-rs-heart"></i>
+              </a>
+              <a href="#" onClick="sendToCart('<%= product._id %>', event)" class="action-btn hover-up addToCartBtn">
+                <i class="fi-rs-shopping-cart"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product-content-wrap">
+            <div class="product-category">
+              <a href="shop-grid-right.html"><%= product.category.name %></a>
+            </div>
+            <h2><a href="/productDetails/<%= product._id %>"><%= product.name %></a></h2>
+            <span>
+                <% if (product.offer ) { %>
+                    <%= product.offer.percentage %>% Off <!-- Check if product.offer exists -->
+                <% } else { %>
+                   0%
+                <% } %>                                       
+              </span>
+            <div class="product-price">
+              <% if (product.offer) { %>
+                <% 
+                  const discountedPrice = product.price - (product.price * product.offer.percentage / 100);
+                %>
+                <span>off Price: <%= discountedPrice.toFixed(2) %></span>
+                <span class="old-price">Price: <%= product.price %></span>
+              <% } else { %>
+                <span>Price: <%= product.price %></span>
+              <% } %>
+            </div>
+            <p class="mt-15"><%= product.author %></p>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  <% } else { %>
+    <div>
+      <p colspan="6">Product Not Found</p>
+    </div>
+  <% } %>
+                        <!--pagination-->
+                        <div class="filter-bar d-flex flex-wrap align-items-center">
+                            <div class="container">
+                                <div class="pagination justify-content-end">
+                                    <% if (currentPage > 1) { %>
+                                        <a href="/product?id=<%= categoryId %>&search=<%= search %>&page=<%= currentPage - 1 %>&sortdata=<%= sortdata %>&min=<%= min %>&max=<%= max %>" class="prev-arrow">
+                                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                                        </a>
+                                    <% } %>
+                                
+                                    <% for (let i = 1; i <= totalPages; i++) { %>
+                                        <a href="/product?page=<%= i %>&id=<%= categoryId %>&sortdata=<%= sortdata %>&search=<%= search %>&min=<%= min %>&max=<%= max %>" 
+                                            class="<%= i === currentPage ? 'active' : '' %>">
+                                            <%= i %>
+                                        </a>
+                                    <% } %>
+                                
+                                    <% if (currentPage < totalPages) { %>
+                                        <a href="/product?id=<%= categoryId %>&search=<%= search %>&page=<%= currentPage + 1 %>&sortdata=<%= sortdata %>&min=<%= min %>&max=<%= max %>" class="next-arrow">
+                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    <% } %>
+                                </div>
+                                
+                            </div>
+                            
+                            </div>
+                    </div>
+                    <div class="col-lg-3 primary-sidebar sticky-sidebar">
+                        <div class="widget-category mb-30">
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
+                            <ul>
+                                <li class="main-nav-list">
+									<a href="/product"><span class="lnr lnr-arrow-right"></span>All Books</a>
+								</li>
+                                <% if(categories.length > 0) { %>
+                                    <% for(let i=0; i<categories.length; i++) { %>
+                                        <li class="main-nav-list">
+											<a href="/product?id=<%= encodeURIComponent(categories[i]._id) %>&sortdata=<%= sortdata || '' %><% if (productData && productData.length > 0) { %>&search=<%= encodeURIComponent(search) %><% } %>">
+												<span class="lnr lnr-arrow-right"></span><%= categories[i].name %>
+											</a>
+										</li>
+                                <% } %>
+                                <% } %>
+                              
+                            </ul>
+                        </div>
+
+                        <div class="widget-category mb-30">
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Sort</h5>
+						<ul class="main-categories">
+							<li class="main-nav-list">
+								<a href="" onclick="sortProduct(event,'a-z')"><span class="lnr lnr-arrow-right"></span>Sort by (A - Z)</a>
+							</li>
+							<li class="main-nav-list">
+								<a href="" onclick="sortProduct(event,'z-a')"><span class="lnr lnr-arrow-right"></span>Sort by (Z - A)</a>
+							</li>
+							<li class="main-nav-list">
+								<a href="" onclick="sortProduct(event,'h-l')"><span class="lnr lnr-arrow-right"></span>High to Low</a>
+							</li>
+							<li class="main-nav-list">
+								<a href="" onclick="sortProduct(event,'l-h')"><span class="lnr lnr-arrow-right"></span>Low to High</a>
+							</li>
+						</ul>
+						
+			            </div>
+
+                        <div class="widget-category mb-30">
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Price</h5>
+
+                        <form id="filterForm">
+							<ul class="list-unstyled">
+								<li class="filter-list"><a href="#" onclick="filterBooks('')"><label class="text-dark" for="allBooks">All price</label></a></li>
+								<li class="filter-list"><a href="#" onclick="filterBooks('1-300')"><label class="text-dark" for="under300">under ₹300</label></a></li>
+								<li class="filter-list"><a href="#" onclick="filterBooks('301-600')"><label class="text-dark" for="301-600">₹301 - ₹600</label></a></li>
+								<li class="filter-list"><a href="#" onclick="filterBooks('601-900')"><label class="text-dark" for="601-900">₹601 - ₹900</label></a></li>
+								<li class="filter-list"><a href="#" onclick="filterBooks('901-1500')"><label class="text-dark" for="901-1200">₹901 - ₹1500</label></a></li>
+							</ul>
+							<input type="hidden" id="searchParam" name="search" value="<%= search %>">
+						</form>
+                        </div>
+                    </div>
+                    
+
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main">
+        <section class="newsletter p-30 text-white wow fadeIn animated">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-md-3 mb-lg-0">
+                        <div class="row align-items-center">
+                            <div class="col flex-horizontal-center">
+                                <img class="icon-email" src="assets/imgs/theme/icons/icon-email.svg" alt="">
+                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
+                            </div>
+                            <div class="col my-4 my-md-0 des">
+                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first shopping.</strong></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- Subscribe Form -->
+                        <form class="form-subcriber d-flex wow fadeIn animated">
+                            <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
+                            <button class="btn bg-dark text-white" type="submit">Subscribe</button>
+                        </form>
+                        <!-- End Subscribe Form -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding footer-mid" style="background-color: white;">
+            <div class="container pt-15 pb-20">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-about font-md mb-md-5 mb-lg-0">
+                            <div class="logo logo-width-1 wow fadeIn animated">
+                                <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
+
+                            </div>
+                            <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
+                          
+                            <p class="wow fadeIn animated">
+                                <strong>Phone: </strong>+01 2222 365 /(+91) 01 2345 6789
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
+                            </p>
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">About</h5>
+                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Support Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
+                        <ul class="footer-list wow fadeIn animated">
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">View Cart</a></li>
+                            <li><a href="#">My Wishlist</a></li>
+                            <li><a href="#">Track My Order</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Order</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
+                        <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container pb-20 wow fadeIn animated">
+            <div class="row">
+                <div class="col-12 mb-20">
+                    <div class="footer-bottom"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong class="text-brand">Booktore</strong> - online book shop </p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-lg-end text-start font-sm text-muted mb-0">
+                        Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+		function sendToCart(parameter, event) {
+			event.preventDefault();
+	
+			function sendGetRequest(param) {
+				const url = '/addtocart?' + new URLSearchParams({ id: param });
+				
+				fetch(url, {
+					method: 'GET',
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				
+				.then(response =>  response.json()) 
+				.then(data =>{
+					console.log(data)
+					showMessage(data.message)
+				})
+				.catch(error => {
+					console.error('Error sending GET request with parameter:', error);
+				});
+			}
+	
+			sendGetRequest(parameter);
+		}
+	
+		function showMessage(message) {
+			const messageElement = document.createElement('div');
+			messageElement.textContent = message;
+			messageElement.classList.add('added-message');
+			document.body.appendChild(messageElement);
+	
+			setTimeout(() => {
+				messageElement.style.display = 'none';
+			}, 2000);
+		}
+	</script>
+
+
+	
+	<style>
+		.added-message {
+			position: fixed;
+			top: 50px;
+			right: 20px;
+			background-color: #fa6f05; 
+			color: white; 
+			padding: 10px;
+			border-radius: 5px;
+			z-index: 9999;
+		}
+	</style>
+    <script>
+        function addToWishlist(parameter, event) {
+         event.preventDefault(); 
+     
+         function sendPostRequest(param) {
+             const url = '/addTowish';
+             const data = { productId: param };
+     
+             fetch(url, {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify(data)
+             })
+             .then(response => response.json()) 
+             .then(data => {
+                 console.log(data);
+                 showMessage(data.message);
+             })
+             .catch(error => {
+                 console.error('Error sending POST request:', error);
+             });
+         }
+     
+         sendPostRequest(parameter);
+     }
+     
+         function showMessage(message) {
+             const messageElement = document.createElement('div');
+             messageElement.textContent = message;
+             messageElement.classList.add('added-message');
+             document.body.appendChild(messageElement);
+     
+             setTimeout(() => {
+                 messageElement.style.display = 'none';
+             }, 2000);
+         }
+     </script>
+     
+     
+	<script>
+		function sortProduct(event, data) {
+			event.preventDefault();
+			const currentUrl = window.location.href;
+			const baseUrl = currentUrl.split('?')[0]; 
+			const updatedUrl = `${baseUrl}?sortdata=${data}`;
+			window.location.href = updatedUrl;
+		}
+	</script>
+	<script>
+	function handleCategoryClick(clickedElement) {
+const categoryId = clickedElement.dataset.categoryId;
+const currentUrl = window.location.href;
+const baseUrl = currentUrl.split('?')[0]; 
+
+const sortCriteria = new URLSearchParams(window.location.search).get('sortdata');
+let updatedUrl = baseUrl;
+
+
+updatedUrl += `?id=${categoryId}?sortdata=${data}`;
+
+
+window.location.href = updatedUrl;
+}
+
+</script>
+	<script>
+		function filterBooks(priceRange) {
+			let min = '';
+			let max = '';
+			if (priceRange === '') {
+			} else if (priceRange === '1-300') {
+				min = '1';
+				max = '300';
+			} else if (priceRange === '301-600') {
+				min = '301';
+				max = '600';
+			} else if (priceRange === '601-900') {
+				min = '601';
+				max = '900';
+			}else if(priceRange === '901-1500'){
+				min = '901';
+				max = '1500';
+			}
+	
+			const categoryId = '<%= categoryId %>'; 
+			const search = document.getElementById('searchParam').value;
+
+			const sortCriteria = new URLSearchParams(window.location.search).get('sortdata');
+			let url = `/product?id=${categoryId}&search=${search}&min=${min}&max=${max}`;
+
+			if (sortCriteria) {
+				url += `&sortdata=${sortCriteria}`;
+			}
+
+			window.location.href = url;
+		}
+	</script>
+    <!-- Vendor JS-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.js"></script>
+    <script src="assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/plugins/jquery-ui.js"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/select2.min.js"></script>
+    <script src="assets/js/plugins/waypoints.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="assets/js/plugins/images-loaded.js"></script>
+    <script src="assets/js/plugins/isotope.js"></script>
+    <script src="assets/js/plugins/scrollup.js"></script>
+    <script src="assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="assets/js/maind134.js?v=3.4"></script>
+    <script src="assets/js/shopd134.js?v=3.4"></script>
+    <%- include('../layouts/header.ejs') -%>

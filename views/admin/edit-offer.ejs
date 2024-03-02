@@ -1,0 +1,341 @@
+<%- include('../layouts/header.ejs') -%>
+
+    <div class="screen-overlay"></div>
+    <aside class="navbar-aside" id="offcanvas_aside">
+        <div class="aside-top">
+            <a href="index.html" class="brand-wrap">
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+            <div>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-aside">
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/home"> <i class="icon material-icons md-home"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item has-submenu ">
+                    <a class="menu-link" href="/admin/products"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Products</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/products">Product List</a>
+                        <!-- <a href="/admin/products">Product grid</a> -->
+                        <!-- <a href="/admin/products">Product grid 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu active ">
+                    <a class="menu-link" href="/admin/category"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Categories</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/category">Categories</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-orders-1.html"> <i class="icon material-icons md-shopping_cart"></i>
+                        <span class="text">Orders</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/order">Order List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-sellers-cards.html"> <i class="icon material-icons md-store"></i>
+                        <span class="text">Sellers</span>
+                    </a>
+                    <div class="submenu">
+                        <!-- <a href="page-sellers-cards.html">Sellers cards</a> -->
+                        <a href="/admin/users" class="active">Sellers list</a>
+                        <!-- <a href="page-seller-detail.html">Seller profile</a> -->
+                    </div>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                        <span class="text">Coupen</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/offer">Coupen Management</a>
+                        <!-- <a href="page-transactions-2.html">Transaction 2</a> -->
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="#"> <i class="icon material-icons md-person"></i>
+                        <span class="text">Offer</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="/admin/offer">Offer Management</a>
+                       
+                    </div>
+                </li>
+               
+            </ul>
+            <hr>
+            <ul class="menu-aside">
+              
+            <li class="menu-item">
+                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                    <span class="text"> Logout </span>
+                </a>
+            </li>
+            </ul>
+            <br>
+            <br>
+        </nav>
+    </aside>
+     <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                <!-- <form class="searchform">
+                    <div class="input-group">
+                        <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                        <button class="btn btn-light bg" type="button"> <i class="material-icons md-search"></i></button>
+                    </div>
+                    <datalist id="search_terms">
+                        <option value="Products">
+                        <option value="New orders">
+                        <option value="Apple iphone">
+                        <option value="Ahmed Hassan">
+                    </datalist>
+                </form> -->
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <ul class="nav">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a  href="#"  aria-expanded="false"><i class="material-icons md-public"></i></a>
+                       
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                      
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="row">
+                <div class="col-9">
+                    <div class="content-header">
+                        <h2 class="content-title">Edit offer</h2>
+                        
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row gx-5">
+                                
+                                <div class="col-lg-9">
+                                    <section class="content-body p-xl-4">
+                                        <form action="" id="addingForm" method="POST">
+                                            <div class="mb-4">
+                                                <label for="offername" class="form-label">offer Name</label>
+                                                <input type="text" name="offername" value="<%=offerData.offername%>" class="form-control" id="offername">
+                                                <div id="offerNameError" class="error" style=" color: red; display: none;"></div>
+                                            </div>
+                                        
+                                            <div class="mb-3">
+                                                <label for="percentage" class="form-label">Percentage</label>
+                                                <input type="text" name="percentage" value="<%=offerData.percentage%>" class="form-control" id="percentage" >
+                                                <input type="hidden" value="<%=offerData._id%>" name="id" id="offerid1">
+
+                                                <p id="percentageError" style="color: red; display: none;"> percentage is required</p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="startingDate" class="form-label">starting Date</label>
+                                                <% const startingNewDate = new Date(offerData.startingDate) %>
+                                                <% const startingYear = startingNewDate.getFullYear() %>
+                                                <% const startingMonth = startingNewDate.getMonth()+1 %>
+                                                <% const startingDay = startingNewDate.getDate() %>
+                                                <% const formattedStartingDate = `${startingYear}-${startingMonth<10?0:''}${startingMonth}-${startingDay<10?0:''}${startingDay}` %>
+                                                <input type="date" name="strtdate" value="<%=formattedStartingDate%>" class="form-control" id="startingDate">
+                                                <div id="startingDateError" class="error" style=" color: red; display: none;"></div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="offerDate" class="form-label">Expiry Date</label>
+                                                <% const offerNewDate = new Date(offerData.expiryDate) %>
+                                                <% const offerYear = offerNewDate.getFullYear() %>
+                                                <% const offerMonth = offerNewDate.getMonth()+1 %>
+                                                <% const offerDay = offerNewDate.getDate() %>
+                                                <% const formattedOfferDate = `${offerYear}-${offerMonth<10?0:''}${offerMonth}-${offerDay<10?0:''}${offerDay}` %>
+                                                <input type="date" name="expdate" value="<%=formattedOfferDate%>" class="form-control" id="offerDate">
+                                                <div id="expiryDateError" class="error" style=" color: red; display: none;"></div>
+                                            </div>
+                                        
+                                            <div class="text-center mt-4">
+                                                <button type="button" onclick="validateForm()" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+                                        
+                                    </section>
+                                     <!-- content-body .// -->
+                                </div> <!-- col.// -->
+                            </div> <!-- row.// -->
+                        </div> <!-- card body end// -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, BookStore - online book shop .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin-assets/js/vendors/select2.min.js"></script>
+    <script src="/admin-assets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="/admin-assets/js/main.js" type="text/javascript"></script>
+    <script src="/admin-assets/js/script.js"></script>
+    <script>
+        function submitForm(){
+            const offername = document.getElementById('offername').value
+            const percentage = document.getElementById('percentage').value
+            const startingDate = document.getElementById('startingDate').value
+
+            const offerDate = document.getElementById('offerDate').value
+            const id = document.getElementById('offerid1').value
+            fetch('/admin/editOffer',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    
+                    offername:offername,
+                    percentage:percentage,
+                    startingDate:startingDate,
+                    expiryDate:offerDate,
+
+                    id:id
+                })
+            })
+            .then(res=>{
+                if(res.ok){
+                    return res.json()
+                }
+            })
+            .then(data => {
+                if (data.message == 'Success') {
+                    console.log("success");
+                    window.location.href = '/admin/offer';
+                }else if(data.message == 'Failed'){
+                    offerNameError.innerText = 'offer Name already exist..';
+                    offerNameError.style.display = 'block';
+                }
+            })
+            .catch(err=>{
+                console.log(err.message)
+            })
+        }
+
+        function validateForm() {
+            let isValid = true;
+    
+            const offerName = document.getElementById('offername');
+            const percentage = document.getElementById('percentage');
+            const startingDate = document.getElementById('startingDate');
+            const offerDate = document.getElementById('offerDate');
+
+    
+            const offerNameError = document.getElementById('offerNameError');
+            const percentageError = document.getElementById('percentageError');
+            const startingDateError = document.getElementById('startingDateError');
+            const expiryDateError = document.getElementById('expiryDateError');
+    
+            if (offerName.value.trim() === '') {
+                offerNameError.innerText = 'offer Name is required';
+                offerNameError.style.display = 'block';
+                isValid = false;
+            } else {
+                offerNameError.style.display = 'none';
+            }
+    
+            if (startingDate.value === '') {
+                startingDateError.innerText = 'Expiry Date is required';
+                startingDateError.style.display = 'block';
+                isValid = false;
+            } else {
+                startingDateError.style.display = 'none';
+            }
+
+            if (offerDate.value === '') {
+                expiryDateError.innerText = 'Expiry Date is required';
+                expiryDateError.style.display = 'block';
+                isValid = false;
+            } else {
+                expiryDateError.style.display = 'none';
+            }
+
+            const startingDateValue = new Date(startingDate.value);
+            const offerDateValue = new Date(offerDate.value);
+
+            // Check if starting date is greater than or equal to offer date
+            if (startingDateValue >= offerDateValue) {
+                startingDateError.innerText = 'Starting date must be before the offer date';
+                startingDateError.style.display = 'block';
+                isValid = false;
+            } else {
+                startingDateError.style.display = 'none';
+            }
+    
+            
+            if (percentage.value.trim() === '') {
+                percentageError.innerText = 'percentage is required';
+                percentageError.style.display = 'block';
+                isValid = false;
+            } else if (isNaN(percentage.value)) {
+                percentageError.innerText = 'percentage must be a number';
+                percentageError.style.display = 'block';
+                isValid = false;
+            } else if (parseFloat(percentage.value) < 0) {
+                percentageError.innerText = ' percentage cannot be negative';
+                percentageError.style.display = 'block';
+                isValid = false;
+            } else if (parseFloat(percentage.value) < 0 || parseFloat(percentage.value) > 99) {
+                percentageError.innerText = 'Percentage must be between 0 and 99';
+                percentageError.style.display = 'block';
+                isValid = false;
+            }else {
+                percentageError.style.display = 'none';
+            }
+    
+         
+    
+            if(isValid===true){
+                const addingForm = document.getElementById('addingForm')
+                submitForm()
+            }else{
+                return false
+            }
+        }
+    </script>
+</body>
+
+
+</html>
