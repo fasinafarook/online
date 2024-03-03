@@ -20,7 +20,7 @@ const port = process.env.PORT||1001
 
  app.set('view engine', 'ejs');
 
-
+console.log('hi')
 //------user route----------
 const userRoute=require('./routes/userRoute');
 app.use('/',userRoute);
