@@ -14,7 +14,7 @@ const path = require('path');
 const errorHandler = require('./handler/errorHandler');
 
 
-const port = process.env.PORT||3000
+const port = process.env.PORT||1001
 
  app.use(express.static('public'));
 
@@ -37,4 +37,4 @@ app.use(errorHandler.errorHandler);
 
 
 
-app.listen(port,()=>console.log("server start: http://localhost:3000"));
+app.listen(port,()=>console.log("server start: http://localhost:1001"));
