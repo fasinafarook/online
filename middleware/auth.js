@@ -1,3 +1,5 @@
+const User = require('../models/userModel');
+
 const isLogin = async (req, res, next) => {
     try {
       if  (req.session.user_id) {
@@ -33,7 +35,7 @@ const isLogin = async (req, res, next) => {
     if(userId){
       try{
         const user = await User.findOne({_id:userId});
-        if(user && user.isBlocked == true){
+        if(user && user.is_verified == 0){
           return res.redirect('/login');
         }
       }catch(error){
