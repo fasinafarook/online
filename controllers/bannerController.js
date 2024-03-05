@@ -34,7 +34,10 @@ const banneranagement = async (req, res) => {
       console.log(error.message);
     }
   };
-  
+
+
+  //--------add banner------------
+
   const addBanner = async (req, res) => {
     try {
       if (
@@ -76,6 +79,8 @@ const banneranagement = async (req, res) => {
     }
   };
   
+
+  //---------block banner----------------
   const blockBanner = async (req, res) => {
     try {
       id = req.body.couponId;
@@ -103,6 +108,8 @@ const banneranagement = async (req, res) => {
     }
   };
   
+
+  //----------edit banner----------------------
   const loadEditBanner = async (req, res) => {
     try {
       id = req.query.bannerId;

@@ -13,7 +13,7 @@ const Banner = require("../models/bannerModel");
 
 
 
-
+//----------------------password-----------------------
 
 const securePassword = async(password)=>{
   try {
@@ -24,6 +24,8 @@ const securePassword = async(password)=>{
   }
 };
 
+
+//------------refferal code generate--------------------------
 const generateReferralCode = () => {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   const codeLength = 8; 
@@ -271,8 +273,8 @@ const insertUser = async (req, res) => {
       let mailTransporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'skycrowlove@gmail.com',
-          pass: 'rete eeaa kcdk pbwm',
+          user:  process.env.USEREMAIL,
+          pass: process.env.USERPASSWORD,
         },
       });
   console.log(generatedOTP)
@@ -342,7 +344,7 @@ const veryfyotp = async (req, res) => {
 
 
 
-//for mail
+//-----------for mail-----------
 
 const generateOTP = async () => {
     return new Promise((resolve, reject) => {
@@ -364,11 +366,13 @@ const generateOTP = async () => {
     next();
   };
   
- 
+
+
+ //-------------------resend otp-----------------------
 const resendOTP = async (req, res) => {
     try {
       const currentTime = new Date().getTime();
-      const timeDifference = (currentTime - req.session.lastResendTime) / 1000; // Convert to seconds
+      const timeDifference = (currentTime - req.session.lastResendTime) / 1000; 
   
       if (timeDifference >= 60) {
         const generatedOTP = await generateOTP();
@@ -490,6 +494,8 @@ const editaddress = async (req, res, next) => {
   }
 };
 
+
+//----------------address delete----------------
 const deleteAddress = async (req, res, next) => {
   try {
     const userId = req.session.user_id;
@@ -510,10 +516,11 @@ const deleteAddress = async (req, res, next) => {
   }
 };
 
+
+//-------------add address-----------------
 const addaddress = async (req, res, next) => {
   try {
     const userId = req.session.user_id;
-//console.log(userId)
     const addressDetails = {
       firstName: req.body.fname,
       lastName: req.body.lname,
@@ -540,16 +547,12 @@ const addaddress = async (req, res, next) => {
   }
 };
 
-//account
+//------------account------------
 const accountManagment = async (req, res, next) => {
   try {
     id = req.session.user_id;
     const userData = await User.findById({ _id: id });
     const referralCode = userData.referralCode;
-
-    // const orderData = await Order.find({ userId: id }).sort({
-    //   currentData: -1,
-    // });
 
     const categories = await Category.find({ is_active: 1 });
     const products = await Product.find({ is_product: 1 }).populate('category');
@@ -593,11 +596,6 @@ const accountManagment = async (req, res, next) => {
           });
       }
 
-     
-    console.log(userData);
-    
-
-
     res.render("Account", {referralCode,categories, products,userData: userData, orderData: orderData,user: req.session.user_id });
   } catch (error) {
     next(new Error("An error occurred"));
@@ -606,7 +604,7 @@ const accountManagment = async (req, res, next) => {
 
 
 
-
+//-------------------edit profile--------------------------
 const profileEdit = async (req, res, next) => {
   try {
     const id = req.session.user_id;
@@ -638,6 +636,8 @@ const profileEdit = async (req, res, next) => {
   }
 };
 
+
+//------------------------password change----------------------
 const changePassword = async (req, res, next) => {
   try {
     id = req.session.user_id;
@@ -660,6 +660,8 @@ const changePassword = async (req, res, next) => {
   }
 };
 
+
+// ---------------------payment policy-----------------------
 const paymentPolicy =async (req, res, next) => {
   try {
     const categories = await Category.find({ is_active: 1 });

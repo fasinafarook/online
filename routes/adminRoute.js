@@ -115,12 +115,4 @@ admin_route.post('/edit-banner',auth.isLogin,bannerUplods.array('image',5),banne
 
 
 
-
-
-// admin_route.get('*',(req,res)=>{
-
-//     res.redirect('/admin/404page');
-
-// })
-
 module.exports = admin_route;

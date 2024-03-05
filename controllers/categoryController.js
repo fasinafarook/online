@@ -9,7 +9,7 @@ const crypto = require('crypto');
 const Offer = require("../models/offerModel");
 const moment = require ('moment')
 
-
+//-----------------category-----------------------
 const loadCategory = async (req,res) =>{
     try {
 
@@ -22,7 +22,6 @@ const loadCategory = async (req,res) =>{
         const offerData = await Offer.find();
        
 
-       // console.log(CategoryData)
         res.render('category',{category:CategoryData,offer:offerData,moment, totalPages,
             currentPage: page,})
         
@@ -42,7 +41,7 @@ const loadAddCategory = async (req,res)=>{
     }
 } 
 
-
+//--------------add category----------------------
 const addCategory = async (req,res)=>{
     try {
         const existingCategory = await Category.findOne({ name: req.body.name });
@@ -69,10 +68,11 @@ const addCategory = async (req,res)=>{
         res.render('addcategory', { message: 'Internal Server Error' });
     }
 };
+
+
 const loadtoggleCategoryStatus = async(req, res) => {
     try {
-        const categoryId = req.params.categoryId;
-       // console.log(categoryId)
+    const categoryId = req.params.categoryId;
     const result = toggleCategoryStatus(categoryId);
     res.json(result);
     } catch (error) {
@@ -85,7 +85,6 @@ const toggleCategoryStatus = async (categoryId) => {
     try {
         let categor;
         const categoryss = await Category.findById({_id:categoryId})
-       // console.log(categoryss)
 
         if (categoryss.is_active === 1) {
             categor = await Category.findByIdAndUpdate(categoryId, { $set: { is_active: 0 } }).exec();
@@ -127,46 +126,6 @@ const editCategoryLoad = async (req, res) => {
 };
 
 
-
-
-// const updateCategory = async (req, res) => {
-//     try {
-//         const id = req.body.id;
-
-//         const data = req.body.name;
-//         const duplicateDataCount = await Category.countDocuments({
-//             name: { $regex: new RegExp(`^${data}$`, "i") },
-//             _id: { $ne: id },
-//         });
-
-//         if (duplicateDataCount > 0) {
-//             const categoryData = await Category.find({});
-
-//             return res.render("edit-category", {
-//                 category: categoryData,
-//                 message: "Already exists...!",
-//             });
-//         }
-        
-
-
-//         const categoryData = await Category.findByIdAndUpdate(
-//             { _id: req.body.id },
-//             {
-//                 $set: {
-//                     name: req.body.name,
-//                     image: req.file.filename,
-//                     is_active: req.body.categorys
-//                 }
-//             }
-//         );
-
-//         res.redirect('/admin/category');
-//     } catch (error) {
-//         console.log(error.message);
-//         res.status(500).send('Internal Server Error');
-//     }
-// };
 const updateCategory = async (req, res) => {
     try {
         const id = req.body.id;
@@ -186,10 +145,8 @@ const updateCategory = async (req, res) => {
             });
         }
 
-        // Construct the update query
         let updateFields = { name: newName };
 
-        // Check if a new image is uploaded
         if (req.file) {
             updateFields.image = req.file.filename;
         }
@@ -210,7 +167,7 @@ const updateCategory = async (req, res) => {
 
 
 
-
+//------------apply category offer----------------------
 const applycategoryOffer = async (req, res) => {
     try {
         const { offerId, categoryId } = req.body;
@@ -221,6 +178,8 @@ const applycategoryOffer = async (req, res) => {
         res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
 };
+
+//---------------remove category offer-----------------------
 const removeCategoryOffer = async (req, res) => {
     try {
         const categoryId = req.body.categoryId;

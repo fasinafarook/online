@@ -16,11 +16,7 @@ const path = require('path');
 const ejs = require('ejs');
 
 
-
-
-
-
-
+//------------------razorpay instance-------------------
 
 var instance = new Razorpay({
   key_id: process.env.REZORPAY_ID_KEY,
@@ -41,9 +37,9 @@ const orderManagement = async (req, res) => {
     switch (filter) {
       case 'day':
         startDate = new Date();
-        startDate.setHours(0, 0, 0, 0); // Set start time to the beginning of the day
+        startDate.setHours(0, 0, 0, 0); 
         endDate = new Date();
-        endDate.setHours(23, 59, 59, 999); // Set end time to the end of the day
+        endDate.setHours(23, 59, 59, 999); 
         break;
       case 'week':
         startDate = new Date();
@@ -113,7 +109,8 @@ const orderManagement = async (req, res) => {
   }
 };
 
- 
+
+ //---------order status--------------
 const orderStatus = async (req, res) => {
   try {
       const orderId = req.query.orderId;
@@ -159,12 +156,12 @@ const orderStatus = async (req, res) => {
 };
 
 
+
+//-------------order product details page------------------
 const viewsorders = async (req, res) => {
   try {
       const orderId = req.query.id;
       const productId = req.query.productId;
-
-      // console.log('product:', productId, 'order:', orderId);
 
       const categories = await Category.find({ is_active: 1 });
       const offers = await Offer.find({ is_active: 1 });
@@ -179,24 +176,20 @@ const viewsorders = async (req, res) => {
       })
       .populate('offer');
   
-  if (!productData.offer && productData.category && productData.category.offer) {
-      productData.offer = productData.category.offer;
-  } else if (productData.offer && productData.category && productData.category.offer) {
-      if (productData.offer.percentage < productData.category.offer.percentage) {
-          productData.offer = productData.category.offer;
-      }
-  }
-  
-  let offerPrice;
-  if (productData.offer) {
-      offerPrice = productData.price - (productData.price * productData.offer.percentage / 100);
-  }
-  
+        if (!productData.offer && productData.category && productData.category.offer) {
+            productData.offer = productData.category.offer;
+        } else if (productData.offer && productData.category && productData.category.offer) {
+            if (productData.offer.percentage < productData.category.offer.percentage) {
+                productData.offer = productData.category.offer;
+            }
+        }
+        
+        let offerPrice;
+        if (productData.offer) {
+            offerPrice = productData.price - (productData.price * productData.offer.percentage / 100);
+        }
+        
       const orderData = await Order.findOne({ _id: orderId }).populate('items');
-    
-      // console.log(orderData)
-
-
 
       if (!orderData) {
           return res.status(404).send("Order not found");
@@ -218,46 +211,7 @@ const viewsorders = async (req, res) => {
 };
 
 
-// const adminCancelOrder = async (req, res) => {
-//   try {
-//     const orderId = req.body.orderId;
-//     const productId = req.body.productId; 
-//     console.log('Order ID:', orderId);
-//     console.log('Product ID:', productId);
-
-//     const orderData = await Order.findOne({ _id: orderId });
-
-//     if (!orderData) {
-//       return res.status(404).send('Order not found');
-//     }
-
-//     const productItem = orderData.items.find(item => item.productId.toString() === productId);
-
-//     if (!productItem) {
-//       return res.status(404).send('Product not found in the order');
-//     }
-
-//     productItem.status = 'Cancelled';
-//     await orderData.save();
-
-//     const editQuantity = await Product.findOneAndUpdate(
-//       { _id: productId },
-//       { $inc: { Quantity: 1 * productItem.quantity } }
-//     );
-
-//     if (orderData.paymentMethod !== 'Cash on delivery') {
-//       const addToWallet = await User.findOneAndUpdate(
-//         { _id: orderData.userId },
-//         { $inc: { wallet: orderData.totalAmount } }
-//       );
-//     }
-
-//     res.redirect('/admin/order');
-//   } catch (error) {
-//     console.log(error.message);
-//     res.status(500).send('Internal Server Error');
-//   }
-// };
+//----------------cancel order---------------------
 const adminCancelOrder = async (req, res) => {
   try {
     const orderId = req.body.orderId;
@@ -285,7 +239,6 @@ const adminCancelOrder = async (req, res) => {
       { $inc: { Quantity: 1 * productItem.quantity } }
     );
 
-    // Find the product details to get the price and associated offers
     const product = await Product.findOne({ _id: productId }).populate({
       path: 'category',
       populate: {
@@ -294,37 +247,31 @@ const adminCancelOrder = async (req, res) => {
       }
     }).populate('offer');
 
+
     let refundAmount;
 
     if (!product.offer && product.category && product.category.offer) {
-      // Apply category-level offer to the product
       product.offer = product.category.offer;
     } else if (product.offer && product.category && product.category.offer) {
-      // Compare offer percentages and assign the higher one
       if (product.offer.percentage < product.category.offer.percentage) {
         product.offer = product.category.offer;
       }
     }
 
     if (product.offer) {
-      // Calculate refund amount based on the offer price and quantity
       refundAmount = product.offer.percentage * product.price * productItem.quantity / 100;
     } else {
-      // If no offer, refund the original price multiplied by the quantity
       refundAmount = product.price * productItem.quantity;
     }
 
     console.log(refundAmount);
 
-    // Refund the amount to the user's wallet
     if (orderData.paymentMethod !== 'Cash on delivery' && orderData.paymentStatus !== "Failed") {
       const addToWallet = await User.findOneAndUpdate(
         { _id: orderData.userId },
         { $inc: { wallet: refundAmount } }
       );
     }
-
-    // Redirect to the admin order page
     res.redirect('/admin/order');
   } catch (error) {
     console.log(error.message);
@@ -335,7 +282,7 @@ const adminCancelOrder = async (req, res) => {
 
 
 
-//-------------------------------userSide--------------------------------------
+//-------------------------------userSide offer--------------------------------------
 
 
 const checkoutOrder = async (req, res, next) => {
@@ -423,7 +370,7 @@ const checkoutOrder = async (req, res, next) => {
   }
 };
 
-
+//---------------------address----------------------------
   const checkoutaddress = async (req, res, next) => {
     try {
       const userId = req.session.user_id;
@@ -463,6 +410,8 @@ const checkoutOrder = async (req, res, next) => {
   
   const uniqueNumber = generateUniqueNumber();
 
+
+  //-----------------online payment----------------------
   const onlinePay = async (req, res) => {
     try {
       const id = req.session.user_id;
@@ -506,6 +455,8 @@ const checkoutOrder = async (req, res, next) => {
   };
   
   
+
+  //---------------------payment--------------------------
   const paymentManagement = async (req, res, next) => {
     try {
       id = req.session.user_id;
@@ -604,6 +555,9 @@ const checkoutOrder = async (req, res, next) => {
   };
 
 
+
+  //-------------wallet payment--------------------
+
   const walletPayment = async (req, res, next) => {
     try {
       id = req.session.user_id;
@@ -645,15 +599,11 @@ const checkoutOrder = async (req, res, next) => {
   };
   
  
+  //---------------------cancel / return ---------------------------
 const cancerlOrReturn = async (req, res, next) => {
   try {
-
-
       const orderId = req.query.id;
       const productId = req.query.productId;
-
-      // console.log('product:', productId, 'order:', orderId);
-
       const categories = await Category.find({ is_active: 1 });
       const offers = await Offer.find({ is_active: 1 });
       const products = await Product.find({ is_product: 1 }).populate('category');
@@ -700,6 +650,8 @@ const cancerlOrReturn = async (req, res, next) => {
   }
 };
 
+
+//--------------------invoice----------------------
 const invoiceDownload = async (req, res) => {
   try {
       const { orderId } = req.query;
@@ -724,20 +676,16 @@ const invoiceDownload = async (req, res) => {
           moment
       };
 
-      // Render the EJS template
       const ejsTemplate = path.resolve(__dirname, '../views/users/invoice.ejs');
       const ejsData = await ejs.renderFile(ejsTemplate, data);
 
-      // Launch Puppeteer and generate PDF
       const browser = await puppeteer.launch({ headless: "new", executablePath: "/snap/bin/chromium" });
        const page = await browser.newPage();
       await page.setContent(ejsData, { waitUntil: 'networkidle0' });
       const pdfBuffer = await page.pdf({ format: 'A4', printBackground: true });
 
-      // Close the browser
       await browser.close();
 
-      // Set headers for inline display in the browser
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', 'inline; filename=order_invoice.pdf');
       res.send(pdfBuffer);
@@ -747,65 +695,9 @@ const invoiceDownload = async (req, res) => {
   }
 };
 
-//  const userCancelOrder = async (req, res, next) => {
-//     try {
-//         const userId = req.session.user_id;
-//         const orderId = req.body.orderId;
-//         const productId = req.body.productId;
-//         console.log("usr:", userId, "ord:", orderId, "prd:", productId);
-//         const order = await Order.findById(orderId);
 
-//         if (!order) {
-//             return res.status(404).send("Order not found");
-//         }
 
-//         const itemToUpdate = order.items.find(item => item.productId.toString() === productId);
-
-//         if (!itemToUpdate) {
-//             return res.status(404).send("Item not found in the order");
-//         }
-
-//         if (order.paymentStatus === "Success" && itemToUpdate.status ==="Delivered") {
-          
-//           console.log('ok')
-//             const updatedOrder = await Order.findOneAndUpdate(
-//                 { _id: orderId, "items.productId": productId },
-//                 { $set: { "items.$.status": "Returned" } },
-//                 { new: true }
-//             );
-
-//             await Product.findByIdAndUpdate(productId, { $inc: { Quantity: itemToUpdate.quantity } });
-
-//             if (order.paymentStatus !== 'Cash on delivery') {
-//               const addToWallet = await User.findOneAndUpdate(
-//                 { _id: order.userId },
-//                 { $inc: { wallet: order.totalAmount } }
-//               );
-//             }
-//             return res.redirect("/account");
-//         } else {
-//           console.log('okkkkk')
-
-//             const updatedOrder = await Order.findOneAndUpdate(
-//                 { _id: orderId, "items.productId": productId },
-//                 { $set: { "items.$.status": "Cancelled" } },
-//                 { new: true }
-//             );
-
-//             await Product.findByIdAndUpdate(productId, { $inc: { Quantity: itemToUpdate.quantity } });
-
-//             if (order.paymentMethod !== 'Cash on delivery') {
-//               const addToWallet = await User.findOneAndUpdate(
-//                 { _id: order.userId },
-//                 { $inc: { wallet: order.totalAmount } }
-//               );
-//             }
-//             return res.redirect("/account");
-//         }
-//     } catch (error) {
-//         next(new Error("An error occurred"));
-//     }
-// };
+//------------------cancel order-----------------------
 
 const userCancelOrder = async (req, res, next) => {
   try {
@@ -836,27 +728,21 @@ const userCancelOrder = async (req, res, next) => {
     let refundAmount;
 
     if (!product.offer && product.category && product.category.offer) {
-      // Apply category-level offer to the product
       product.offer = product.category.offer;
     } else if (product.offer && product.category && product.category.offer) {
-      // Compare offer percentages and assign the higher one
       if (product.offer.percentage < product.category.offer.percentage) {
         product.offer = product.category.offer;
       }
     }
 
     if (product.offer) {
-      // Calculate refund amount based on the offer price and quantity
       refundAmount = (product.offer.percentage / 100) * product.price * itemToUpdate.quantity;
     } else {
-      // If no offer, refund the original price multiplied by the quantity
       refundAmount = product.price * itemToUpdate.quantity;
     }
 
-    console.log(refundAmount);
 
         if (order.paymentStatus === "Success" && itemToUpdate.status ==="Delivered") {
-  console.log('ok')
       const updatedOrder = await Order.findOneAndUpdate(
         { _id: orderId, "items.productId": productId },
         { $set: { "items.$.status": "Returned" } },
@@ -873,7 +759,6 @@ const userCancelOrder = async (req, res, next) => {
       }
       return res.redirect("/account");
     } else  {
-      console.log('okkkkk')
 
       const updatedOrder = await Order.findOneAndUpdate(
         { _id: orderId, "items.productId": productId },

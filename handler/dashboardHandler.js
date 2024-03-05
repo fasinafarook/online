@@ -76,71 +76,7 @@ module.exports = {
     }
   },
 
-  //   getYearlyOrderDetails: async () => {
-  //     try {
-  //         const orderDetailsByYear = await Order.aggregate([
-  //           {
-  //             $match: {
-  //                 "items.status": "Delivered" 
-  //             }
-  //         },
-  //             {
-
-  //                 $group: {
-  //                     _id: { $year: "$currentData" }, 
-  //                     count: { $sum: 1 } 
-  //                 }
-  //             },
-  //             {
-  //                 $sort: { "_id": -1 } 
-  //             }
-  //         ]);
-
-  //         return orderDetailsByYear;
-  //     } catch (error) {
-  //         console.error("Error:", error.message);
-  //         throw error;
-  //     }
-  // }
-  // getYearlyOrderDetails: async () => {
-  //   try {
-  //     const currentYear = new Date().getFullYear();
-  //     const minYear = 2018; // Set your minimum year here
-
-  //     // Generate range of years from minYear to currentYear
-  //     const yearsRange = Array.from({ length: currentYear - minYear + 1 }, (_, index) => currentYear - index);
-
-  //     // Retrieve order details grouped by year
-  //     const orderDetailsByYear = await Order.aggregate([
-  //       {
-  //         $match: {
-  //           "items.status": "Delivered",
-  //           "currentData": { $gte: new Date(`${minYear}-01-01`), $lte: new Date(`${currentYear}-12-31`) }
-  //         }
-  //       },
-  //       {
-  //         $group: {
-  //           _id: { $year: "$currentData" },
-  //           count: { $sum: 1 }
-  //         }
-  //       }
-  //     ]);
-
-  //     // Fill in missing years with zero counts
-  //     const yearlyData = yearsRange.map(year => {
-  //       const foundYearData = orderDetailsByYear.find(data => data._id === year);
-  //       return { year, count: foundYearData ? foundYearData.count : 0 };
-  //     });
-  //     yearlyData.sort((a, b) => a.year - b.year);
-
-  //     return yearlyData;
-  //   } catch (error) {
-  //     console.error("Error:", error.message);
-  //     throw error;
-  //   }
-  // }
-
-  // ,
+  
   getYearlyOrderDetails: async () => {
     try {
       const currentYear = new Date().getFullYear();
@@ -191,7 +127,6 @@ module.exports = {
         }
       ]);
 
-      // Fill in missing years with zero counts
       const yearlyData = yearsRange.map(year => {
         const foundYearData = orderDetailsByYear.find(data => data.year === year);
         return { year, count: foundYearData ? foundYearData.count : 0 };
@@ -205,117 +140,38 @@ module.exports = {
     }
   }
   ,
-  // getMonthlyOrderDetails: async () => {
-  //   try {
-  //     const orderDetailsByMonth = await Order.aggregate([
-  //       {
-  //         $match: {
-  //             "items.status": "Delivered" // Filter orders with items that are delivered
-  //         }
-  //     },
-  //       {
-  //         $group: {
-  //           _id: {
-  //             $month: "$currentData",
-  //           },
-  //           count: { $sum: 1 },
-  //         },
-  //       },
-  //       {
-  //         $sort: { _id: 1 },
-  //       },
-  //       {
-  //         $group: {
-  //           _id: null,
-  //           months: {
-  //             $push: {
-  //               month: "$_id",
-  //               count: "$count",
-  //             },
-  //           },
-  //         },
-  //       },
-  //       {
-  //         $project: {
-  //           _id: 0,
-  //           months: {
-  //             $map: {
-  //               input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-  //               as: "month",
-  //               in: {
-  //                 month: "$$month",
-  //                 count: {
-  //                   $let: {
-  //                     vars: {
-  //                       matchedMonth: {
-  //                         $arrayElemAt: [
-  //                           {
-  //                             $filter: {
-  //                               input: "$months",
-  //                               as: "m",
-  //                               cond: { $eq: ["$$m.month", "$$month"] },
-  //                             },
-  //                           },
-  //                           0,
-  //                         ],
-  //                       },
-  //                     },
-  //                     in: { $ifNull: ["$$matchedMonth.count", 0] },
-  //                   },
-  //                 },
-  //               },
-  //             },
-  //           },
-  //         },
-  //       },
-  //       {
-  //         $unwind: "$months",
-  //       },
-  //       {
-  //         $replaceRoot: { newRoot: "$months" },
-  //       },
-  //       {
-  //         $sort: { month: 1 },
-  //       },
-  //     ]);
-
-  //     return orderDetailsByMonth;
-  //   } catch (error) {
-  //     console.error("Error:", error.message);
-  //     throw error;
-  //   }
-  // },
+  
 
   getMonthlyOrderDetails: async () => {
     try {
       const orderDetailsByMonth = await Order.aggregate([
         {
           $match: {
-            "items.status": "Delivered" // Filter orders with items that are delivered
+            "items.status": "Delivered" 
           }
         },
         {
-          $unwind: "$items" // Unwind the items array to treat each product separately
+          $unwind: "$items" 
         },
         {
           $match: {
-            "items.status": "Delivered" // Filter only delivered items
+            "items.status": "Delivered" 
           }
         },
         {
           $group: {
             _id: {
               month: { $month: "$currentData" },
-              orderId: "$orderId" // Group by order ID
+              orderId: "$orderId" 
             },
-            count: { $sum: 1 } // Count each delivered product in the order
+            count: { $sum: 1 } 
           }
         },
         {
           $group: {
             _id: "$_id.month",
             counts: {
-              $push: "$count" // Push the count for each order ID within each month
+              $push: "$count" 
             }
           }
         },
@@ -323,7 +179,7 @@ module.exports = {
           $project: {
             _id: 1,
             month: "$_id",
-            count: { $sum: "$counts" } // Sum the counts for each month
+            count: { $sum: "$counts" } 
           }
         },
         {
@@ -351,51 +207,7 @@ module.exports = {
     }
   },
 
-  // getDeliveredOrderCount: async () => {
-  //     try {
-  //         const deliveredOrderCount = await Order.countDocuments({ "items.status": "Delivered" });
-  //         return deliveredOrderCount;
-  //     } catch (error) {
-  //         console.error("Error:", error.message);
-  //         throw error;
-  //     }
-  // },
-  // getCancelledOrderCount: async () => {
-  //   try {
-  //       const getCancelledOrderCount = await Order.countDocuments({ "items.status": "Cancelled" });
-  //       return getCancelledOrderCount;
-  //   } catch (error) {
-  //       console.error("Error:", error.message);
-  //       throw error;
-  //   }
-  // },
-  // getReturnOrderCount: async () => {
-  //   try {
-  //       const getReturnOrderCount = await Order.countDocuments({ "items.status": "Returned" });
-  //       return getReturnOrderCount;
-  //   } catch (error) {
-  //       console.error("Error:", error.message);
-  //       throw error;
-  //   }
-  // },
-  // getPendingOrderCount: async () => {
-  //   try {
-  //       const getPendingOrderCount = await Order.countDocuments({ "items.status": "Processing" });
-  //       return getPendingOrderCount;
-  //   } catch (error) {
-  //       console.error("Error:", error.message);
-  //       throw error;
-  //   }
-  // },
-  // getPlaceCount: async () => {
-  //   try {
-  //       const getPlaceCount = await Order.countDocuments({ "items.status": "Order Placed" });
-  //       return getPlaceCount;
-  //   } catch (error) {
-  //       console.error("Error:", error.message);
-  //       throw error;
-  //   }
-  // },
+ 
   getOrderStatusPercentages: async () => {
     try {
       const statusCounts = {
@@ -502,289 +314,22 @@ module.exports = {
       throw error;
     }
   },
-  // calculateDeliveredRevenue: async () => {
-  //   try {
-  //     const totalDeliveredRevenue = await Order.aggregate([
-  //       {
-  //         $match: { "items.status": "Delivered" },
-  //       },
-  //       {
-  //         $unwind: "$items",
-  //       },
-  //       {
-  //         $lookup: {
-  //           from: "products",
-  //           localField: "items.productId",
-  //           foreignField: "_id",
-  //           as: "product",
-  //         },
-  //       },
-  //       {
-  //         $unwind: "$product",
-  //       },
-  //       {
-  //         $lookup: {
-  //           from: "categories",
-  //           localField: "product.category",
-  //           foreignField: "_id",
-  //           as: "category",
-  //         },
-  //       },
-  //       {
-  //         $unwind: "$category",
-  //       },
-  //       {
-  //         $lookup: {
-  //           from: "offers",
-  //           let: { productId: "$product._id", categoryId: "$category._id" },
-  //           pipeline: [
-  //             {
-  //               $match: {
-  //                 $expr: {
-  //                   $and: [
-  //                     { $or: [{ $eq: ["$product", "$$productId"] }, { $eq: ["$category", "$$categoryId"] }] },
-  //                     { $lte: ["$startingDate", new Date()] },
-  //                     { $gte: ["$expiryDate", new Date()] },
-  //                     { $eq: ["$is_active", "1"] }
-  //                   ]
-  //                 }
-  //               }
-  //             },
-  //             {
-  //               $sort: { percentage: -1 }
-  //             },
-  //             {
-  //               $limit: 1
-  //             }
-  //           ],
-  //           as: "offer",
-  //         },
-  //       },
-  //       {
-  //         $addFields: {
-  //           offer: { $arrayElemAt: ["$offer", 0] }
-  //         }
-  //       },
-  //       {
-  //         $project: {
-  //           totalPrice: {
-  //             $cond: [
-  //               {
-  //                 $or: [
-  //                   { $eq: ["$offer", null] },
-  //                   { $lte: ["$offer.percentage", 0] }
-  //                 ]
-  //               },
-  //               "$product.price",
-  //               {
-  //                 $cond: [
-  //                   { $gte: ["$product.offerPrice", "$offer.percentage"] },
-  //                   "$product.offerPrice",
-  //                   "$offer.percentage"
-  //                 ]
-  //               }
-  //             ]
-  //           }
-  //         }
-  //       },
-  //       {
-  //         $group: {
-  //           _id: null,
-  //           totalAmount: { $sum: "$totalPrice" },
-  //         },
-  //       },
-  //     ]);
-
-  //     if (totalDeliveredRevenue.length > 0) {
-  //       return totalDeliveredRevenue[0].totalAmount;
-  //     }
-
-  //     return 0;
-  //   } catch (error) {
-  //     console.error("Error:", error.message);
-  //     throw error;
-  //   }
-  // },
-
-  // getCurrentMonthRevenue: async () => {
-  //   try {
-  //     const currentDate = new Date();
-  //     const currentMonth = currentDate.getMonth() + 1;
-
-  //     const currentMonthRevenue = await Order.aggregate([
-  //       {
-  //         $match: {
-  //           "items.status": "Delivered",
-  //           currentData: {
-  //             $gte: new Date(currentDate.getFullYear(), currentMonth - 1, 1),
-  //             $lt: new Date(currentDate.getFullYear(), currentMonth, 0),
-  //           },
-  //         },
-  //       },
-  //       {
-  //         $unwind: "$items",
-  //       },
-  //       {
-  //         $lookup: {
-  //           from: "products",
-  //           localField: "items.productId",
-  //           foreignField: "_id",
-  //           as: "product",
-  //         },
-  //       },
-  //       {
-  //         $unwind: "$product",
-  //       },
-  //       {
-  //         $lookup: {
-  //           from: "categories",
-  //           localField: "product.category",
-  //           foreignField: "_id",
-  //           as: "category",
-  //         },
-  //       },
-  //       {
-  //         $unwind: "$category",
-  //       },
-  //       {
-  //         $lookup: {
-  //           from: "offers",
-  //           let: { productId: "$product._id", categoryId: "$category._id" },
-  //           pipeline: [
-  //             {
-  //               $match: {
-  //                 $expr: {
-  //                   $and: [
-  //                     { $or: [{ $eq: ["$product", "$$productId"] }, { $eq: ["$category", "$$categoryId"] }] },
-  //                     { $lte: ["$startingDate", new Date()] },
-  //                     { $gte: ["$expiryDate", new Date()] },
-  //                     { $eq: ["$is_active", "1"] }
-  //                   ]
-  //                 }
-  //               }
-  //             },
-  //             {
-  //               $sort: { percentage: -1 }
-  //             },
-  //             {
-  //               $limit: 1
-  //             }
-  //           ],
-  //           as: "offer",
-  //         },
-  //       },
-  //       {
-  //         $addFields: {
-  //           offer: { $arrayElemAt: ["$offer", 0] }
-  //         }
-  //       },
-  //       {
-  //         $project: {
-  //           totalPrice: {
-  //             $cond: [
-  //               {
-  //                 $or: [
-  //                   { $eq: ["$offer", null] },
-  //                   { $lte: ["$offer.percentage", 0] }
-  //                 ]
-  //               },
-  //               "$product.price",
-  //               {
-  //                 $cond: [
-  //                   { $gte: ["$product.offerPrice", "$offer.percentage"] },
-  //                   "$product.offerPrice",
-  //                   "$offer.percentage"
-  //                 ]
-  //               }
-  //             ]
-  //           }
-  //         }
-  //       },
-  //       {
-  //         $group: {
-  //           _id: null,
-  //           totalAmount: { $sum: "$totalPrice" },
-  //         },
-  //       },
-  //     ]);
-
-  //     if (currentMonthRevenue.length > 0) {
-  //       return currentMonthRevenue[0].totalAmount;
-  //     } else {
-  //       return 0;
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error.message);
-  //     throw error;
-  //   }
-  // },
-
-  //   getOrderStatusPercentages: async () => {
-  //     try {
-  //         const orderStatuses = await Order.aggregate([
-  //             {
-  //                 $unwind: "$items" // Unwind the items array
-  //             },
-  //             {
-  //                 $group: {
-  //                     _id: "$items.status", // Group by status
-  //                     count: { $sum: 1 } // Count the occurrences of each status
-  //                 }
-  //             },
-  //             {
-  //                 $project: {
-  //                     _id: 0,
-  //                     status: "$_id",
-  //                     count: 1
-  //                 }
-  //             },
-  //             {
-  //                 $group: {
-  //                     _id: null,
-  //                     statuses: {
-  //                         $push: "$$ROOT" // Push each status count into an array
-  //                     },
-  //                     totalOrders: { $sum: "$count" } // Calculate the total number of orders
-  //                 }
-  //             },
-  //             {
-  //                 $project: {
-  //                     _id: 0,
-  //                     statusPercentages: {
-  //                         $map: {
-  //                             input: "$statuses",
-  //                             as: "status",
-  //                             in: {
-  //                                 status: "$$status.status",
-  //                                 percentage: { $multiply: [{ $divide: ["$$status.count", "$totalOrders"] }, 100] }
-  //                             }
-  //                         }
-  //                     }
-  //                 }
-  //             }
-  //         ]);
-
-  //         return orderStatuses.length > 0 ? orderStatuses[0].statusPercentages : [];
-  //     } catch (error) {
-  //         console.error("Error:", error.message);
-  //         throw error;
-  //     }
-  // }
+ 
   getOrderStatusPercentages: async () => {
     try {
       const orderStatuses = await Order.aggregate([
         {
-          $unwind: "$items" // Unwind the items array
+          $unwind: "$items" 
         },
         {
           $match: {
-            "items.status": { $exists: true, $ne: null } // Filter out null or undefined statuses
+            "items.status": { $exists: true, $ne: null } 
           }
         },
         {
           $group: {
-            _id: "$items.status", // Group by status
-            count: { $sum: 1 } // Count the occurrences of each status
+            _id: "$items.status",
+            count: { $sum: 1 } 
           }
         },
         {
@@ -798,9 +343,9 @@ module.exports = {
           $group: {
             _id: null,
             statuses: {
-              $push: "$$ROOT" // Push each status count into an array
+              $push: "$$ROOT" 
             },
-            totalOrders: { $sum: "$count" } // Calculate the total number of orders
+            totalOrders: { $sum: "$count" } 
           }
         },
         {

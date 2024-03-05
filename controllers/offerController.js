@@ -9,7 +9,7 @@ const Swal = require('sweetalert2');
 const Offer = require("../models/offerModel");
 
 
-//-------------------------admin side--------------------------
+//-------------------------admin side offer--------------------------
 const offerManagement = async (req, res) => {
     try {
         const page = parseInt(req.query.page) || 1;
@@ -38,7 +38,10 @@ const offerManagement = async (req, res) => {
       }
     };
 
-    const addOffers = async (req, res) => {
+
+    
+    //-------------add offer-------------------------
+  const addOffers = async (req, res) => {
         try {
           const offerData = new Offer({
             offername: req.body.offername,
@@ -65,8 +68,10 @@ const offerManagement = async (req, res) => {
           console.log(error.message);
         }
       };
-    
 
+
+    
+//----------------offer status--------------------------------
       const updateOfferStatus = async (req, res) => {
         try {
           id = req.body.offerId;
@@ -94,6 +99,10 @@ const offerManagement = async (req, res) => {
         }
       };
       
+
+
+
+//---------------edit offer---------------------
 const loadEditOffer = async (req, res) => {
         try {
           const offerId = req.query.offerId;
@@ -138,6 +147,9 @@ const loadEditOffer = async (req, res) => {
           console.log(error.message);
         }
       }; 
+
+
+
 
     module.exports ={
         offerManagement,

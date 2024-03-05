@@ -10,7 +10,7 @@ const Order = require("../models/orderModel");
 const Wishlist = require('../models/wishlistModel');
 const crypto = require('crypto');
 
-
+//=======================wishlist============================
 const wishlistManagement = async (req, res, next) => {
     try {
         const categories = await Category.find({ is_active: 1 });
@@ -56,6 +56,10 @@ const wishlistManagement = async (req, res, next) => {
     }
 };
 
+
+
+
+//--------------------------add to wish------------------------------
 const wishManagementAddtowish = async (req, res, next) => {
     try {
         const id = req.query.id;
@@ -128,7 +132,8 @@ const addTowish = async (req, res, next) => {
     }
 };
 
-// Remove product from wishlist
+
+// ----------------Remove product from wishlist-----------------
 const deleteWishlistItem = async (req, res, next) => {
     try {
       const userid = req.session.user_id;
@@ -145,6 +150,8 @@ const deleteWishlistItem = async (req, res, next) => {
       next(new Error("An error occurred"));
     }
   };
+
+  
 
 module.exports = {
 

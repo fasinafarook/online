@@ -1,6 +1,4 @@
 const User = require('../models/userModel');
-const bcrypt = require('bcrypt');
-const nodemailer = require('nodemailer')
 const Product = require('../models/productModel');
 const Category = require('../models/categoryModel');
 const Cart = require("../models/cartModel");
@@ -8,7 +6,7 @@ const Order = require("../models/orderModel");
 const crypto = require('crypto');
 const Offer = require("../models/offerModel");
 
-
+//==================cart=============================
 const cartManagement = async (req, res, next) => {
   try {
       const categories = await Category.find({ is_active: 1 });
@@ -25,7 +23,7 @@ const cartManagement = async (req, res, next) => {
           }
          }]
       });
-  console.log(CartData)
+
   if (CartData) {
       CartData.product.forEach(productItem => {
           if (!productItem.offer && productItem.productId.offer) {
@@ -55,7 +53,7 @@ const cartManagement = async (req, res, next) => {
 
 
 
-  
+//------------------add to cart----------------------------
 const cartManagementAddtocart = async (req, res, next) => {
   try {
       const CartData = await Cart.findOne({
@@ -168,60 +166,7 @@ const cartManagementAddtocart = async (req, res, next) => {
     }
   };
   
-  // const quantityCheck = async (req, res, next) => {
-  //   const userId = req.session.user_id;
-  //   const id = req.query.id;
-  //   const action = req.query.action;
-  
-  //   try {
-  //     let cart = await Cart.findOne({ userId: userId });
-  //     let cartData = await Cart.findOne(
-  //       { userId: userId, "product.productId": id },
-  //       { "product.$": 1, _id: 0 }
-  //     );
-  //     let specificProduct = cartData.product[0];
-  
-  //     let productData = await Product.findOne({ _id: id });
-  //     if (action === "increase" || action === "decrease") {
-  //       const cartProductIndex = cart.product.findIndex(
-  //         (item) => item.productId.toString() === id
-  //       );
-  //       if (cartProductIndex !== -1) {
-  //         if (action === "increase") {
-  //           if (productData.Quantity > specificProduct.Quantity) {
-  //             cart.product[cartProductIndex].Quantity += 1;
-  //             await cart.save();
-  //             return res
-  //               .status(200)
-  //               .json({ message: "Quantity updated successfully", cart });
-  //           } else {
-  //             return res.status(400).json({ message: "Out of stock!!! availible in  this quantity only" });
-  //           }
-  //         } else {
-  //           if (cart.product[cartProductIndex].Quantity > 0) {
-  //             cart.product[cartProductIndex].Quantity -= 1;
-  //           } else {
-  //             return res
-  //               .status(400)
-  //               .json({ message: "Quantity cannot be less than zero" });
-  //           }
-  //         }
-  //         await cart.save();
-  //         return res
-  //           .status(200)
-  //           .json({ message: "Quantity updated successfully", cart });
-  //       } else {
-  //         return res
-  //           .status(404)
-  //           .json({ message: "Product not found in the cart" });
-  //       }
-  //     } else {
-  //       return res.status(400).json({ message: "Invalid action" });
-  //     }
-  //   } catch (error) {
-  //     next(new Error("An error occurred"));
-  //   }
-  // };
+  //------------------quantity--------------------------
   const quantityCheck = async (req, res, next) => {
     const userId = req.session.user_id;
     const id = req.query.id;
@@ -297,6 +242,8 @@ const cartManagementAddtocart = async (req, res, next) => {
     }
   };
   
+
+  //-----------delete cart item-------------------------
   const deleteCartitem = async (req, res, next) => {
     try {
       const userid = req.session.user_id;

@@ -15,7 +15,7 @@ const fs = require('fs').promises;
 
 
 
-//-------------------------------------adminSide----------------------------------------------------------------
+//-------------------------------------adminSide product----------------------------------------------------------------
 
 const loadProducts = async (req, res) => {
     try {
@@ -109,7 +109,7 @@ const loadProducts = async (req, res) => {
 };
 
 
-
+//----------------add product-----------------
 
 const loadAddProduct = async (req,res)=>{
     try {
@@ -164,6 +164,8 @@ const addProduct = async (req,res)=>{
     }
 };
 
+
+//----------------------product status-------------------------
 const loadtoggleProductStatus = async(req, res) => {
     try {
     const productId = req.params.productId;
@@ -205,13 +207,12 @@ const toggleProductStatus = async (productId) => {
 
 
 
-//edit product
+//--------------------edit product-----------------------
 const editProductLoad = async (req, res) => {
     try {
         const id = req.query.id;
         const productData = await Product.findById(id).populate("category");
         const categoryData = await Category.find({});
-        // console.log('thisone',productData,categoryData)
 
         if (!productData) {
             return res.status(404).send('Product not found.');
@@ -330,14 +331,13 @@ const editProduct = async (req, res) => {
     }
 };
 
-
+//------------image removed --------------
 const deleteImg =  async (req, res) => {
     const { removedImages } = req.body;
 
     try {
         for (const imageURL of removedImages) {
-            console.log('working')
-            const imagePath = `./public/productimages/${imageURL}`; // Adjust the path accordingly
+            const imagePath = `./public/productimages/${imageURL}`; 
             await fs.unlink(imagePath);
             console.log(`Image deleted: ${imageURL}`);
         }
@@ -349,6 +349,9 @@ const deleteImg =  async (req, res) => {
     }
 };
 
+
+
+//------------ apply product offer -----------------
 const applyProductOffer = async (req, res) => {
     try {
         const { offerId, productId  } = req.body;
@@ -359,6 +362,8 @@ const applyProductOffer = async (req, res) => {
         res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
 };
+
+//---------------remove product offer--------------------
 const removeProductOffer = async (req, res) => {
     try {
         const productId  = req.body.productId ;

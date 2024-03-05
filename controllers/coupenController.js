@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 const Swal = require('sweetalert2');
 const sharp = require("sharp");
 
-//-------------------------admin side----------------------------------------------------
+//-------------------------admin side coupen----------------------------------------------------
 const couponManagement = async (req, res) => {
     try {
       const page = parseInt(req.query.page) || 1;
@@ -37,6 +37,8 @@ const couponManagement = async (req, res) => {
     }
   };
   
+
+  //----------add coupon--------------
   const addCoupons = async (req, res) => {
     try {
       const couponData = new Coupon({
@@ -65,6 +67,8 @@ const couponManagement = async (req, res) => {
     }
   };
   
+
+//----------------coupen status--------------
   const updateCouponStatus = async (req, res) => {
     try {
       id = req.body.couponId;
@@ -92,6 +96,7 @@ const couponManagement = async (req, res) => {
     }
   };
   
+  //----------------edit coupen------------------
   const loadEditCoupon = async (req, res) => {
     try {
       const couponId = req.query.couponId;
@@ -137,7 +142,7 @@ const couponManagement = async (req, res) => {
     }
   };
   
-//-------------------------------user side------------------------------------------
+//-------------------------------user side coupen------------------------------------------
 const applycoupons = async (req, res, next) => {
     try {
       const id = req.session.user_id;
@@ -175,6 +180,7 @@ const applycoupons = async (req, res, next) => {
       next(new Error("An error occurred"));
     }
   };
+  
   const pushingCoupon = async (req, res, next) => {
     try {
       const userId = req.session.user_id;
