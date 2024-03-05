@@ -631,35 +631,56 @@ const loadtoggleUserStatus = async (req, res) => {
     }
 };
 
+// const toggleUserStatus = async (userId, req) => {
+//     try {
+//         let user;
+//         const users = await User.findById({_id:userId});
+
+//         if (!users) {
+//             return { success: false, message: 'User not found' };
+//         }
+
+//         if (users.is_verified === 1) {
+//             user = await User.findByIdAndUpdate(userId, { $set: { is_verified: 0 } }).exec();
+//         } else {
+//             user = await User.findByIdAndUpdate(userId, { $set: { is_verified: 1 } }).exec();
+//         }
+
+//         if (user) {
+//             user.is_verified = user.is_verified === 1 ? 0 : 1;
+//             await user.save();
+
+//             if (req.session.user_id && req.session.user_id.toString() === userId.toString()) {
+//                 req.session.user_id = null;
+//             }
+
+//             return { success: true, action: user.is_verified === 1 ? 'block' : 'unblock', is_verified: user.is_verified };
+//         } else {
+//             return { success: false, message: 'User not found' };
+//         }
+//     } catch (error) {
+//         console.log(error.message);
+//         return { success: false, message: 'Internal Server Error' };
+//     }
+// };
 const toggleUserStatus = async (userId, req) => {
     try {
-        let user;
-        const users = await User.findById({_id:userId});
+        const user = await User.findById(userId);
 
-        if (!users) {
+        if (!user) {
             return { success: false, message: 'User not found' };
         }
 
-        if (users.is_verified === 1) {
-            user = await User.findByIdAndUpdate(userId, { $set: { is_verified: 0 } }).exec();
-        } else {
-            user = await User.findByIdAndUpdate(userId, { $set: { is_verified: 1 } }).exec();
+        user.is_verified = !user.is_verified;
+        await user.save();
+
+        if (req.session.user_id && req.session.user_id.toString() === userId.toString()) {
+            req.session.user_id = null;
         }
 
-        if (user) {
-            user.is_verified = user.is_verified === 1 ? 0 : 1;
-            await user.save();
-
-            if (req.session.user_id && req.session.user_id.toString() === userId.toString()) {
-                req.session.user_id = null;
-            }
-
-            return { success: true, action: user.is_verified === 1 ? 'block' : 'unblock', is_verified: user.is_verified };
-        } else {
-            return { success: false, message: 'User not found' };
-        }
+        return { success: true, action: user.is_verified ? 'block' : 'unblock', is_verified: user.is_verified };
     } catch (error) {
-        console.log(error.message);
+        console.error('Error toggling user status:', error);
         return { success: false, message: 'Internal Server Error' };
     }
 };

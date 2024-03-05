@@ -406,7 +406,7 @@ const verifyLogin = async(req,res)=>{
         if(pwdMatch){
             if(userData.is_verified === 0){
               
-                res.render('login',{message:"please verify your mail"});
+                res.render('login',{message:"admin blocked you"});
 
             }else{
                
