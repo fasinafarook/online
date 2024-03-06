@@ -7,10 +7,10 @@ const Cart = require("../models/cartModel");
 const Order = require("../models/orderModel");
 const crypto = require('crypto');
 const Offer = require("../models/offerModel");
-const moment = require ('moment')
+const moment = require('moment')
 
 //-----------------category-----------------------
-const loadCategory = async (req,res) =>{
+const loadCategory = async (req, res) => {
     try {
 
         const page = req.query.page ? parseInt(req.query.page) : 1;
@@ -20,18 +20,20 @@ const loadCategory = async (req,res) =>{
         const totalCount = await Category.countDocuments({});
         const totalPages = Math.ceil(totalCount / limit);
         const offerData = await Offer.find();
-       
 
-        res.render('category',{category:CategoryData,offer:offerData,moment, totalPages,
-            currentPage: page,})
-        
+
+        res.render('category', {
+            category: CategoryData, offer: offerData, moment, totalPages,
+            currentPage: page,
+        })
+
     } catch (error) {
         console.log(error.message);
 
     }
 }
 
-const loadAddCategory = async (req,res)=>{
+const loadAddCategory = async (req, res) => {
     try {
         res.render('addcategory')
 
@@ -39,10 +41,10 @@ const loadAddCategory = async (req,res)=>{
         console.log(error.message);
 
     }
-} 
+}
 
 //--------------add category----------------------
-const addCategory = async (req,res)=>{
+const addCategory = async (req, res) => {
     try {
         const existingCategory = await Category.findOne({ name: req.body.name });
 
@@ -70,34 +72,34 @@ const addCategory = async (req,res)=>{
 };
 
 
-const loadtoggleCategoryStatus = async(req, res) => {
+const loadtoggleCategoryStatus = async (req, res) => {
     try {
-    const categoryId = req.params.categoryId;
-    const result = toggleCategoryStatus(categoryId);
-    res.json(result);
+        const categoryId = req.params.categoryId;
+        const result = toggleCategoryStatus(categoryId);
+        res.json(result);
     } catch (error) {
         console.log(error.message);
     }
-    
+
 };
 
 const toggleCategoryStatus = async (categoryId) => {
     try {
         let categor;
-        const categoryss = await Category.findById({_id:categoryId})
+        const categoryss = await Category.findById({ _id: categoryId })
 
         if (categoryss.is_active === 1) {
             categor = await Category.findByIdAndUpdate(categoryId, { $set: { is_active: 0 } }).exec();
         } else {
-            categor  = await Category.findByIdAndUpdate(categoryId, { $set: { is_active: 1 } }).exec();
+            categor = await Category.findByIdAndUpdate(categoryId, { $set: { is_active: 1 } }).exec();
         }
 
         if (categor) {
             categor.is_active = categor.is_active === 1 ? 0 : 1;
             await categor.save();
-           
+
             return { success: true, action: categor.is_active === 1 ? 'block' : 'unblock', is_active: categor.is_active };
-          
+
         } else {
             return { success: false, message: 'product not found' };
         }
@@ -193,7 +195,7 @@ const removeCategoryOffer = async (req, res) => {
 
 
 
-module.exports={
+module.exports = {
     loadCategory,
     loadAddCategory,
     addCategory,

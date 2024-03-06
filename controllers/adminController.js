@@ -14,12 +14,12 @@ const fs = require('fs');
 const ExcelJS = require('exceljs');
 
 //-----------------admin login--------------------------
-const loadLogin = async(req,res)=>{
+const loadLogin = async (req, res) => {
 
-    try{
+    try {
         res.render('admin-login');
 
-    }catch(error){
+    } catch (error) {
         console.log(error.message);
     }
 
@@ -27,33 +27,34 @@ const loadLogin = async(req,res)=>{
 
 
 //-----------verify login----------------------
-const veryfyLogin = async(req,res)=>{
+const veryfyLogin = async (req, res) => {
 
-    try{
-        
+    try {
+
         const email = req.body.email
         const password = req.body.password
 
-        const userData = await User.findOne({email:email});
-        if(userData){
-            const pwdMatch = await bcrypt.compare(password,userData.password);
+        const userData = await User.findOne({ email: email });
+        if (userData) {
+            const pwdMatch = await bcrypt.compare(password, userData.password);
 
-            if(pwdMatch){
-                if(userData.is_admin === 0){
-                    res.render('admin-login',{message:"Not an Admin"});
+            if (pwdMatch) {
+                if (userData.is_admin === 0) {
+                    res.render('admin-login', { message: "Not an Admin" });
 
-             }else{
-                req.session.user = userData._id;
-                res.redirect('/admin/home')
+                } else {
+                    req.session.user = userData._id;
+                    res.redirect('/admin/home')
+                }
+            } else {
+                res.render('admin-login', { message: "Access Danied...please check your email & password" });
+
             }
-            }else{
-               res.render('admin-login',{message:"Access Danied...please check your email & password"});
-
-            }}else{
-            res.render('admin-login',{message:"Access Danied...please check your email & password"});
+        } else {
+            res.render('admin-login', { message: "Access Danied...please check your email & password" });
         }
 
-    }catch(error){
+    } catch (error) {
         console.log(error.message);
     }
 
@@ -63,36 +64,36 @@ const veryfyLogin = async(req,res)=>{
 
 const loadDashboard = async (req, res) => {
     try {
-        
-      let arrayforUser = [];
-      let arrayforYearlyOrder = [];
-      let arrayforMonthlyOrder = [];
-      let arrayforStatus = [];
-      const monthlyUserCounts = await dashboardHandler.getMonthlyUserCount();
-      monthlyUserCounts.forEach((monthData) => {
-        const { month, count } = monthData;
-        arrayforUser.push(count);
-      });
 
-      //monthlly order count
+        let arrayforUser = [];
+        let arrayforYearlyOrder = [];
+        let arrayforMonthlyOrder = [];
+        let arrayforStatus = [];
+        const monthlyUserCounts = await dashboardHandler.getMonthlyUserCount();
+        monthlyUserCounts.forEach((monthData) => {
+            const { month, count } = monthData;
+            arrayforUser.push(count);
+        });
 
-      const monthlyOrderCounts = await dashboardHandler.getMonthlyOrderDetails();
-      monthlyOrderCounts.forEach((monthData) => {
-        const { month, count } = monthData;
-        arrayforMonthlyOrder.push(count);
-      });
+        //monthlly order count
 
-      //yearlly order count
+        const monthlyOrderCounts = await dashboardHandler.getMonthlyOrderDetails();
+        monthlyOrderCounts.forEach((monthData) => {
+            const { month, count } = monthData;
+            arrayforMonthlyOrder.push(count);
+        });
 
-      const yearlyOrderCounts = await dashboardHandler.getYearlyOrderDetails();
-      yearlyOrderCounts.forEach((yearData) => {
-          const { year, count } = yearData;
-          arrayforYearlyOrder.push(count);
-      });
+        //yearlly order count
 
-      //percentage base status
+        const yearlyOrderCounts = await dashboardHandler.getYearlyOrderDetails();
+        yearlyOrderCounts.forEach((yearData) => {
+            const { year, count } = yearData;
+            arrayforYearlyOrder.push(count);
+        });
 
-      const statusPercentages = await dashboardHandler.getOrderStatusPercentages();
+        //percentage base status
+
+        const statusPercentages = await dashboardHandler.getOrderStatusPercentages();
         statusPercentages.forEach((statusData) => {
             const { status, percentage } = statusData;
             arrayforStatus.push(percentage);
@@ -118,82 +119,82 @@ const loadDashboard = async (req, res) => {
 
 
 
-      //counts
-      const productCount = await Product.countDocuments({});
-      const categoryCount = await Category.countDocuments({});
-      const orderCount = await Order.countDocuments({});
-      
-      
-     
+        //counts
+        const productCount = await Product.countDocuments({});
+        const categoryCount = await Category.countDocuments({});
+        const orderCount = await Order.countDocuments({});
 
-      let orderData = await Order.aggregate().sort({ currentData: -1 });
 
-      await Order.populate(orderData, {
-          path: 'items.productId',
-          select: 'name price quantity ',
-          populate: [{
-              path: 'offer'
-          }, {
-              path: 'category',
-              populate: {
-                  path: 'offer'
-              }
-          }]
-      });
 
-      if (orderData && orderData.length > 0) {
-          orderData.forEach(order => {
-              if (order.items && order.items.length > 0) {
-                  order.items.forEach(productItem => {
-                      if (!productItem.offer && productItem.productId.offer) {
-                          productItem.offer = productItem.productId.offer;
-                      } else if (productItem.offer && productItem.productId.offer) {
-                          if (productItem.offer.percentage < productItem.productId.offer.percentage) {
-                              productItem.offer = productItem.productId.offer;
-                          }
-                      } else if (!productItem.offer && productItem.productId.category && productItem.productId.category.offer) {
-                          productItem.offer = productItem.productId.category.offer;
-                      } else if (productItem.offer && productItem.productId.category && productItem.productId.category.offer) {
-                          if (productItem.offer.percentage < productItem.productId.category.offer.percentage) {
-                              productItem.offer = productItem.productId.category.offer;
-                          }
-                      }
-                  });
-              }
-          });
-      }
 
-      orderData.forEach(order => {
-          order.items = order.items.filter(item => item.status === "Delivered");
-      });
+        let orderData = await Order.aggregate().sort({ currentData: -1 });
+
+        await Order.populate(orderData, {
+            path: 'items.productId',
+            select: 'name price quantity ',
+            populate: [{
+                path: 'offer'
+            }, {
+                path: 'category',
+                populate: {
+                    path: 'offer'
+                }
+            }]
+        });
+
+        if (orderData && orderData.length > 0) {
+            orderData.forEach(order => {
+                if (order.items && order.items.length > 0) {
+                    order.items.forEach(productItem => {
+                        if (!productItem.offer && productItem.productId.offer) {
+                            productItem.offer = productItem.productId.offer;
+                        } else if (productItem.offer && productItem.productId.offer) {
+                            if (productItem.offer.percentage < productItem.productId.offer.percentage) {
+                                productItem.offer = productItem.productId.offer;
+                            }
+                        } else if (!productItem.offer && productItem.productId.category && productItem.productId.category.offer) {
+                            productItem.offer = productItem.productId.category.offer;
+                        } else if (productItem.offer && productItem.productId.category && productItem.productId.category.offer) {
+                            if (productItem.offer.percentage < productItem.productId.category.offer.percentage) {
+                                productItem.offer = productItem.productId.category.offer;
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        orderData.forEach(order => {
+            order.items = order.items.filter(item => item.status === "Delivered");
+        });
 
 
         //delivered products
 
-      let totalDeliveredProducts = 0;
+        let totalDeliveredProducts = 0;
 
-      for (let order of orderData) {
-          let deliveredItems = order.items.filter(item => item.status === "Delivered");
-          totalDeliveredProducts += deliveredItems.length;
-      }
-
-
-      let totalAmount = orderData.reduce((acc, order) => acc + order.totalAmount, 0);
-      let totalAmountWithDiscount = 0;
-
-      for (let order of orderData) {
-          let deliveredItems = order.items.filter(item => item.status === "Delivered");
-          let orderTotal = deliveredItems.reduce((acc, item) => {
-              let productPrice = item.productId.price;
-              let itemPrice = item.offer ? productPrice * (1 - item.offer.percentage / 100) : productPrice;
-              return acc + (itemPrice * item.quantity);
-          }, 0);
-
-          totalAmountWithDiscount += orderTotal;
-      }
+        for (let order of orderData) {
+            let deliveredItems = order.items.filter(item => item.status === "Delivered");
+            totalDeliveredProducts += deliveredItems.length;
+        }
 
 
-     //monthlly amount
+        let totalAmount = orderData.reduce((acc, order) => acc + order.totalAmount, 0);
+        let totalAmountWithDiscount = 0;
+
+        for (let order of orderData) {
+            let deliveredItems = order.items.filter(item => item.status === "Delivered");
+            let orderTotal = deliveredItems.reduce((acc, item) => {
+                let productPrice = item.productId.price;
+                let itemPrice = item.offer ? productPrice * (1 - item.offer.percentage / 100) : productPrice;
+                return acc + (itemPrice * item.quantity);
+            }, 0);
+
+            totalAmountWithDiscount += orderTotal;
+        }
+
+
+        //monthlly amount
 
         const deliveredOrders = orderData.filter(order => order.items.some(item => item.status === "Delivered"));
 
@@ -209,7 +210,7 @@ const loadDashboard = async (req, res) => {
         });
 
         const currentMonthDeliveredRevenue = deliveredOrdersInCurrentMonth.reduce((total, order) => {
-            
+
             const orderTotal = order.items.reduce((acc, item) => {
                 if (item.status === "Delivered") {
                     const productPrice = item.productId.price;
@@ -221,31 +222,31 @@ const loadDashboard = async (req, res) => {
             return total + orderTotal;
         }, 0);
 
-      res.render("home", {
-        arrayforUser: arrayforUser,
-        arrayforYearlyOrder: arrayforYearlyOrder,
-        arrayforMonthlyOrder: arrayforMonthlyOrder,
-        productCount: productCount,
-        categoryCount: categoryCount,
-        orderCount: orderCount,
-        revenue: totalAmountWithDiscount,
-        monthlyrevenue: currentMonthDeliveredRevenue,
-        arrayforStatus: JSON.stringify(roundedArray),
-        topSellingProducts: JSON.stringify(topSellingProducts), 
-        topSellingCategories: JSON.stringify(getTopSellingCategories),
-        topSellingBrands:JSON.stringify(getTopSellingBrands),
-        
+        res.render("home", {
+            arrayforUser: arrayforUser,
+            arrayforYearlyOrder: arrayforYearlyOrder,
+            arrayforMonthlyOrder: arrayforMonthlyOrder,
+            productCount: productCount,
+            categoryCount: categoryCount,
+            orderCount: orderCount,
+            revenue: totalAmountWithDiscount,
+            monthlyrevenue: currentMonthDeliveredRevenue,
+            arrayforStatus: JSON.stringify(roundedArray),
+            topSellingProducts: JSON.stringify(topSellingProducts),
+            topSellingCategories: JSON.stringify(getTopSellingCategories),
+            topSellingBrands: JSON.stringify(getTopSellingBrands),
 
-      });
-      
+
+        });
+
     } catch (error) {
-      console.log(error.message);
+        console.log(error.message);
     }
-  };
+};
 
 
 //---------------sales report------------------------------
-  const reportDetails = async (req, res) => {
+const reportDetails = async (req, res) => {
     try {
         const SortedData = req.query.sorting;
         let startDate = req.query.startDateInput;
@@ -264,9 +265,9 @@ const loadDashboard = async (req, res) => {
         switch (filter) {
             case 'day':
                 startDates = new Date();
-                startDates.setHours(0, 0, 0, 0); 
+                startDates.setHours(0, 0, 0, 0);
                 endDates = new Date();
-                endDates.setHours(23, 59, 59, 999); 
+                endDates.setHours(23, 59, 59, 999);
                 break;
             case 'week':
                 startDates = new Date();
@@ -415,7 +416,7 @@ const loadDashboard = async (req, res) => {
 
 //--------------logout-------------------------------
 
-const adminLogout = async(req,res)=>{
+const adminLogout = async (req, res) => {
     try {
         req.session.destroy();
         res.redirect('/admin');
@@ -430,21 +431,21 @@ const adminLogout = async(req,res)=>{
 
 //-----------------------users---------------------------------
 
-const loadUsers = async(req,res)=>{
+const loadUsers = async (req, res) => {
     try {
         var search = '';
-        if(req.query.search){
+        if (req.query.search) {
             search = req.query.search
         }
         const usersData = await User.find({
-            is_admin:0,
-            $or:[
-                {name:{ $regex:'.*'+search+'.*',$options:'i' }},
-                {email:{ $regex:'.*'+search+'.*',$options:'i'}},
-                {mobile:{ $regex:'.*'+search+'.*',$options:'i'}}
+            is_admin: 0,
+            $or: [
+                { name: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { email: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { mobile: { $regex: '.*' + search + '.*', $options: 'i' } }
             ]
         })
-        res.render('users',{users:usersData});
+        res.render('users', { users: usersData });
 
     } catch (error) {
         console.log(error.message);
@@ -493,7 +494,7 @@ const toggleUserStatus = async (userId, req) => {
 
 
 
-module.exports ={
+module.exports = {
     loadLogin,
     veryfyLogin,
     adminLogout,

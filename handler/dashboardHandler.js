@@ -76,7 +76,7 @@ module.exports = {
     }
   },
 
-  
+
   getYearlyOrderDetails: async () => {
     try {
       const currentYear = new Date().getFullYear();
@@ -140,38 +140,38 @@ module.exports = {
     }
   }
   ,
-  
+
 
   getMonthlyOrderDetails: async () => {
     try {
       const orderDetailsByMonth = await Order.aggregate([
         {
           $match: {
-            "items.status": "Delivered" 
+            "items.status": "Delivered"
           }
         },
         {
-          $unwind: "$items" 
+          $unwind: "$items"
         },
         {
           $match: {
-            "items.status": "Delivered" 
+            "items.status": "Delivered"
           }
         },
         {
           $group: {
             _id: {
               month: { $month: "$currentData" },
-              orderId: "$orderId" 
+              orderId: "$orderId"
             },
-            count: { $sum: 1 } 
+            count: { $sum: 1 }
           }
         },
         {
           $group: {
             _id: "$_id.month",
             counts: {
-              $push: "$count" 
+              $push: "$count"
             }
           }
         },
@@ -179,7 +179,7 @@ module.exports = {
           $project: {
             _id: 1,
             month: "$_id",
-            count: { $sum: "$counts" } 
+            count: { $sum: "$counts" }
           }
         },
         {
@@ -207,7 +207,7 @@ module.exports = {
     }
   },
 
- 
+
   getOrderStatusPercentages: async () => {
     try {
       const statusCounts = {
@@ -314,22 +314,22 @@ module.exports = {
       throw error;
     }
   },
- 
+
   getOrderStatusPercentages: async () => {
     try {
       const orderStatuses = await Order.aggregate([
         {
-          $unwind: "$items" 
+          $unwind: "$items"
         },
         {
           $match: {
-            "items.status": { $exists: true, $ne: null } 
+            "items.status": { $exists: true, $ne: null }
           }
         },
         {
           $group: {
             _id: "$items.status",
-            count: { $sum: 1 } 
+            count: { $sum: 1 }
           }
         },
         {
@@ -343,9 +343,9 @@ module.exports = {
           $group: {
             _id: null,
             statuses: {
-              $push: "$$ROOT" 
+              $push: "$$ROOT"
             },
-            totalOrders: { $sum: "$count" } 
+            totalOrders: { $sum: "$count" }
           }
         },
         {

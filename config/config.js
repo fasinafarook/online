@@ -1,5 +1,5 @@
 const secretSession = "strictllyMySecret";
 
-module.exports ={
+module.exports = {
     secretSession
 }

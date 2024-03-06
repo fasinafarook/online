@@ -4,10 +4,13 @@
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                    style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
             <div>
-                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
+                </button>
             </div>
         </div>
         <nav>
@@ -53,9 +56,10 @@
                         <!-- <a href="page-seller-detail.html">Seller profile</a> -->
                     </div>
                 </li>
-                
+
                 <li class="menu-item has-submenu ">
-                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                    <a class="menu-link" href="page-transactions-1.html"> <i
+                            class="icon material-icons md-monetization_on"></i>
                         <span class="text">Coupen</span>
                     </a>
                     <div class="submenu">
@@ -69,7 +73,7 @@
                     </a>
                     <div class="submenu">
                         <a href="/admin/offer">Offer Management</a>
-                       
+
                     </div>
                 </li>
                 <li class="menu-item">
@@ -80,12 +84,12 @@
             </ul>
             <hr>
             <ul class="menu-aside">
-                
-            <li class="menu-item">
-                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
-                    <span class="text"> Logout </span>
-                </a>
-            </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                        <span class="text"> Logout </span>
+                    </a>
+                </li>
             </ul>
             <br>
             <br>
@@ -108,16 +112,20 @@
                 </form> -->
             </div>
             <div class="col-nav">
-                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
                     </li>
                 </ul>
             </div>
@@ -126,44 +134,53 @@
             <div class="content-header">
                 <h2 class="content-title">offer</h2>
                 <div>
-                    <button class="btn btn-primary border-0" data-bs-toggle="modal" data-bs-target="#offerModal">Add offer</button>
+                    <button class="btn btn-primary border-0" data-bs-toggle="modal" data-bs-target="#offerModal">Add
+                        offer</button>
                 </div>
-                <div class="modal fade" id="offerModal" tabindex="-1" aria-labelledby="offerModalLabel" aria-hidden="true">
+                <div class="modal fade" id="offerModal" tabindex="-1" aria-labelledby="offerModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="offerModalLabel">Add offer</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="" id="addofferForm" method="post" >
+                                <form action="" id="addofferForm" method="post">
                                     <div class="mb-3">
                                         <label for="offerName" class="form-label"> Name</label>
-                                        <input type="text" name="offername" class="form-control" id="offerName" >
-                                        <p id="offerNameError" style="color: red; display: none;">offer Name is required</p>
+                                        <input type="text" name="offername" class="form-control" id="offerName">
+                                        <p id="offerNameError" style="color: red; display: none;">offer Name is required
+                                        </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="percentage" class="form-label">  Percentage</label>
-                                        <input type="text" name="percentage" class="form-control" id="percentage" >
-                                        <p id="percentageError" style="color: red; display: none;"> percentage is required</p>
+                                        <label for="percentage" class="form-label"> Percentage</label>
+                                        <input type="text" name="percentage" class="form-control" id="percentage">
+                                        <p id="percentageError" style="color: red; display: none;"> percentage is
+                                            required</p>
                                     </div>
                                     <div class="mb-3">
                                         <label for="startingDate" class="form-label">Starting Date</label>
-                                        <input type="date" name="startingDate" class="form-control" id="startingDate" >
-                                        <p id="startingDateError" style="color: red; display: none;">Starting Date is required</p>
+                                        <input type="date" name="startingDate" class="form-control" id="startingDate">
+                                        <p id="startingDateError" style="color: red; display: none;">Starting Date is
+                                            required</p>
                                     </div>
                                     <div class="mb-3">
                                         <label for="offerDate" class="form-label">Expiry Date</label>
-                                        <input type="date" name="expdate" class="form-control" id="offerDate" >
-                                        <p id="offerDateError" style="color: red; display: none;">Expiry Date is required</p>
+                                        <input type="date" name="expdate" class="form-control" id="offerDate">
+                                        <p id="offerDateError" style="color: red; display: none;">Expiry Date is
+                                            required</p>
                                     </div>
-                                    <button type="button" type="button" onclick="validateForm1()" class="btn btn-primary">Submit</button>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" type="button" onclick="validateForm1()"
+                                        class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>              
+                </div>
             </div>
             <div class="card mb-4">
                 <header class="card-header">
@@ -180,228 +197,252 @@
                                 <option>Show all</option>
                             </select>
                         </div>  -->
-                    
+
                 </header> <!-- card-header end// -->
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                            <th>offer</th>
-                            <th>percentage </th>
-                            <th>Starting Date</th>
-                            <th>Expiry Date</th>
-                            <th>Status</th>
-                            <th class="text-end"> Action </th>
+                                    <th>offer</th>
+                                    <th>percentage </th>
+                                    <th>Starting Date</th>
+                                    <th>Expiry Date</th>
+                                    <th>Status</th>
+                                    <th class="text-end"> Action </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <% if (offerData && offerData.length > 0) { %>
-                                <% for (let i = 0; i < offerData.length; i++) { %>
-                                    <tr>
-                                        <td width="30%">
-                                            <a href="#" class="itemside">
-                                                <div class="info pl-3">
-                                                    <h6 class="mb-0 title"><%= offerData[i].offername %></h6>
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td><%= offerData[i].percentage %>%</td>
-                                        <td><%= offerData[i].startingDate.toLocaleDateString() %></td>
-                                        
-                                        <td><%= offerData[i].expiryDate.toLocaleDateString() %></td>
-                                        <td>
-                                            <% if (offerData[i].is_active==1) { %>
-                                                <span class="badge rounded-pill alert-success">Active</span>
-                                            <% } else { %>
-                                                <span class="badge rounded-pill alert-danger">Inactive</span>
-                                            <% } %>
-                                        </td>
-                                        <td class="text-end">
-                                            <input type="hidden" class="offerId" value="<%= offerData[i]._id %>">
-                                            <input type="hidden" class="offerStatus" value="<%= offerData[i].is_active %>">
-                                            <% if (offerData[i].is_active == 1) { %>
-                                                <button type="button" class="badge badge-sm alert-success offer-btn">Deactivate</button>
-                                            <% } else { %>
-                                                <button type="button" class="badge badge-sm alert-danger offer-btn">Activate</button>
-                                            <% } %>                                            
-                                            <div class="dropdown">
-                                                <a href="#" data-bs-toggle="dropdown" class="btn btn-light rounded btn-sm font-sm">
-                                                    <i class="material-icons md-more_horiz"></i>
+                                <% if (offerData && offerData.length> 0) { %>
+                                    <% for (let i=0; i < offerData.length; i++) { %>
+                                        <tr>
+                                            <td width="30%">
+                                                <a href="#" class="itemside">
+                                                    <div class="info pl-3">
+                                                        <h6 class="mb-0 title">
+                                                            <%= offerData[i].offername %>
+                                                        </h6>
+                                                    </div>
                                                 </a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="/admin/editoffer?offerId=<%= offerData[i]._id %>">Edit offer</a>
-                                                    
-                                                </div>
-                                            </div> 
-                                        </td>
-                                    </tr>
-                                    <% } %>
-                                <% } else { %>
-                                    <tr>
-                                        <td colspan="6">No offers Found</td>
-                                    </tr>
-                                <% } %>
+                                            </td>
+                                            <td>
+                                                <%= offerData[i].percentage %>%
+                                            </td>
+                                            <td>
+                                                <%= offerData[i].startingDate.toLocaleDateString() %>
+                                            </td>
+
+                                            <td>
+                                                <%= offerData[i].expiryDate.toLocaleDateString() %>
+                                            </td>
+                                            <td>
+                                                <% if (offerData[i].is_active==1) { %>
+                                                    <span class="badge rounded-pill alert-success">Active</span>
+                                                    <% } else { %>
+                                                        <span class="badge rounded-pill alert-danger">Inactive</span>
+                                                        <% } %>
+                                            </td>
+                                            <td class="text-end">
+                                                <input type="hidden" class="offerId" value="<%= offerData[i]._id %>">
+                                                <input type="hidden" class="offerStatus"
+                                                    value="<%= offerData[i].is_active %>">
+                                                <% if (offerData[i].is_active==1) { %>
+                                                    <button type="button"
+                                                        class="badge badge-sm alert-success offer-btn">Deactivate</button>
+                                                    <% } else { %>
+                                                        <button type="button"
+                                                            class="badge badge-sm alert-danger offer-btn">Activate</button>
+                                                        <% } %>
+                                                            <div class="dropdown">
+                                                                <a href="#" data-bs-toggle="dropdown"
+                                                                    class="btn btn-light rounded btn-sm font-sm">
+                                                                    <i class="material-icons md-more_horiz"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item"
+                                                                        href="/admin/editoffer?offerId=<%= offerData[i]._id %>">Edit
+                                                                        offer</a>
+
+                                                                </div>
+                                                            </div>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                            <% } else { %>
+                                                <tr>
+                                                    <td colspan="6">No offers Found</td>
+                                                </tr>
+                                                <% } %>
                             </tbody>
                         </table>
                     </div>
-                
+
                 </div>
                 <div class="pagination-area mt-15 mb-50">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-start">
-                            <% for (let i = 1; i <= totalPages; i++) { %>
-                                <% if (i === currentPage) { %>
-                                    <li class="page-item active"><a class="page-link" href="#"><%= i.toString().padStart(2, '0') %></a></li>
-                                <% } else { %>
-                                    <li class="page-item"><a class="page-link" href="/admin/offer?page=<%= i %>"><%= i.toString().padStart(2, '0') %></a></li>
-                                <% } %>
-                            <% } %>
-                            <li class="page-item"><a class="page-link dot" href="#">...</a></li>
-                            <li class="page-item"><a class="page-link" href="/admin/offer?page=<%= totalPages %>"><%= totalPages.toString().padStart(2, '0') %></a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="/admin/offer?page=<%= currentPage < totalPages ? currentPage + 1 : 1 %>">
-                                    <i class="material-icons md-chevron_right"></i>
-                                </a>
-                            </li>
+                            <% for (let i=1; i <=totalPages; i++) { %>
+                                <% if (i===currentPage) { %>
+                                    <li class="page-item active"><a class="page-link" href="#">
+                                            <%= i.toString().padStart(2, '0' ) %>
+                                        </a></li>
+                                    <% } else { %>
+                                        <li class="page-item"><a class="page-link" href="/admin/offer?page=<%= i %>">
+                                                <%= i.toString().padStart(2, '0' ) %>
+                                            </a></li>
+                                        <% } %>
+                                            <% } %>
+                                                <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                                                <li class="page-item"><a class="page-link"
+                                                        href="/admin/offer?page=<%= totalPages %>">
+                                                        <%= totalPages.toString().padStart(2, '0' ) %>
+                                                    </a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link"
+                                                        href="/admin/offer?page=<%= currentPage < totalPages ? currentPage + 1 : 1 %>">
+                                                        <i class="material-icons md-chevron_right"></i>
+                                                    </a>
+                                                </li>
                         </ul>
                     </nav>
-                </div>            
-                
-        </section> 
-       
-    <footer class="main-footer font-xs">
-        <div class="row pb-30 pt-15">
-            <div class="col-sm-6">
-                <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                document.write(new Date().getFullYear())
-                </script> ©, BookStore - online book shop .
-            </div>
-            <div class="col-sm-6">
-                <div class="text-sm-end">
-                    All rights reserved
+                </div>
+
+        </section>
+
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script data-cfasync="false"
+                        src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> ©, BookStore - online book shop .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</main>
-<script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
-<script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
-<script src="/admin-assets/js/vendors/select2.min.js"></script>
-<script src="/admin-assets/js/vendors/perfect-scrollbar.js"></script>
-<script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
-<!-- Main Script -->
-<script src="/admin-assets/js/main.js" type="text/javascript"></script>
-<script src="/admin-assets/js/script.js"></script>
+        </footer>
+    </main>
+    <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin-assets/js/vendors/select2.min.js"></script>
+    <script src="/admin-assets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="/admin-assets/js/main.js" type="text/javascript"></script>
+    <script src="/admin-assets/js/script.js"></script>
 
 
     <script>
         function confirmSubmission(index) {
-          Swal.fire({
-            title: 'Are you sure?',
-            text: 'You want to block this customer.',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes !',
-            cancelButtonText: 'Cancel'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              document.getElementById(`myForm_${index}`).submit();
-            }
-          });
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You want to block this customer.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes !',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(`myForm_${index}`).submit();
+                }
+            });
         }
         function confirmSubmission1(index) {
-          Swal.fire({
-            title: 'Are you sure?',
-            text: 'You want to unblock this customer.',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes  !',
-            cancelButtonText: 'Cancel'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              document.getElementById(`myForm_${index}`).submit();
-            }
-          });
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You want to unblock this customer.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes  !',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(`myForm_${index}`).submit();
+                }
+            });
         }
-    
-      </script>
-       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-       <script>
-        function submitForm1(){
-                       const offername = document.getElementById('offerName').value
-                       const percentage = document.getElementById('percentage').value 
-                       const startingDate = document.getElementById('startingDate').value
-                       const offerDate = document.getElementById('offerDate').value
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        function submitForm1() {
+            const offername = document.getElementById('offerName').value
+            const percentage = document.getElementById('percentage').value
+            const startingDate = document.getElementById('startingDate').value
+            const offerDate = document.getElementById('offerDate').value
 
 
-                       fetch('/admin/offer',{
-                           method:'POST',
-                           headers:{
-                               'Content-Type':'application/json'
-                           },
-                           body:JSON.stringify({
-                               
-                               offername:offername,
-                               
-                               percentage:percentage,
-                               startingDate:startingDate,
-                               expiryDate:offerDate,
-                               
-                           })
-                       })
-                       .then(res=>{
-                           if(res.ok){
-                               return res.json()
-                           }
-                       })
-                       .then(data => {
-                           if (data.message == 'Success') {
-                               console.log("success");
-                               window.location.href = '/admin/offer';
-                           }else if(data.message == 'Failed'){
-                               offerNameError.innerText = 'offer Name already exist..!';
-                               offerNameError.style.display = 'block';
-                           }
-                       })
-                       .catch(err=>{
-                           console.log(err.message)
-                       })
-                   }
+            fetch('/admin/offer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+
+                    offername: offername,
+
+                    percentage: percentage,
+                    startingDate: startingDate,
+                    expiryDate: offerDate,
+
+                })
+            })
+                .then(res => {
+                    if (res.ok) {
+                        return res.json()
+                    }
+                })
+                .then(data => {
+                    if (data.message == 'Success') {
+                        console.log("success");
+                        window.location.href = '/admin/offer';
+                    } else if (data.message == 'Failed') {
+                        offerNameError.innerText = 'offer Name already exist..!';
+                        offerNameError.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    console.log(err.message)
+                })
+        }
 
 
 
-       function validateForm1() {
-           let isValid = true;
-   
-           const offerName = document.getElementById('offerName');
-           const offerNameError = document.getElementById('offerNameError');
-           if (offerName.value.trim() === '') {
-               offerNameError.style.display = 'block';
-               isValid = false;
-           } else {
-               offerNameError.style.display = 'none';
-           }
+        function validateForm1() {
+            let isValid = true;
 
-           const startingDate = document.getElementById('startingDate');
-           const startingDateError = document.getElementById('startingDateError');
-           if (startingDate.value.trim() === '') {
-            startingDateError.style.display = 'block';
-               isValid = false;
-           } else {
-            startingDateError.style.display = 'none';
-           }
-   
-           const offerDate = document.getElementById('offerDate');
-           const offerDateError = document.getElementById('offerDateError');
-           if (offerDate.value.trim() === '') {
-               offerDateError.style.display = 'block';
-               isValid = false;
-           } else {
-               offerDateError.style.display = 'none';
-           }
-   
-           const startingDateValue = new Date(startingDate.value);
+            const offerName = document.getElementById('offerName');
+            const offerNameError = document.getElementById('offerNameError');
+            if (offerName.value.trim() === '') {
+                offerNameError.style.display = 'block';
+                isValid = false;
+            } else {
+                offerNameError.style.display = 'none';
+            }
+
+            const startingDate = document.getElementById('startingDate');
+            const startingDateError = document.getElementById('startingDateError');
+            if (startingDate.value.trim() === '') {
+                startingDateError.style.display = 'block';
+                isValid = false;
+            } else {
+                startingDateError.style.display = 'none';
+            }
+
+            const offerDate = document.getElementById('offerDate');
+            const offerDateError = document.getElementById('offerDateError');
+            if (offerDate.value.trim() === '') {
+                offerDateError.style.display = 'block';
+                isValid = false;
+            } else {
+                offerDateError.style.display = 'none';
+            }
+
+            const startingDateValue = new Date(startingDate.value);
             const offerDateValue = new Date(offerDate.value);
 
             // Check if starting date is greater than or equal to offer date
@@ -414,86 +455,86 @@
             }
 
 
-           const percentage = document.getElementById('percentage');
-           const percentageError = document.getElementById('percentageError');
-           if (percentage.value.trim() === '') {
-               percentageError.innerText = ' percentage is required';
-               percentageError.style.display = 'block';
-               isValid = false;
-           } else if (isNaN(percentage.value)) {
-               percentageError.innerText = ' percentage must be a number';
-               percentageError.style.display = 'block';
-               isValid = false;
-           } else if (parseFloat(percentage.value) < 0) {
-               percentageError.innerText = ' percentage cannot be negative';
-               percentageError.style.display = 'block';
-               isValid = false;
-           } else if (parseFloat(percentage.value) < 0 || parseFloat(percentage.value) > 99) {
+            const percentage = document.getElementById('percentage');
+            const percentageError = document.getElementById('percentageError');
+            if (percentage.value.trim() === '') {
+                percentageError.innerText = ' percentage is required';
+                percentageError.style.display = 'block';
+                isValid = false;
+            } else if (isNaN(percentage.value)) {
+                percentageError.innerText = ' percentage must be a number';
+                percentageError.style.display = 'block';
+                isValid = false;
+            } else if (parseFloat(percentage.value) < 0) {
+                percentageError.innerText = ' percentage cannot be negative';
+                percentageError.style.display = 'block';
+                isValid = false;
+            } else if (parseFloat(percentage.value) < 0 || parseFloat(percentage.value) > 99) {
                 percentageError.innerText = 'Percentage must be between 0 and 99';
                 percentageError.style.display = 'block';
                 isValid = false;
-            
+
             } else {
-               percentageError.style.display = 'none';
-           }
-   
-        //    const limit = document.getElementById('limit');
-        //    const limitError = document.getElementById('limitError');
-        //    if (limit.value.trim() === '') {
-        //        limitError.innerText = 'Limit is required';
-        //        limitError.style.display = 'block';
-        //        isValid = false;
-        //    } else if (isNaN(limit.value)) {
-        //        limitError.innerText = 'Limit must be a number';
-        //        limitError.style.display = 'block';
-        //        isValid = false;
-        //    } else if (parseFloat(limit.value) < 0) {
-        //        limitError.innerText = 'Limit cannot be negative';
-        //        limitError.style.display = 'block';
-        //        isValid = false;
-        //    } else {
-        //        limitError.style.display = 'none';
-        //    }
-   
-        //    const minPurchase = document.getElementById('minPurchase');
-        //    const minPurchaseError = document.getElementById('minPurchaseError');
-        //    if (minPurchase.value.trim() === '') {
-        //        minPurchaseError.innerText = 'Minimum Purchase is required';
-        //        minPurchaseError.style.display = 'block';
-        //        isValid = false;
-        //    } else if (isNaN(minPurchase.value)) {
-        //        minPurchaseError.innerText = 'Minimum Purchase must be a number';
-        //        minPurchaseError.style.display = 'block';
-        //        isValid = false;
-        //    } else if (parseFloat(minPurchase.value) < 0) {
-        //        minPurchaseError.innerText = 'Minimum Purchase cannot be negative';
-        //        minPurchaseError.style.display = 'block';
-        //        isValid = false;
-        //    } else if (parseFloat(minPurchase.value) < parseFloat(percentage .value)) {
-        //        minPurchaseError.innerText = 'Minimum Purchase cannot be less than Discound';
-        //        minPurchaseError.style.display = 'block';
-        //        isValid = false;
-        //    } else {
-        //        minPurchaseError.style.display = 'none';
-        //    }
-   
-           if(isValid===true){
-               submitForm1()
-           }else{
-               return false
-           }
-       }
-   </script>
+                percentageError.style.display = 'none';
+            }
+
+            //    const limit = document.getElementById('limit');
+            //    const limitError = document.getElementById('limitError');
+            //    if (limit.value.trim() === '') {
+            //        limitError.innerText = 'Limit is required';
+            //        limitError.style.display = 'block';
+            //        isValid = false;
+            //    } else if (isNaN(limit.value)) {
+            //        limitError.innerText = 'Limit must be a number';
+            //        limitError.style.display = 'block';
+            //        isValid = false;
+            //    } else if (parseFloat(limit.value) < 0) {
+            //        limitError.innerText = 'Limit cannot be negative';
+            //        limitError.style.display = 'block';
+            //        isValid = false;
+            //    } else {
+            //        limitError.style.display = 'none';
+            //    }
+
+            //    const minPurchase = document.getElementById('minPurchase');
+            //    const minPurchaseError = document.getElementById('minPurchaseError');
+            //    if (minPurchase.value.trim() === '') {
+            //        minPurchaseError.innerText = 'Minimum Purchase is required';
+            //        minPurchaseError.style.display = 'block';
+            //        isValid = false;
+            //    } else if (isNaN(minPurchase.value)) {
+            //        minPurchaseError.innerText = 'Minimum Purchase must be a number';
+            //        minPurchaseError.style.display = 'block';
+            //        isValid = false;
+            //    } else if (parseFloat(minPurchase.value) < 0) {
+            //        minPurchaseError.innerText = 'Minimum Purchase cannot be negative';
+            //        minPurchaseError.style.display = 'block';
+            //        isValid = false;
+            //    } else if (parseFloat(minPurchase.value) < parseFloat(percentage .value)) {
+            //        minPurchaseError.innerText = 'Minimum Purchase cannot be less than Discound';
+            //        minPurchaseError.style.display = 'block';
+            //        isValid = false;
+            //    } else {
+            //        minPurchaseError.style.display = 'none';
+            //    }
+
+            if (isValid === true) {
+                submitForm1()
+            } else {
+                return false
+            }
+        }
+    </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const offerButtons = document.querySelectorAll('.offer-btn');
-    
+
             offerButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     const offerId = this.parentNode.querySelector('.offerId').value;
                     const isActivate = this.textContent === 'Activate';
                     const offerStatus = this.parentNode.querySelector('.offerStatus').value;
-    
+
                     Swal.fire({
                         title: isActivate ? 'Activate offer?' : 'Deactivate offer?',
                         text: isActivate ? 'Do you want to activate this offer?' : 'Do you want to deactivate this offer?',
@@ -512,20 +553,20 @@
                                 body: JSON.stringify({ offerId, is_active: offerStatus })
                             }).then(response => {
                                 if (response.ok) {
-                                return Swal.fire(isActivate ? 'Activated!' : 'Deactivated!', `offer has been ${isActivate ? 'activated' : 'deactivated'}.`, 'success');
-                            } else {
-                                return Swal.fire('Error!', `offer is expired...! `, 'error');
-                            }
+                                    return Swal.fire(isActivate ? 'Activated!' : 'Deactivated!', `offer has been ${isActivate ? 'activated' : 'deactivated'}.`, 'success');
+                                } else {
+                                    return Swal.fire('Error!', `offer is expired...! `, 'error');
+                                }
                             })
-                            .then(response => {
-                                if (result.isConfirmed) {
-                                location.reload()
-                                } 
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                Swal.fire('Error!', `Failed to ${isActivate ? 'activate' : 'deactivate'} offer.`, 'error');
-                            });
+                                .then(response => {
+                                    if (result.isConfirmed) {
+                                        location.reload()
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    Swal.fire('Error!', `Failed to ${isActivate ? 'activate' : 'deactivate'} offer.`, 'error');
+                                });
                         }
                     });
                 });
@@ -534,7 +575,7 @@
     </script>
 
 
-</body>
+    </body>
 
 
-</html>
+    </html>

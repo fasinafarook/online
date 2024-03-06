@@ -19,14 +19,14 @@ const wishlistManagement = async (req, res, next) => {
         const userId = req.session.user_id;
         const WishData = await Wishlist.findOne({ userId }).populate({
             path: 'product.productId',
-           populate:[{
-            path:'offer'
-           },{
-            path:'category',
-            populate:{
-              path:'offer'
-            }
-           }]
+            populate: [{
+                path: 'offer'
+            }, {
+                path: 'category',
+                populate: {
+                    path: 'offer'
+                }
+            }]
         });
         if (WishData) {
             WishData.product.forEach(productItem => {
@@ -45,11 +45,11 @@ const wishlistManagement = async (req, res, next) => {
                 }
             });
             res.render("wishlist", { WishData, categories, products, user: userId });
-        }else{
+        } else {
 
-        res.render("wishlist", { WishData, categories, products, user: userId });
+            res.render("wishlist", { WishData, categories, products, user: userId });
         }
-        
+
     } catch (error) {
         console.error("Error in wishlistManagement:", error);
         next(new Error("An error occurred"));
@@ -65,7 +65,7 @@ const wishManagementAddtowish = async (req, res, next) => {
         const id = req.query.id;
         const userId = req.session.user_id;
         const productData = await Product.findById(id);
-        
+
         if (!productData) {
             return res.status(404).send("Product not found");
         }
@@ -136,22 +136,22 @@ const addTowish = async (req, res, next) => {
 // ----------------Remove product from wishlist-----------------
 const deleteWishlistItem = async (req, res, next) => {
     try {
-      const userid = req.session.user_id;
-      const productid = req.query.id;
-      const removeCart = await Wishlist.updateOne(
-        { userId: userid },
-        { $pull: { product: { productId: productid } } }
-      );
-  
-      if (removeCart.modifiedCount > 0) {
-        res.redirect("/wishlist");
-      }
-    } catch (error) {
-      next(new Error("An error occurred"));
-    }
-  };
+        const userid = req.session.user_id;
+        const productid = req.query.id;
+        const removeCart = await Wishlist.updateOne(
+            { userId: userid },
+            { $pull: { product: { productId: productid } } }
+        );
 
-  
+        if (removeCart.modifiedCount > 0) {
+            res.redirect("/wishlist");
+        }
+    } catch (error) {
+        next(new Error("An error occurred"));
+    }
+};
+
+
 
 module.exports = {
 

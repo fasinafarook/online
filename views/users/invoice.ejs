@@ -125,7 +125,7 @@
                     <div class="receipt-header receipt-header-mid">
                         <div class="col-xs-8 col-sm-8 col-md-8 text-left">
                             <div class="receipt-right">
-                            
+
                                 <p><b>customer :</b>
                                     <%= user.name %>
                                 </p>
@@ -145,16 +145,16 @@
                                 </p>
                                 <p><b>Address :</b>
                                     <%= order.address[0].firstName %>,
-                                    <%= order.address[0].lastName %>,
-                                    <%= order.address[0].City %>,
-                                    <%= order.address[0].District %>,
-                                    <%= order.address[0].State %>,
-                                    <%= order.address[0].Pincode %>
+                                        <%= order.address[0].lastName %>,
+                                            <%= order.address[0].City %>,
+                                                <%= order.address[0].District %>,
+                                                    <%= order.address[0].State %>,
+                                                        <%= order.address[0].Pincode %>
 
                                 </p>
-                               
 
-                                
+
+
                             </div>
                         </div>
                     </div>
@@ -190,11 +190,10 @@
                                         <%= orders.quantity %>
                                     </td>
 
-                                    <td class="col-md-9"><i class="fa fa-inr"></i>₹ <%= orders.productId.price 
-                                          %>
+                                    <td class="col-md-9"><i class="fa fa-inr"></i>₹ <%= orders.productId.price %>
                                     </td>
 
-                                  
+
 
                                     <td class="col-md-9">₹ <%= orders.quantity*orders.productId.price %>
                                     </td>

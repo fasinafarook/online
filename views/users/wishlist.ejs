@@ -2,10 +2,11 @@
 
 
     <!-- Quick view -->
-    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">              
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -47,15 +48,15 @@
                                 </div>
                             </div>
                             <!-- End Gallery -->
-                          
+
                         </div>
-              
-                            <!-- Detail Info -->
-                        </div>
+
+                        <!-- Detail Info -->
                     </div>
-                </div>        
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
     </div>
     <header class="header-area header-style-4 header-height-2">
         <div class="header-top header-top-ptb-1 d-none d-lg-block">
@@ -72,7 +73,8 @@
                         <div class="text-center">
                             <div id="news-flash" class="d-inline-block">
                                 <ul>
-                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a></li>
+                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a>
+                                    </li>
                                     <li>Supper Value Deals - Save more with coupons</li>
                                 </ul>
                             </div>
@@ -82,99 +84,105 @@
                         <div class="header-info header-info-right">
                             <ul>
                                 <li>
-                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i
+                                            class="fi-rs-angle-small-down"></i></a>
                                     <ul class="language-dropdown">
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a></li>
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a>
+                                        </li>
                                         <li><a href="#"><img src="assets/imgs/theme/flag-dt.png" alt="">Deutsch</a></li>
                                         <li><a href="#"><img src="assets/imgs/theme/flag-ru.png" alt="">Pусский</a></li>
                                     </ul>
                                 </li>
                                 <li><!-- In your navigation bar or header section -->
-                                    
-                                        <% if (user) { %>
-                                            <!-- If user is logged in, show logout button -->
-                                            <li><a href="/logout">Logout</a></li>
-                                        <% } else { %>
-                                            <!-- If user is not logged in, show login button -->
-                                            <li><a href="/login">Log In / Sign Up</a></li>
-                                        <% } %>
-                                    
-                                    </li>
+
+                                    <% if (user) { %>
+                                        <!-- If user is logged in, show logout button -->
+                                <li><a href="/logout">Logout</a></li>
+                                <% } else { %>
+                                    <!-- If user is not logged in, show login button -->
+                                    <li><a href="/login">Log In / Sign Up</a></li>
+                                    <% } %>
+
+                                        </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header-middle header-middle-ptb-1 d-none d-lg-block"  style="background: white;">
+        <div class="header-middle header-middle-ptb-1 d-none d-lg-block" style="background: white;">
             <div class="container">
-                <div class="container" >
-                <div class="header-wrap">
-                    <div class="logo logo-width-1">
-                        <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
-                        <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
-                    </div>
-                    <div class="header-right">
-                        <div class="search-style-2" >
-                            <form class="d-flex justify-content-between" >
-                                <!-- This input field is initially hidden -->
-                                <input type="text" name="search" class="form-control" id="search_input" placeholder="Search Here" style="display: none;">
-                                <!-- <input type="submit"> -->
-                                <span id="close_search" title="Close Search"></span>
-                            </form>
-                        <div class="header-action-right">
-                            <div class="header-action-2">
-                                <div class="header-action-icon-2">
-                                    <a href="/wishlist">
-                                        <img class="svgInject" alt="Evara" src="assets/imgs/theme/icons/icon-heart.svg">
-                                    </a>
-                                </div>
-                                <div class="header-action-icon-2">
-                                    <a class="mini-cart-icon" href="/cart">
-                                        <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
-                                    </a>
-                         
-                                </div>
-                                <div class="nav-item "><a class="nav-link" href="/account" ><i class="fas fa-user"></i></a></div>
+                <div class="container">
+                    <div class="header-wrap">
+                        <div class="logo logo-width-1">
+                            <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                            <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
+                        </div>
+                        <div class="header-right">
+                            <div class="search-style-2">
+                                <form class="d-flex justify-content-between">
+                                    <!-- This input field is initially hidden -->
+                                    <input type="text" name="search" class="form-control" id="search_input"
+                                        placeholder="Search Here" style="display: none;">
+                                    <!-- <input type="submit"> -->
+                                    <span id="close_search" title="Close Search"></span>
+                                </form>
+                                <div class="header-action-right">
+                                    <div class="header-action-2">
+                                        <div class="header-action-icon-2">
+                                            <a href="/wishlist">
+                                                <img class="svgInject" alt="Evara"
+                                                    src="assets/imgs/theme/icons/icon-heart.svg">
+                                            </a>
+                                        </div>
+                                        <div class="header-action-icon-2">
+                                            <a class="mini-cart-icon" href="/cart">
+                                                <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                            </a>
 
+                                        </div>
+                                        <div class="nav-item "><a class="nav-link" href="/account"><i
+                                                    class="fas fa-user"></i></a></div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
-            <div class="container" >
-                <div class="header-wrap header-space-between position-relative">
-                    <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
-                    </div>
-                    <div class="header-nav d-none d-lg-flex">
-                        
-                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block" style="margin-left: 300px;">
-                            <nav>
-                                <ul>
-                                    <li><a  href="/">Home </a>
-                                    </li>
-                                    <li>
-                                        <a class="active" href="/product">All Books</a>
-                                    </li>
-                                   
-                                    <li><a href="/account">Account</a>
-                                        
-                                    </li>
-                                   
-                                    <li>
-                                        <a href="/payment-policy">Privacy-policy</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
+                    <div class="container">
+                        <div class="header-wrap header-space-between position-relative">
+                            <div class="logo logo-width-1 d-block d-lg-none">
+                                <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                            </div>
+                            <div class="header-nav d-none d-lg-flex">
+
+                                <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block"
+                                    style="margin-left: 300px;">
+                                    <nav>
+                                        <ul>
+                                            <li><a href="/">Home </a>
+                                            </li>
+                                            <li>
+                                                <a class="active" href="/product">All Books</a>
+                                            </li>
+
+                                            <li><a href="/account">Account</a>
+
+                                            </li>
+
+                                            <li>
+                                                <a href="/payment-policy">Privacy-policy</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-              
                 </div>
-            </div>
-        </div>
     </header>
     <div class="mobile-header-active mobile-header-wrapper-style">
         <div class="mobile-header-wrapper-inner">
@@ -197,29 +205,30 @@
                     </form> -->
                 </div>
                 <div class="mobile-menu-wrap mobile-header-border">
-                  
+
                     <!-- mobile menu start -->
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/">Home</a>
-                               
+
                             </li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop-grid-right.html">shop</a>
-                               
-                                    </li>
-                                   
-                                </ul>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="shop-grid-right.html">shop</a>
+
                             </li>
-                           
-                            
-                      
-                           
+
+                        </ul>
+                        </li>
+
+
+
+
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap mobile-header-border">
-                    
+
                     <div class="single-mobile-header-info">
                         <a href="page-login-register.html">Log In / Sign Up </a>
                     </div>
@@ -262,63 +271,69 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% if (WishData && WishData.product && WishData.product.length > 0) { %>
-                                        <% WishData.product.forEach(productItem => { %>
+                                    <% if (WishData && WishData.product && WishData.product.length> 0) { %>
+                                        <% WishData.product.forEach(productItem=> { %>
                                             <tr>
                                                 <td class="image product-thumbnail">
                                                     <a href="/productDetails/<%= productItem.productId._id %>">
-                                                        <img src="/productimages/<%= productItem.productId.image[0] %>" alt="">
+                                                        <img src="/productimages/<%= productItem.productId.image[0] %>"
+                                                            alt="">
                                                     </a>
                                                 </td>
                                                 <td class="product-des product-name">
                                                     <h5 class="product-name">
-                                                        <a href="/productDetails/<%= productItem.productId._id %>"><%= productItem.productId.name %></a>
+                                                        <a href="/productDetails/<%= productItem.productId._id %>">
+                                                            <%= productItem.productId.name %>
+                                                        </a>
                                                     </h5>
-                                                    <p class="font-xs">by <%=productItem.productId.author %></p>
+                                                    <p class="font-xs">by <%=productItem.productId.author %>
+                                                    </p>
                                                 </td>
                                                 <td class="price" data-title="Price">
-                                                    <td class="offer-price" data-title="Offer Price">
-                                                        <% if (productItem.offer && productItem.offer.percentage > 0) { %>
-                                                            <% 
-                                                                var offerPrice = productItem.productId.price * (1 - productItem.offer.percentage / 100); 
-                                                            %>
+                                                <td class="offer-price" data-title="Offer Price">
+                                                    <% if (productItem.offer && productItem.offer.percentage> 0) { %>
+                                                        <% var offerPrice=productItem.productId.price * (1 -
+                                                            productItem.offer.percentage / 100); %>
                                                             <span>₹<%= offerPrice.toFixed(2) %></span>
-                                                        <% } else { %>
-                                                            <p>no offer</p>
-                                                        <% } %>
-                                                    </td>                                                </td>
+                                                            <% } else { %>
+                                                                <p>no offer</p>
+                                                                <% } %>
+                                                </td>
+                                                </td>
                                                 <td>
-                                                    <button class="btn btn-warning removeButton" data-product-id="<%= productItem.productId._id %>">Remove</button>
+                                                    <button class="btn btn-warning removeButton"
+                                                        data-product-id="<%= productItem.productId._id %>">Remove</button>
                                                 </td>
                                                 <td>
                                                     <div class="product-action-1 show">
-                                                        <a aria-label="Add To Cart" class="action-btn hover-up" href="#" onclick="sendToCart('<%= productItem.productId._id %>', event)">
+                                                        <a aria-label="Add To Cart" class="action-btn hover-up" href="#"
+                                                            onclick="sendToCart('<%= productItem.productId._id %>', event)">
                                                             <i class="fi-rs-shopping-bag-add">Add to Cart</i>
                                                         </a>
                                                     </div>
                                                 </td>
                                             </tr>
-                                        <% }) %>
-                                    <% } else { %>
-                                        <tr>
-                                            <td colspan="4" class="text-center">
-                                                <p class="text-muted">Wishlist is empty.</p>
-                                            </td>
-                                        </tr>
-                                    <% } %>
+                                            <% }) %>
+                                                <% } else { %>
+                                                    <tr>
+                                                        <td colspan="4" class="text-center">
+                                                            <p class="text-muted">Wishlist is empty.</p>
+                                                        </td>
+                                                    </tr>
+                                                    <% } %>
                                 </tbody>
-                                
-                                
+
+
                             </table>
                         </div>
-                        
+
                         <div class="cart-action text-end">
                             <a class="btn " href="/"><i class="fi-rs-shopping-bag mr-10"></i> Shopping</a>
                         </div>
                         <div class="divider center_icon mt-50 mb-50"><i class="fi-rs-fingerprint"></i></div>
                         <div class="row mb-50">
-             
-                           
+
+
                         </div>
                     </div>
                 </div>
@@ -336,7 +351,8 @@
                                 <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
                             </div>
                             <div class="col my-4 my-md-0 des">
-                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first shopping.</strong></h5>
+                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first
+                                        shopping.</strong></h5>
                             </div>
                         </div>
                     </div>
@@ -360,14 +376,14 @@
                                 <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
                             </div>
                             <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
-                          
+
                             <p class="wow fadeIn animated">
                                 <strong>Phone: </strong>+01 2222 365 /(+91) 01 2345 6789
                             </p>
                             <p class="wow fadeIn animated">
                                 <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
                             </p>
-                         
+
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3">
@@ -394,13 +410,13 @@
                     </div>
                     <div class="col-lg-4">
                         <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
-                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
-                            </div>
+                        <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -411,11 +427,13 @@
                     <div class="footer-bottom"></div>
                 </div>
                 <div class="col-lg-6">
-                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong class="text-brand">Booktore</strong> - online book shop </p>
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong
+                            class="text-brand">Booktore</strong> - online book shop </p>
                 </div>
                 <div class="col-lg-6">
                     <p class="text-lg-end text-start font-sm text-muted mb-0">
-                        Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights reserved
+                        Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights
+                        reserved
                     </p>
                 </div>
             </div>
@@ -436,131 +454,131 @@
             </div>
         </div>
     </div>
-   
+
 
     <!--==================== SweetAlert CDN============================= -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-     
-<script>
-    function confirmRemove(productId) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'You are about to remove this item!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, remove it!',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                performGetRequest(productId);
-            }
-        });
-    }
 
-    function performGetRequest(productId) {
-        window.location.href = `/deleteWishlistItem?id=${productId}`;
-    }
-    
-    document.addEventListener('click', function (event) {
-        if (event.target.classList.contains('removeButton')) {
-            const productId = event.target.getAttribute('data-product-id');
-            confirmRemove(productId);
-        }
-    });
-</script>
-<script>
-    function sendToCart(parameter, event) {
-        event.preventDefault(); 
-
-        function sendGetRequest(param) {
-            const url = '/addtocart?' + new URLSearchParams({ id: param });
-            
-            fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
+    <script>
+        function confirmRemove(productId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You are about to remove this item!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, remove it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    performGetRequest(productId);
                 }
-            })
-            
-            .then(response =>  response.json()) 
-            .then(data =>{
-                console.log(data)
-                showMessage(data.message)
-            })
-            .catch(error => {
-                console.error('Error sending GET request with parameter:', error);
             });
         }
 
-        sendGetRequest(parameter);
-    }
-    function showMessage(message) {
-        const messageElement = document.createElement('div');
-        messageElement.textContent = message;
-        messageElement.classList.add('added-message');
-        document.body.appendChild(messageElement);
+        function performGetRequest(productId) {
+            window.location.href = `/deleteWishlistItem?id=${productId}`;
+        }
 
-        setTimeout(() => {
-            messageElement.style.display = 'none';
-        }, 2000);
-    }
-</script>
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('removeButton')) {
+                const productId = event.target.getAttribute('data-product-id');
+                confirmRemove(productId);
+            }
+        });
+    </script>
+    <script>
+        function sendToCart(parameter, event) {
+            event.preventDefault();
 
-<script>
-function addToWishlist(parameter, event) {
-event.preventDefault(); 
+            function sendGetRequest(param) {
+                const url = '/addtocart?' + new URLSearchParams({ id: param });
 
-function sendPostRequest(param) {
-    const url = '/addTowish';
-    const data = { productId: param };
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json()) 
-    .then(data => {
-        console.log(data);
-        showMessage(data.message);
-    })
-    .catch(error => {
-        console.error('Error sending POST request:', error);
-    });
-}
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        showMessage(data.message)
+                    })
+                    .catch(error => {
+                        console.error('Error sending GET request with parameter:', error);
+                    });
+            }
 
-sendPostRequest(parameter);
-}
+            sendGetRequest(parameter);
+        }
+        function showMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.classList.add('added-message');
+            document.body.appendChild(messageElement);
 
-function showMessage(message) {
-    const messageElement = document.createElement('div');
-    messageElement.textContent = message;
-    messageElement.classList.add('added-message');
-    document.body.appendChild(messageElement);
+            setTimeout(() => {
+                messageElement.style.display = 'none';
+            }, 2000);
+        }
+    </script>
 
-    setTimeout(() => {
-        messageElement.style.display = 'none';
-    }, 2000);
-}
-</script>
+    <script>
+        function addToWishlist(parameter, event) {
+            event.preventDefault();
+
+            function sendPostRequest(param) {
+                const url = '/addTowish';
+                const data = { productId: param };
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        showMessage(data.message);
+                    })
+                    .catch(error => {
+                        console.error('Error sending POST request:', error);
+                    });
+            }
+
+            sendPostRequest(parameter);
+        }
+
+        function showMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.classList.add('added-message');
+            document.body.appendChild(messageElement);
+
+            setTimeout(() => {
+                messageElement.style.display = 'none';
+            }, 2000);
+        }
+    </script>
 
 
 
-<style>
-    .added-message {
-        position: fixed;
-        top: 50px; 
-        right: 20px; 
-        background-color: #fa6f05;
-        color: white; 
-        padding: 10px;
-        border-radius: 5px;
-        z-index: 9999;
-    }
-</style>
+    <style>
+        .added-message {
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background-color: #fa6f05;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+    </style>
 
     <!--====================end of SweetAlert CDN============================= -->
     <!-- <script>
@@ -638,8 +656,9 @@ function showMessage(message) {
     <!-- Template  JS -->
     <script src="assets/js/maind134.js?v=3.4"></script>
     <script src="assets/js/shopd134.js?v=3.4"></script>
-</body>
+    </body>
 
 
-<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/shop-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
-</html>
+    <!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/shop-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
+
+    </html>

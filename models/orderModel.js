@@ -6,14 +6,14 @@ const addressSchema = mongoose.Schema({
     lastName: { type: String, required: true },
     City: { type: String, required: true },
     District: { type: String, required: true },
-    State: { type: String , required: true},
-    Pincode: { type: Number , required: true}, 
+    State: { type: String, required: true },
+    Pincode: { type: Number, required: true },
 });
 
 const itemSchema = mongoose.Schema({
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'product', required: true },
     quantity: { type: String, required: true },
-    status: { type: String, enum: ['Processing',  'Order Placed', 'Cancelled', 'Delivered', 'Returned'], default: 'Processing' },
+    status: { type: String, enum: ['Processing', 'Order Placed', 'Cancelled', 'Delivered', 'Returned'], default: 'Processing' },
 });
 
 const orderSchema = mongoose.Schema({
@@ -24,10 +24,10 @@ const orderSchema = mongoose.Schema({
     paymentMethod: { type: String, required: true },
     paymentStatus: { type: String, enum: ['Pending', 'Success', 'Failed'], default: 'Pending' },
     orderId: { type: String, required: true },
-    
+
     // Status: { type: String, enum: ['Processing', 'Order Placed', 'Cancelled', 'Delivered', 'Return'], default: 'Processing' },
     currentData: { type: Date, default: () => Date.now() },
-    coupen:{ type: mongoose.Schema.Types.ObjectId, ref: 'Coupon',}
+    coupen: { type: mongoose.Schema.Types.ObjectId, ref: 'Coupon', }
 });
 
 module.exports = mongoose.model('Order', orderSchema);

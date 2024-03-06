@@ -4,10 +4,13 @@
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                    style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
             <div>
-                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
+                </button>
             </div>
         </div>
         <nav>
@@ -53,9 +56,10 @@
                         <!-- <a href="page-seller-detail.html">Seller profile</a> -->
                     </div>
                 </li>
-            
+
                 <li class="menu-item has-submenu">
-                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                    <a class="menu-link" href="page-transactions-1.html"> <i
+                            class="icon material-icons md-monetization_on"></i>
                         <span class="text">Coupen</span>
                     </a>
                     <div class="submenu">
@@ -69,7 +73,7 @@
                     </a>
                     <div class="submenu">
                         <a href="/admin/offer">Offer Management</a>
-                       
+
                     </div>
                 </li>
                 <li class="menu-item">
@@ -80,12 +84,12 @@
             </ul>
             <hr>
             <ul class="menu-aside">
-                
-            <li class="menu-item">
-                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
-                    <span class="text"> Logout </span>
-                </a>
-            </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                        <span class="text"> Logout </span>
+                    </a>
+                </li>
             </ul>
             <br>
             <br>
@@ -107,63 +111,69 @@
                 </form> -->
             </div>
             <div class="col-nav">
-                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
                     </li>
                 </ul>
             </div>
         </header>
         <div class="modal fade" id="discountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <% if (offer && offer.length> 0) { %>
-                <% for (offer of offer) { %>
-                    <div class="modal-content rounded bg-light border-white mb-3">
-                        <div data-offerid="<%= offer._id %>" style="cursor: pointer;"
-                            class="modal-body text-center">
-                           
-                            <div class="notice">
-                                <h4 class="text-white">
-                                    <%= offer.offername %>
-                                </h4>
-                                <div class="icon text-info">
-                                    <i style="font-size: 20px;" class="fas fa-gift"></i>
-                                </div>
-                                <h5 class="text-danger">
-                                    <%= offer.percentage %>% Discount
-                                </h5>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <% if (offer && offer.length> 0) { %>
+                    <% for (offer of offer) { %>
+                        <div class="modal-content rounded bg-light border-white mb-3">
+                            <div data-offerid="<%= offer._id %>" style="cursor: pointer;"
+                                class="modal-body text-center">
 
-                                <p class="offer-validity text-dark">
-                                    <span>Valid from</span>
-                                    <%= moment(offer.startingDate).format('DD/MM/YYYY') %> <span> to</span>
-                                        <%= moment(offer.expiryDate).format('DD/MM/YYYY') %>
-                                </p>
+                                <div class="notice">
+                                    <h4 class="text-white">
+                                        <%= offer.offername %>
+                                    </h4>
+                                    <div class="icon text-info">
+                                        <i style="font-size: 20px;" class="fas fa-gift"></i>
+                                    </div>
+                                    <h5 class="text-danger">
+                                        <%= offer.percentage %>% Discount
+                                    </h5>
+                                    <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+                                    <p class="offer-validity text-dark">
+                                        <span>Valid from</span>
+                                        <%= moment(offer.startingDate).format('DD/MM/YYYY') %> <span> to</span>
+                                            <%= moment(offer.expiryDate).format('DD/MM/YYYY') %>
+                                    </p>
+                                </div>
+                                <div class="code"></div>
                             </div>
-                            <div class="code"></div>
                         </div>
-                    </div>
-                    <% } %>
                         <% } %>
+                            <% } %>
+            </div>
         </div>
-    </div>
         <section class="content-main">
             <div class="content-header">
                 <h2 class="content-title">product list</h2>
-                
+
                 <div>
-                    <a href="/admin/addproducts" class="btn btn-primary"><i class="material-icons md-plus"></i> Add product</a>
+                    <a href="/admin/addproducts" class="btn btn-primary"><i class="material-icons md-plus"></i> Add
+                        product</a>
                 </div>
             </div>
-            
+
             <div class="card mb-4">
                 <header class="card-header">
                     <div class="row gx-3">
@@ -184,188 +194,215 @@
                             <header class="card-header">
                                 <div class="row gx-3">
                                     <div class="col-lg-2 col-md-3 col-6">
-                                <ul>
-                                    <li class="main-nav-list">
-                                        <a href="/admin/products"><span class="lnr lnr-arrow-right"></span>All Books</a>
-                                    </li>
-                                    <% if(categories.length > 0) { %>
-                                        <% for(let i=0; i<categories.length; i++) { %>
+                                        <ul>
                                             <li class="main-nav-list">
-                                                <a href="/admin/products?id=<%= encodeURIComponent(categories[i]._id) %>&sortdata=<%= sortdata || '' %><% if (product && product.length > 0) { %>&search=<%= encodeURIComponent(search) %><% } %>">
-                                                    <span class="lnr lnr-arrow-right"></span><%= categories[i].name %>
-                                                </a>
+                                                <a href="/admin/products"><span class="lnr lnr-arrow-right"></span>All
+                                                    Books</a>
                                             </li>
-                                    <% } %>
-                                    <% } %>
-                                  
-                                </ul>
-                            </div>
-                        </div>
-                    
-                </header> <!-- card-header end// -->
-                <div class="card-body">
-                    
-                    <div class="table-responsive">
-                        
-                       
-                        <table class="table table-hover">
-                            
-                             <input type="hidden" id="searchParam" name="search" value="<%= search %>">
-
-                             <br><br>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Product</th>
-                                    <th>Category</th>
-                                    <th>Offer</th>
-                                    <th>Price</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                    <th>Edit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% if(product.length > 0) {
-                                    for(let i=0; i<product.length; i++) { %>
-                                        <tr>
-                                            <td><%= product[i].name %></td>
-                                            <% if (product[i].image) { %>
-                                                <td>
-                                                    <img src="/productimages/<%= product[i].image[0] %>" 
-                                                        alt="<%= product[i].image[0] %>" 
-                                                        class="img-thumbnail" 
-                                                        width="100px" height="100px">
-                                                </td>
-                                            <% } else { %>
-                                                <td>No Image</td>
-                                            <% } %>
-                                            <td><%= product[i].category.name  %></td>
-                                            <td>
-                                                <% if ( product[i].offer ){%>
-
-                                                    <button onclick="removeOffer('<%= product[i]._id %>')" class="btn btn-sm btn-outline-warning rounded font-sm">
-                                                        Remove offer
-                                                    </button>
-                                                    <p>
-                                                        <%= product[i].offer.offername %>( <%=
-                                                        product[i].offer.percentage %>% )
-                                                    </p>
-                                                    <% } else {%>
-                                                        <button class="btn btn-sm btn-outline-primary rounded
-                                                     font-sm" onclick="showModal('<%= product[i]._id %>')">
-                                                            Apply offer
-                                                        </button>
-                                                        <p>No offers</p>
-                                                        <% }%>
-                                            </td>
-                                            <td><%= product[i].price %></td>
-                                            <td>
-                                                <% if(product[i].is_product == 0) { %>
-                                                    <span class="badge rounded-pill alert-danger">Inactive</span>
-                                                <% } else { %>
-                                                    <span class="badge rounded-pill alert-success">Active</span>
-                                                <% } %>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <% if (product[i].is_product == 0) { %>
-                                                        <button type="button" onclick="toggleProductStatus('<%= product[i]._id, %> ','unblock')" class="badge badge-sm alert-success toggleButton" data-product-id="<%= product[i]._id %>">
-                                                            Unblock
-                                                        </button>
-                                                    <% } else { %>
-                                                        <button type="button" onclick="toggleProductStatus('<%= product[i]._id %>', 'block')" class="badge badge-sm alert-danger toggleButton" data-product-id="<%= product[i]._id %>">
-                                                            Block
-                                                        </button>
+                                            <% if(categories.length> 0) { %>
+                                                <% for(let i=0; i<categories.length; i++) { %>
+                                                    <li class="main-nav-list">
+                                                        <a
+                                                            href="/admin/products?id=<%= encodeURIComponent(categories[i]._id) %>&sortdata=<%= sortdata || '' %><% if (product && product.length > 0) { %>&search=<%= encodeURIComponent(search) %><% } %>">
+                                                            <span class="lnr lnr-arrow-right"></span>
+                                                            <%= categories[i].name %>
+                                                        </a>
+                                                    </li>
                                                     <% } %>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="/admin/edit-product?id=<%= product[i]._id %>" class="badge alert-success">Edit</a>
-                                            </td>
-                                        </tr>
-                                    <% }
-                                } else { %>
-                                    <tr>
-                                        <td colspan="7">Products Not Found</td>
-                                    </tr>
-                                <% } %>
-                            </tbody>
-                        </table>
-                    </div>
-                
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-                
-                    <script>
-                            document.querySelectorAll('.toggleButton').forEach(button => {
-                                button.addEventListener('click', function() {
-                                    const productId = this.dataset.productId;
-                                    toggleProductStatus(productId, this.textContent.trim().toLowerCase());
-                                });
-                            });
+                                                        <% } %>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </header> <!-- card-header end// -->
+                            <div class="card-body">
+
+                                <div class="table-responsive">
 
 
-                
-                        async function toggleProductStatus(productId, action) {
-                           
-                
-                            const confirmation = await Swal.fire({
-                                title: 'Confirmation',
-                                text: `Are you sure you want to ${action === 'block' ? 'block' : 'unblock'} the product?`,
-                                icon: 'question',
-                                showCancelButton: true,
-                                confirmButtonText: 'OK',
-                                cancelButtonText: 'Cancel',
-                            });
-                
-                            if (confirmation.isConfirmed) {
-                                const response = await fetch(`/admin/products/toggleProductStatus/${productId}`, { method: 'POST' });
-                                const result = await response.json();
-                
-                                if (result) {
-                                    const button = document.querySelector(`.toggleButton[data-product-id="${productId}"][data-action="${action}"]`);
-                                    window.location.reload();
-                                      button.innerText = result.is_product === 1 ? 'Unblock' : 'Block';
-                                    
-                                } else {
-                                    Swal.fire('Error', result.message || 'Failed to toggle product status.', 'error');
-                                }
-                            }
-                        }
-                    </script>
-                </div>
-                
-                <div class="pagination-area mt-30 mb-50">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-start">
-                            <% if (currentPage > 1) { %>
-                                <li class="page-item">
-                                    <a class="page-link" href="/admin/products?page=<%= currentPage - 1 %>"><i class="material-icons md-chevron_left"></i></a>
-                                </li>
-                            <% } %>
-                
-                            <% for (let i = 1; i <= totalPages; i++) { %>
-                                <li class="page-item <%= i === currentPage ? 'active' : '' %>">
-                                    <a class="page-link" href="/admin/products?page=<%= i %>"><%= i %></a>
-                                </li>
-                            <% } %>
-                
-                            <% if (currentPage < totalPages) { %>
-                                <li class="page-item">
-                                    <a class="page-link" href="/admin/products?page=<%= currentPage + 1 %>"><i class="material-icons md-chevron_right"></i></a>
-                                </li>
-                            <% } %>
-                        </ul>
-                    </nav>
-                </div>
-                
-            
+                                    <table class="table table-hover">
+
+                                        <input type="hidden" id="searchParam" name="search" value="<%= search %>">
+
+                                        <br><br>
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Product</th>
+                                                <th>Category</th>
+                                                <th>Offer</th>
+                                                <th>Price</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                                <th>Edit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% if(product.length> 0) {
+                                                for(let i=0; i<product.length; i++) { %>
+                                                    <tr>
+                                                        <td>
+                                                            <%= product[i].name %>
+                                                        </td>
+                                                        <% if (product[i].image) { %>
+                                                            <td>
+                                                                <img src="/productimages/<%= product[i].image[0] %>"
+                                                                    alt="<%= product[i].image[0] %>"
+                                                                    class="img-thumbnail" width="100px" height="100px">
+                                                            </td>
+                                                            <% } else { %>
+                                                                <td>No Image</td>
+                                                                <% } %>
+                                                                    <td>
+                                                                        <%= product[i].category.name %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <% if ( product[i].offer ){%>
+
+                                                                            <button
+                                                                                onclick="removeOffer('<%= product[i]._id %>')"
+                                                                                class="btn btn-sm btn-outline-warning rounded font-sm">
+                                                                                Remove offer
+                                                                            </button>
+                                                                            <p>
+                                                                                <%= product[i].offer.offername %>( <%=
+                                                                                        product[i].offer.percentage %>%
+                                                                                        )
+                                                                            </p>
+                                                                            <% } else {%>
+                                                                                <button class="btn btn-sm btn-outline-primary rounded
+                                                     font-sm" onclick="showModal('<%= product[i]._id %>')">
+                                                                                    Apply offer
+                                                                                </button>
+                                                                                <p>No offers</p>
+                                                                                <% }%>
+                                                                    </td>
+                                                                    <td>
+                                                                        <%= product[i].price %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <% if(product[i].is_product==0) { %>
+                                                                            <span
+                                                                                class="badge rounded-pill alert-danger">Inactive</span>
+                                                                            <% } else { %>
+                                                                                <span
+                                                                                    class="badge rounded-pill alert-success">Active</span>
+                                                                                <% } %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <% if (product[i].is_product==0) { %>
+                                                                                <button type="button"
+                                                                                    onclick="toggleProductStatus('<%= product[i]._id, %> ','unblock')"
+                                                                                    class="badge badge-sm alert-success toggleButton"
+                                                                                    data-product-id="<%= product[i]._id %>">
+                                                                                    Unblock
+                                                                                </button>
+                                                                                <% } else { %>
+                                                                                    <button type="button"
+                                                                                        onclick="toggleProductStatus('<%= product[i]._id %>', 'block')"
+                                                                                        class="badge badge-sm alert-danger toggleButton"
+                                                                                        data-product-id="<%= product[i]._id %>">
+                                                                                        Block
+                                                                                    </button>
+                                                                                    <% } %>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="/admin/edit-product?id=<%= product[i]._id %>"
+                                                                            class="badge alert-success">Edit</a>
+                                                                    </td>
+                                                    </tr>
+                                                    <% } } else { %>
+                                                        <tr>
+                                                            <td colspan="7">Products Not Found</td>
+                                                        </tr>
+                                                        <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+                                <script>
+                                    document.querySelectorAll('.toggleButton').forEach(button => {
+                                        button.addEventListener('click', function () {
+                                            const productId = this.dataset.productId;
+                                            toggleProductStatus(productId, this.textContent.trim().toLowerCase());
+                                        });
+                                    });
+
+
+
+                                    async function toggleProductStatus(productId, action) {
+
+
+                                        const confirmation = await Swal.fire({
+                                            title: 'Confirmation',
+                                            text: `Are you sure you want to ${action === 'block' ? 'block' : 'unblock'} the product?`,
+                                            icon: 'question',
+                                            showCancelButton: true,
+                                            confirmButtonText: 'OK',
+                                            cancelButtonText: 'Cancel',
+                                        });
+
+                                        if (confirmation.isConfirmed) {
+                                            const response = await fetch(`/admin/products/toggleProductStatus/${productId}`, { method: 'POST' });
+                                            const result = await response.json();
+
+                                            if (result) {
+                                                const button = document.querySelector(`.toggleButton[data-product-id="${productId}"][data-action="${action}"]`);
+                                                window.location.reload();
+                                                button.innerText = result.is_product === 1 ? 'Unblock' : 'Block';
+
+                                            } else {
+                                                Swal.fire('Error', result.message || 'Failed to toggle product status.', 'error');
+                                            }
+                                        }
+                                    }
+                                </script>
+                            </div>
+
+                            <div class="pagination-area mt-30 mb-50">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-start">
+                                        <% if (currentPage> 1) { %>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                    href="/admin/products?page=<%= currentPage - 1 %>"><i
+                                                        class="material-icons md-chevron_left"></i></a>
+                                            </li>
+                                            <% } %>
+
+                                                <% for (let i=1; i <=totalPages; i++) { %>
+                                                    <li class="page-item <%= i === currentPage ? 'active' : '' %>">
+                                                        <a class="page-link" href="/admin/products?page=<%= i %>">
+                                                            <%= i %>
+                                                        </a>
+                                                    </li>
+                                                    <% } %>
+
+                                                        <% if (currentPage < totalPages) { %>
+                                                            <li class="page-item">
+                                                                <a class="page-link"
+                                                                    href="/admin/products?page=<%= currentPage + 1 %>"><i
+                                                                        class="material-icons md-chevron_right"></i></a>
+                                                            </li>
+                                                            <% } %>
+                                    </ul>
+                                </nav>
+                            </div>
+
+
         </section> <!-- content-main end// -->
         <footer class="main-footer font-xs">
             <div class="row pb-30 pt-15">
                 <div class="col-sm-6">
-                    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                    document.write(new Date().getFullYear())
+                    <script data-cfasync="false"
+                        src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <script>
+                        document.write(new Date().getFullYear())
                     </script> ©, BookStore - online book shop .
                 </div>
                 <div class="col-sm-6">
@@ -377,27 +414,27 @@
         </footer>
     </main>
     <script>
-        function showModal(productId ) {
-            console.log(productId );
+        function showModal(productId) {
+            console.log(productId);
             $('#discountModal').modal('show');
             const offerElements = document.querySelectorAll('.modal-body.text-center');
             offerElements.forEach((element) => {
                 element.onclick = function () {
                     const offerId = this.getAttribute('data-offerid');
-                    console.log('offer:',offerId);
-                    enterOffer(offerId, productId );
+                    console.log('offer:', offerId);
+                    enterOffer(offerId, productId);
                 };
             });
         }
 
 
-      
+
     </script>
     <script>
-        async function enterOffer(offerId, productId ) {
+        async function enterOffer(offerId, productId) {
             $('#discountModal').modal('hide');
             try {
-                const response = await axios.post('/admin/applyProductOffer', { offerId, productId  });
+                const response = await axios.post('/admin/applyProductOffer', { offerId, productId });
                 if (response.data.success) {
                     Swal.fire({
                         title: 'Offer applied',
@@ -421,9 +458,9 @@
         }
     </script>
     <script>
-        async function removeOffer(productId ) {
+        async function removeOffer(productId) {
             try {
-                const response = await axios.post('/admin/removeProductOffer', { productId  });
+                const response = await axios.post('/admin/removeProductOffer', { productId });
                 if (response.data.success) {
                     Swal.fire({
                         title: 'Offer removed',
@@ -446,64 +483,64 @@
             }
         }
     </script>
-   <script>
-    function sortProduct(event, data) {
-        event.preventDefault();
-        const currentUrl = window.location.href;
-        const baseUrl = currentUrl.split('?')[0]; 
-        const updatedUrl = `${baseUrl}?sortdata=${data}`;
-        window.location.href = updatedUrl;
-    }
-</script>
-<script>
-function handleCategoryClick(clickedElement) {
-const categoryId = clickedElement.dataset.categoryId;
-const currentUrl = window.location.href;
-const baseUrl = currentUrl.split('?')[0]; 
+    <script>
+        function sortProduct(event, data) {
+            event.preventDefault();
+            const currentUrl = window.location.href;
+            const baseUrl = currentUrl.split('?')[0];
+            const updatedUrl = `${baseUrl}?sortdata=${data}`;
+            window.location.href = updatedUrl;
+        }
+    </script>
+    <script>
+        function handleCategoryClick(clickedElement) {
+            const categoryId = clickedElement.dataset.categoryId;
+            const currentUrl = window.location.href;
+            const baseUrl = currentUrl.split('?')[0];
 
-const sortCriteria = new URLSearchParams(window.location.search).get('sortdata');
-let updatedUrl = baseUrl;
-
-
-updatedUrl += `?id=${categoryId}?sortdata=${data}`;
+            const sortCriteria = new URLSearchParams(window.location.search).get('sortdata');
+            let updatedUrl = baseUrl;
 
 
-window.location.href = updatedUrl;
-}
+            updatedUrl += `?id=${categoryId}?sortdata=${data}`;
 
-</script>
-<script>
-    function filterBooks(priceRange) {
-        let min = '';
-        let max = '';
-        if (priceRange === '') {
-        } else if (priceRange === '1-300') {
-            min = '1';
-            max = '300';
-        } else if (priceRange === '301-600') {
-            min = '301';
-            max = '600';
-        } else if (priceRange === '601-900') {
-            min = '601';
-            max = '900';
-        }else if(priceRange === '901-1500'){
-            min = '901';
-            max = '1500';
+
+            window.location.href = updatedUrl;
         }
 
-        const categoryId = '<%= categoryId %>'; 
-        const search = document.getElementById('searchParam').value;
+    </script>
+    <script>
+        function filterBooks(priceRange) {
+            let min = '';
+            let max = '';
+            if (priceRange === '') {
+            } else if (priceRange === '1-300') {
+                min = '1';
+                max = '300';
+            } else if (priceRange === '301-600') {
+                min = '301';
+                max = '600';
+            } else if (priceRange === '601-900') {
+                min = '601';
+                max = '900';
+            } else if (priceRange === '901-1500') {
+                min = '901';
+                max = '1500';
+            }
 
-        const sortCriteria = new URLSearchParams(window.location.search).get('sortdata');
-        let url = `/product?id=${categoryId}&search=${search}&min=${min}&max=${max}`;
+            const categoryId = '<%= categoryId %>';
+            const search = document.getElementById('searchParam').value;
 
-        if (sortCriteria) {
-            url += `&sortdata=${sortCriteria}`;
+            const sortCriteria = new URLSearchParams(window.location.search).get('sortdata');
+            let url = `/product?id=${categoryId}&search=${search}&min=${min}&max=${max}`;
+
+            if (sortCriteria) {
+                url += `&sortdata=${sortCriteria}`;
+            }
+
+            window.location.href = url;
         }
-
-        window.location.href = url;
-    }
-</script>
+    </script>
     <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
     <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
     <script src="/admin-assets/js/vendors/select2.min.js"></script>

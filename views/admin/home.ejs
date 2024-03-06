@@ -1,22 +1,22 @@
-
-
-
 <%- include('../layouts/header.ejs') -%>
-<style>
-    .full-width {
-        width: 100%;
-        height: 100%; 
-    }
-</style>   
+    <style>
+        .full-width {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
     <div class="screen-overlay"></div>
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                    style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
             <div>
-                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
+                </button>
             </div>
         </div>
         <nav>
@@ -63,7 +63,8 @@
                     </div>
                 </li>
                 <li class="menu-item has-submenu">
-                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                    <a class="menu-link" href="page-transactions-1.html"> <i
+                            class="icon material-icons md-monetization_on"></i>
                         <span class="text">Coupen</span>
                     </a>
                     <div class="submenu">
@@ -77,7 +78,7 @@
                     </a>
                     <div class="submenu">
                         <a href="/admin/offer">Offer Management</a>
-                       
+
                     </div>
                 </li>
                 <li class="menu-item">
@@ -85,16 +86,16 @@
                         <span class="text">Banner</span>
                     </a>
                 </li>
-               
+
             </ul>
             <hr>
             <ul class="menu-aside">
-               
-            <li class="menu-item">
-                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
-                    <span class="text"> Logout </span>
-                </a>
-            </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                        <span class="text"> Logout </span>
+                    </a>
+                </li>
             </ul>
             <br>
             <br>
@@ -103,121 +104,133 @@
     <main class="main-wrap">
         <header class="main-header navbar">
             <div class="col-search">
-                
+
             </div>
             <div class="col-nav">
-                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
                 <ul class="nav">
-                   
+
                     <li class="nav-item">
-                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
                     </li>
 
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
-                     
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+
                     </li>
                 </ul>
             </div>
         </header>
-            <section class="content-main">
-                <div class="content-header">
-                    <div>
-                        <h2 class="content-title card-title">Dashboard </h2>
-                    </div>
-                    <div>
-                        <a href="/admin/report" class="btn btn-primary"><i class="text-muted material-icons md-post_add"></i>Generate report</a>
-                    </div>
+        <section class="content-main">
+            <div class="content-header">
+                <div>
+                    <h2 class="content-title card-title">Dashboard </h2>
                 </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="card card-body mb-4">
-                            <article class="icontext">
-                                <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-monetization_on"></i></span>
-                                <div class="text">
-                                    <h6 class="mb-1 card-title">Revenue</h6>
-                                    <span>₹<%=revenue%></span>
-                                    <span class="text-sm">
-                                        Based on Delivered product only
-                                    </span>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card card-body mb-4">
-                            <article class="icontext">
-                                <span class="icon icon-sm rounded-circle bg-success-light">
-                                    <i class="text-success material-icons md-local_shipping"></i>
+                <div>
+                    <a href="/admin/report" class="btn btn-primary"><i
+                            class="text-muted material-icons md-post_add"></i>Generate report</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card card-body mb-4">
+                        <article class="icontext">
+                            <span class="icon icon-sm rounded-circle bg-primary-light"><i
+                                    class="text-primary material-icons md-monetization_on"></i></span>
+                            <div class="text">
+                                <h6 class="mb-1 card-title">Revenue</h6>
+                                <span>₹<%=revenue%></span>
+                                <span class="text-sm">
+                                    Based on Delivered product only
                                 </span>
-                                <div class="text">
-                                    <span class="font-weight-bold"><%= orderCount %></span>
-                                    <span class="text-sm">all orders</span>
-                                    <p>including delivered,returned,<br>processing,cancelled</p>
-                                </div>
-                               
-                            </article>
-                           
-
-                            
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="col-lg-3">
-                        <div class="card card-body mb-4">
-                            <article class="icontext">
-                                <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-qr_code"></i></span>
-                                <div class="text">
-                                    <h6 class="mb-1 card-title">Products</h6> <span><%=productCount%></span>
-                                    <span class="text-sm">
-                                        in <%=categoryCount%>  categories
-                                    </span>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card card-body mb-4">
-                            <article class="icontext">
-                                <span class="icon icon-sm rounded-circle bg-info-light"><i class="text-info material-icons md-shopping_basket"></i></span>
-                                <div class="text">
-                                    <h6 class="mb-1 card-title">Monthly Earning</h6> <span>₹<%=monthlyrevenue%></span>
-                                    <span class="text-sm">
-                                        Based in your local time.
-                                    </span>
-                                </div>
-                            </article>
-                        </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
-                <div class="row full-width">
-                    <div class="col-xl-8 col-lg-12 full-width">
-                        
-                        <div class="card mb-4 full-width">
-                            
-                            
-                           
-                            <article class="card-body full-width">
-                                <h5 class="card-title">Sale statistics</h5>
-                                <div>
-                                    <button id="yearlyButton">Yearly</button>
-                                    <button id="monthlyButton">Monthly</button>
-                                </div>
-                                <canvas id="myChart" width="800" height="400" 
-                                        data-yearly-order-counts="<%= JSON.stringify(arrayforYearlyOrder) %>" 
-                                        data-monthly-order-counts="<%= JSON.stringify(arrayforMonthlyOrder) %>"> 
-                                </canvas>
-                            </article>
+                <div class="col-lg-3">
+                    <div class="card card-body mb-4">
+                        <article class="icontext">
+                            <span class="icon icon-sm rounded-circle bg-success-light">
+                                <i class="text-success material-icons md-local_shipping"></i>
+                            </span>
+                            <div class="text">
+                                <span class="font-weight-bold">
+                                    <%= orderCount %>
+                                </span>
+                                <span class="text-sm">all orders</span>
+                                <p>including delivered,returned,<br>processing,cancelled</p>
                             </div>
 
-                        </div>
-                      
-                       
-                    <!-- <div class="row full-width">
+                        </article>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="card card-body mb-4">
+                        <article class="icontext">
+                            <span class="icon icon-sm rounded-circle bg-warning-light"><i
+                                    class="text-warning material-icons md-qr_code"></i></span>
+                            <div class="text">
+                                <h6 class="mb-1 card-title">Products</h6> <span>
+                                    <%=productCount%>
+                                </span>
+                                <span class="text-sm">
+                                    in <%=categoryCount%> categories
+                                </span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card card-body mb-4">
+                        <article class="icontext">
+                            <span class="icon icon-sm rounded-circle bg-info-light"><i
+                                    class="text-info material-icons md-shopping_basket"></i></span>
+                            <div class="text">
+                                <h6 class="mb-1 card-title">Monthly Earning</h6> <span>₹<%=monthlyrevenue%></span>
+                                <span class="text-sm">
+                                    Based in your local time.
+                                </span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="row full-width">
+                <div class="col-xl-8 col-lg-12 full-width">
+
+                    <div class="card mb-4 full-width">
+
+
+
+                        <article class="card-body full-width">
+                            <h5 class="card-title">Sale statistics</h5>
+                            <div>
+                                <button id="yearlyButton">Yearly</button>
+                                <button id="monthlyButton">Monthly</button>
+                            </div>
+                            <canvas id="myChart" width="800" height="400"
+                                data-yearly-order-counts="<%= JSON.stringify(arrayforYearlyOrder) %>"
+                                data-monthly-order-counts="<%= JSON.stringify(arrayforMonthlyOrder) %>">
+                            </canvas>
+                        </article>
+                    </div>
+
+                </div>
+
+
+                <!-- <div class="row full-width">
                         <div class="col-xl-8 col-lg-12 full-width">
                             <div class="card mb-4 full-width">
                                 <article class="card-body full-width">
@@ -228,77 +241,77 @@
                         </div>
                     </div> -->
 
-                         
-                    </div>
-                   
-                    <div class="card mb-4 full-width">
-                        <article class="card-body full-width">
-                            <h5 class="card-title">Sale statistics</h5>
-                            <div style="display: flex; justify-content: center;">
-                                <canvas id="myPieChart" style="width: 50%;"></canvas>
-                            </div>
-                        </article>
-                    </div>                    
-                    <div style="width: 50%;">
-                        <canvas id="myPieChart"></canvas>
-                      </div>
 
-                     
-                    <div class="card mb-4 full-width">
-                        <article class="card-body full-width">
-                            <h5 class="card-title">Top Selling Products</h5>
-                            <div style="display: flex; justify-content: center;">
-                                <canvas id="topSellingProductsChart" style="width: 50%;"></canvas>
-                            </div>
-                        </article>
-                    </div>   
+            </div>
 
-                    <div class="card mb-4 full-width">
-                        <article class="card-body full-width">
-                            <h5 class="card-title">Top Selling Categories</h5>
-                            <div style="display: flex; justify-content: center;">
-                                <canvas id="topSellingCategoriesChart" style="width: 50%;"></canvas>
-                            </div>
-                        </article>
-                    </div>   
+            <div class="card mb-4 full-width">
+                <article class="card-body full-width">
+                    <h5 class="card-title">Sale statistics</h5>
+                    <div style="display: flex; justify-content: center;">
+                        <canvas id="myPieChart" style="width: 50%;"></canvas>
+                    </div>
+                </article>
+            </div>
+            <div style="width: 50%;">
+                <canvas id="myPieChart"></canvas>
+            </div>
 
-                    <div class="card mb-4 full-width">
-                        <article class="card-body full-width">
-                            <h5 class="card-title">Top Selling Brands</h5>
-                            <div style="display: flex; justify-content: center;">
-                                <canvas id="topSellingBrandsChart" style="width: 50%;"></canvas>
-                            </div>
-                        </article>
-                    </div>   
-            </section> 
-            <footer class="main-footer font-xs">
-                <div class="row pb-30 pt-15">
-                    <div class="col-sm-6">
-                        <script>
-                        document.write(new Date().getFullYear())
-                        </script> ©, 999 bookstore .
+
+            <div class="card mb-4 full-width">
+                <article class="card-body full-width">
+                    <h5 class="card-title">Top Selling Products</h5>
+                    <div style="display: flex; justify-content: center;">
+                        <canvas id="topSellingProductsChart" style="width: 50%;"></canvas>
                     </div>
-                    <div class="col-sm-6">
-                        
+                </article>
+            </div>
+
+            <div class="card mb-4 full-width">
+                <article class="card-body full-width">
+                    <h5 class="card-title">Top Selling Categories</h5>
+                    <div style="display: flex; justify-content: center;">
+                        <canvas id="topSellingCategoriesChart" style="width: 50%;"></canvas>
                     </div>
-                </div>
-            </footer>
-        </main>
-       
+                </article>
+            </div>
+
+            <div class="card mb-4 full-width">
+                <article class="card-body full-width">
+                    <h5 class="card-title">Top Selling Brands</h5>
+                    <div style="display: flex; justify-content: center;">
+                        <canvas id="topSellingBrandsChart" style="width: 50%;"></canvas>
+                    </div>
+                </article>
+            </div>
+        </section>
         <footer class="main-footer font-xs">
             <div class="row pb-30 pt-15">
                 <div class="col-sm-6">
                     <script>
-                    document.write(new Date().getFullYear())
-                    </script> ©, BookStore - online book shop .
+                        document.write(new Date().getFullYear())
+                    </script> ©, 999 bookstore .
                 </div>
                 <div class="col-sm-6">
-                    <div class="text-sm-end">
-                        All rights reserved
-                    </div>
+
                 </div>
             </div>
         </footer>
+    </main>
+
+    <footer class="main-footer font-xs">
+        <div class="row pb-30 pt-15">
+            <div class="col-sm-6">
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> ©, BookStore - online book shop .
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-end">
+                    All rights reserved
+                </div>
+            </div>
+        </div>
+    </footer>
     </main>
     <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
     <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
@@ -313,120 +326,120 @@
     <script src="path/to/your/js/file.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        const arrayforStatus =JSON.parse(`<%=arrayforStatus%>`)
+        const arrayforStatus = JSON.parse(`<%=arrayforStatus%>`)
         const data = {
-          labels: ['Processing', 'Cancelled', 'Delivered','Return','Order Placed'],
-          datasets: [{
-            label: 'My First Dataset',
-            data: arrayforStatus,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)', 
-              'rgba(165, 42, 42, 0.8)'
-            ],
-          }]
+            labels: ['Processing', 'Cancelled', 'Delivered', 'Return', 'Order Placed'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: arrayforStatus,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(165, 42, 42, 0.8)'
+                ],
+            }]
         };
-    
+
         var ctx = document.getElementById('myPieChart').getContext('2d');
         var myPieChart = new Chart(ctx, {
-          type: 'pie',
-          data: data,
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-          },
-        });
-      </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', async function () {
-        const topSellingCategories = JSON.parse('<%- topSellingCategories %>');
-
-        const labels = topSellingCategories.map(product => product.categoryName);
-        const quantities = topSellingCategories.map(product => product.totalQuantity);
-
-        const ctx = document.getElementById('topSellingCategoriesChart').getContext('2d');
-        const topSellingCategoriesChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Total Quantity Sold',
-                    data: quantities,
-                    backgroundColor: 'rgba(54, 162, 235, 0.8)', // Blue color for bars
-                    borderColor: 'rgba(54, 162, 235, 1)', // Border color for bars
-                    borderWidth: 1
-                }]
-            },
+            type: 'pie',
+            data: data,
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-               
-            }
-        });
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', async function () {
-        const topSellingProductsData = JSON.parse('<%- topSellingProducts %>');
-
-        const labels = topSellingProductsData.map(product => product.productName);
-        const quantities = topSellingProductsData.map(product => product.totalQuantity);
-
-        const ctx = document.getElementById('topSellingProductsChart').getContext('2d');
-        const topSellingProductsChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Total Quantity Sold',
-                    data: quantities,
-                    backgroundColor: 'rgba(54, 162, 235, 0.8)', // Blue color for bars
-                    borderColor: 'rgba(54, 162, 235, 1)', // Border color for bars
-                    borderWidth: 1
-                }]
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                
-            }
         });
-    });
-</script>
+    </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', async function () {
-        const topSellingBrands = JSON.parse('<%- topSellingBrands %>');
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const topSellingCategories = JSON.parse('<%- topSellingCategories %>');
 
-        const labels = topSellingBrands.map(product => product._id);
-        const quantities = topSellingBrands.map(product => product.totalQuantity);
+            const labels = topSellingCategories.map(product => product.categoryName);
+            const quantities = topSellingCategories.map(product => product.totalQuantity);
 
-        const ctx = document.getElementById('topSellingBrandsChart').getContext('2d');
-        const topSellingBrandsChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Total Quantity Sold',
-                    data: quantities,
-                    backgroundColor: 'rgba(54, 162, 235, 0.8)', // Blue color for bars
-                    borderColor: 'rgba(54, 162, 235, 1)', // Border color for bars
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-               
-            }
+            const ctx = document.getElementById('topSellingCategoriesChart').getContext('2d');
+            const topSellingCategoriesChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Quantity Sold',
+                        data: quantities,
+                        backgroundColor: 'rgba(54, 162, 235, 0.8)', // Blue color for bars
+                        borderColor: 'rgba(54, 162, 235, 1)', // Border color for bars
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                }
+            });
         });
-    });
-</script>
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const topSellingProductsData = JSON.parse('<%- topSellingProducts %>');
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            const labels = topSellingProductsData.map(product => product.productName);
+            const quantities = topSellingProductsData.map(product => product.totalQuantity);
+
+            const ctx = document.getElementById('topSellingProductsChart').getContext('2d');
+            const topSellingProductsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Quantity Sold',
+                        data: quantities,
+                        backgroundColor: 'rgba(54, 162, 235, 0.8)', // Blue color for bars
+                        borderColor: 'rgba(54, 162, 235, 1)', // Border color for bars
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const topSellingBrands = JSON.parse('<%- topSellingBrands %>');
+
+            const labels = topSellingBrands.map(product => product._id);
+            const quantities = topSellingBrands.map(product => product.totalQuantity);
+
+            const ctx = document.getElementById('topSellingBrandsChart').getContext('2d');
+            const topSellingBrandsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Quantity Sold',
+                        data: quantities,
+                        backgroundColor: 'rgba(54, 162, 235, 0.8)', // Blue color for bars
+                        borderColor: 'rgba(54, 162, 235, 1)', // Border color for bars
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                }
+            });
+        });
+    </script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -471,20 +484,19 @@
     }
 </script> -->
 
-<style>
-    /* CSS styling for the frontend */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
+    <style>
+        /* CSS styling for the frontend */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.chart-container {
-    margin-bottom: 20px;
-}
+        .chart-container {
+            margin-bottom: 20px;
+        }
 
-.filter-options button {
-    margin-right: 10px;
-}
-
-</style>
+        .filter-options button {
+            margin-right: 10px;
+        }
+    </style>
     <%- include('../layouts/footer.ejs') -%>

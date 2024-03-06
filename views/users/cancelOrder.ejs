@@ -2,10 +2,11 @@
 
 
     <!-- Quick view -->
-    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">              
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -47,15 +48,15 @@
                                 </div>
                             </div>
                             <!-- End Gallery -->
-                          
+
                         </div>
-              
-                            <!-- Detail Info -->
-                        </div>
+
+                        <!-- Detail Info -->
                     </div>
-                </div>        
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
     </div>
     <header class="header-area header-style-4 header-height-2">
         <div class="header-top header-top-ptb-1 d-none d-lg-block">
@@ -72,7 +73,8 @@
                         <div class="text-center">
                             <div id="news-flash" class="d-inline-block">
                                 <ul>
-                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a></li>
+                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a>
+                                    </li>
                                     <li>Supper Value Deals - Save more with coupons</li>
                                 </ul>
                             </div>
@@ -82,99 +84,105 @@
                         <div class="header-info header-info-right">
                             <ul>
                                 <li>
-                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i
+                                            class="fi-rs-angle-small-down"></i></a>
                                     <ul class="language-dropdown">
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a></li>
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a>
+                                        </li>
                                         <li><a href="#"><img src="assets/imgs/theme/flag-dt.png" alt="">Deutsch</a></li>
                                         <li><a href="#"><img src="assets/imgs/theme/flag-ru.png" alt="">Pусский</a></li>
                                     </ul>
                                 </li>
                                 <li><!-- In your navigation bar or header section -->
-                                    
-                                        <% if (user) { %>
-                                            <!-- If user is logged in, show logout button -->
-                                            <li><a href="/logout">Logout</a></li>
-                                        <% } else { %>
-                                            <!-- If user is not logged in, show login button -->
-                                            <li><a href="/login">Log In / Sign Up</a></li>
-                                        <% } %>
-                                    
-                                    </li>
+
+                                    <% if (user) { %>
+                                        <!-- If user is logged in, show logout button -->
+                                <li><a href="/logout">Logout</a></li>
+                                <% } else { %>
+                                    <!-- If user is not logged in, show login button -->
+                                    <li><a href="/login">Log In / Sign Up</a></li>
+                                    <% } %>
+
+                                        </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header-middle header-middle-ptb-1 d-none d-lg-block"  style="background: white;">
+        <div class="header-middle header-middle-ptb-1 d-none d-lg-block" style="background: white;">
             <div class="container">
-                <div class="container" >
-                <div class="header-wrap">
-                    <div class="logo logo-width-1">
-                        <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
-                        <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
-                    </div>
-                    <div class="header-right">
-                        <div class="search-style-2" >
-                            <form class="d-flex justify-content-between" >
-                                <!-- This input field is initially hidden -->
-                                <input type="text" name="search" class="form-control" id="search_input" placeholder="Search Here" style="display: none;">
-                                <!-- <input type="submit"> -->
-                                <span id="close_search" title="Close Search"></span>
-                            </form>
-                        <div class="header-action-right">
-                            <div class="header-action-2">
-                                <div class="header-action-icon-2">
-                                    <a href="/wishlist">
-                                        <img class="svgInject" alt="Evara" src="assets/imgs/theme/icons/icon-heart.svg">
-                                    </a>
-                                </div>
-                                <div class="header-action-icon-2">
-                                    <a class="mini-cart-icon" href="/cart">
-                                        <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
-                                    </a>
-                         
-                                </div>
-                                <div class="nav-item "><a class="nav-link" href="/account" ><i class="fas fa-user"></i></a></div>
+                <div class="container">
+                    <div class="header-wrap">
+                        <div class="logo logo-width-1">
+                            <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                            <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
+                        </div>
+                        <div class="header-right">
+                            <div class="search-style-2">
+                                <form class="d-flex justify-content-between">
+                                    <!-- This input field is initially hidden -->
+                                    <input type="text" name="search" class="form-control" id="search_input"
+                                        placeholder="Search Here" style="display: none;">
+                                    <!-- <input type="submit"> -->
+                                    <span id="close_search" title="Close Search"></span>
+                                </form>
+                                <div class="header-action-right">
+                                    <div class="header-action-2">
+                                        <div class="header-action-icon-2">
+                                            <a href="/wishlist">
+                                                <img class="svgInject" alt="Evara"
+                                                    src="assets/imgs/theme/icons/icon-heart.svg">
+                                            </a>
+                                        </div>
+                                        <div class="header-action-icon-2">
+                                            <a class="mini-cart-icon" href="/cart">
+                                                <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                            </a>
 
+                                        </div>
+                                        <div class="nav-item "><a class="nav-link" href="/account"><i
+                                                    class="fas fa-user"></i></a></div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
-            <div class="container" >
-                <div class="header-wrap header-space-between position-relative">
-                    <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
-                    </div>
-                    <div class="header-nav d-none d-lg-flex">
-                        
-                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block" style="margin-left: 300px;">
-                            <nav>
-                                <ul>
-                                    <li><a  href="/">Home </a>
-                                    </li>
-                                    <li>
-                                        <a  href="/product">All Books</a>
-                                    </li>
-                                    
-                                   
-                                    <li><a class="active" href="/account">Account</a>
-                                        
-                                    
-                                    <li>
-                                        <a href="/payment-policy">Privacy-policy</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
+                    <div class="container">
+                        <div class="header-wrap header-space-between position-relative">
+                            <div class="logo logo-width-1 d-block d-lg-none">
+                                <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                            </div>
+                            <div class="header-nav d-none d-lg-flex">
+
+                                <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block"
+                                    style="margin-left: 300px;">
+                                    <nav>
+                                        <ul>
+                                            <li><a href="/">Home </a>
+                                            </li>
+                                            <li>
+                                                <a href="/product">All Books</a>
+                                            </li>
+
+
+                                            <li><a class="active" href="/account">Account</a>
+
+
+                                            <li>
+                                                <a href="/payment-policy">Privacy-policy</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-              
                 </div>
-            </div>
-        </div>
     </header>
     <div class="mobile-header-active mobile-header-wrapper-style">
         <div class="mobile-header-wrapper-inner">
@@ -197,29 +205,30 @@
                     </form> -->
                 </div>
                 <div class="mobile-menu-wrap mobile-header-border">
-                    
+
                     <!-- mobile menu start -->
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/">Home</a>
-                               
+
                             </li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop-grid-right.html">shop</a>
-                               
-                                    </li>
-                                   
-                                </ul>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="shop-grid-right.html">shop</a>
+
                             </li>
-                           
-                            
-                      
-                           
+
+                        </ul>
+                        </li>
+
+
+
+
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap mobile-header-border">
-                    
+
                     <div class="single-mobile-header-info">
                         <a href="page-login-register.html">Log In / Sign Up </a>
                     </div>
@@ -238,257 +247,321 @@
             </div>
         </div>
     </div>
-<main class="main">
-    <div class="page-header breadcrumb-wrap">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html" rel="nofollow">Home</a>
-                <span></span> Account
-                <span></span> Order
+    <main class="main">
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html" rel="nofollow">Home</a>
+                    <span></span> Account
+                    <span></span> Order
+                </div>
             </div>
         </div>
-    </div>                                  
-      <% const productItem = orderData.items.find(item => item.productId.toString() === productData._id.toString()); %>
+        <% const productItem=orderData.items.find(item=> item.productId.toString() === productData._id.toString()); %>
 
-    <section class="pt-150 pb-150">
-        
-        <div class="container">
-            <a href="/invoice?orderId=<%= orderData._id %>" class="btn btn-success"  target="_blank">Download Invoice</a>
+            <section class="pt-150 pb-150">
 
-            <div class="row" id="invoice">
-                <div class="col-lg-10 m-auto">
-                    <div class="row">
+                <div class="container">
+                    <a href="/invoice?orderId=<%= orderData._id %>" class="btn btn-success" target="_blank">Download
+                        Invoice</a>
+
+                    <div class="row" id="invoice">
                         <div class="col-lg-10 m-auto">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="heading_s1">
-                                        <h3 class="mb-30 text-center">Order Info</h3>
+                            <div class="row">
+                                <div class="col-lg-10 m-auto">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="heading_s1">
+                                                <h3 class="mb-30 text-center">Order Info</h3>
+                                            </div>
+                                            <% if(orderData){ %>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item"><span>Order number</span>: #<%=
+                                                            orderData.orderId %>
+                                                    </li>
+                                                    <li class="list-group-item"><span>Date</span> : <%= new
+                                                            Date(orderData.currentData).toLocaleString() %>
+                                                    </li>
+                                                    <!-- <li class="list-group-item"><span>Total</span> : ₹ <%= orderData.totalAmount %>.00</li> -->
+                                                    <li class="list-group-item"><span>Payment method</span> : <%=
+                                                            orderData.paymentMethod %>
+                                                    </li>
+                                                </ul>
+                                                <% } else { %>
+                                                    <% } %>
+                                                        <br><br>
+                                                        <div class="details_item">
+                                                            <h4>Shipping Address</h4>
+                                                            <ul class="list-group">
+                                                                <li class="list-group-item"><span>City</span> : <%=
+                                                                        orderData.address[0].City %>
+                                                                </li>
+                                                                <li class="list-group-item"><span>District</span> : <%=
+                                                                        orderData.address[0].District %>
+                                                                </li>
+                                                                <li class="list-group-item"><span>State</span> : <%=
+                                                                        orderData.address[0].State %>
+                                                                </li>
+                                                                <li class="list-group-item"><span>Postcode </span> : <%=
+                                                                        orderData.address[0].Pincode %>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                        </div>
                                     </div>
-                                    <% if(orderData){ %>
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><span>Order number</span>: #<%= orderData.orderId %></li>
-                                        <li class="list-group-item"><span>Date</span> : <%= new Date(orderData.currentData).toLocaleString() %></li>
-                                        <!-- <li class="list-group-item"><span>Total</span> : ₹ <%= orderData.totalAmount %>.00</li> -->
-                                        <li class="list-group-item"><span>Payment method</span> : <%= orderData.paymentMethod %></li>
-                                    </ul>
-                                    <% } else { %>
-                                    <% } %>
-                                    <br><br>
-                                    <div class="details_item">
-                                        <h4>Shipping Address</h4>
-                                        <ul class="list-group" >
-                                            <li class="list-group-item"><span>City</span> : <%= orderData.address[0].City %></li>
-                                            <li class="list-group-item"><span>District</span> : <%= orderData.address[0].District %></li>
-                                            <li class="list-group-item"><span>State</span> :  <%= orderData.address[0].State %></li>
-                                            <li class="list-group-item"><span>Postcode </span> :  <%= orderData.address[0].Pincode %></li>
-                                        </ul>
+                                </div>
+                            </div>
+
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h2 class="mb-4">Order Details</h2>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Product</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Offer</th>
+                                                    <th scope="col">Final Price</th>
+                                                    <th scope="col">Quantity</th>
+                                                    <th scope="col">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% if (productItem) { %>
+                                                    <tr>
+                                                        <td>
+                                                            <a class="itemside" href="#">
+                                                                <div class="left">
+                                                                    <img src="/productimages/<%= productData.image[0] %>"
+                                                                        class="img-xs" alt="Item">
+                                                                </div>
+                                                                <div class="info">
+                                                                    <%= productData.name %>
+                                                                </div>
+                                                            </a>
+                                                        </td>
+                                                        <td> ₹<%= productData.price %>.00 </td>
+                                                        <td>
+                                                            <% if (productData.offer) { %>
+                                                                <%= productData.offer.percentage %>%
+                                                                    <% } else { %>
+                                                                        0%
+                                                                        <% } %>
+                                                        </td>
+                                                        <td> ₹<%= offerPrice ? offerPrice : productData.price %>.00
+                                                        </td>
+                                                        <td>
+                                                            <%= productItem.quantity %>
+                                                        </td>
+                                                        <td class="text-end" id="fullTotal"> <span id="totalSum">₹<%=
+                                                                    offerPrice ? offerPrice * productItem.quantity :
+                                                                    productData.price * productItem.quantity %>.00
+                                                            </span></td>
+                                                    </tr>
+                                                    <% } %>
+
+                                                        <% if (productItem && orderData.paymentStatus !=="Failed" ) { %>
+                                                            <tr>
+                                                                <td colspan="6" class="text-center">
+
+                                                                    <% if (productItem.status !=='Cancelled' &&
+                                                                        productItem.status !=='Delivered' &&
+                                                                        productItem.status !=='Returned' ) { %>
+                                                                        <button
+                                                                            onclick="confirmCancellation('<%= orderData._id %>', '<%= productItem.productId %>')"
+                                                                            class="btn btn-danger">Cancel</button>
+                                                                        <% } else if(productItem.status==='Delivered' )
+                                                                            { %>
+                                                                            <span class="text-success">Delivered</span>
+                                                                            <button
+                                                                                onclick="confirmReturn('<%= orderData._id %>','<%= productItem.productId %>')"
+                                                                                class="btn btn-success">Return</button>
+                                                                            <% } else
+                                                                                if(productItem.status==='Cancelled' ) {
+                                                                                %>
+                                                                                <span
+                                                                                    class="text-danger">Cancelled</span>
+                                                                                <% } else
+                                                                                    if(productItem.status==='Returned' )
+                                                                                    { %>
+                                                                                    <span
+                                                                                        class="text-success">Returned</span>
+                                                                                    <% } %>
+
+                                                                </td>
+                                                            </tr>
+
+                                                            <% } else {%>
+                                                                <tr>
+                                                                    <td colspan="6" class="text-center">
+
+                                                                        <% if (productItem.status !=='Cancelled' &&
+                                                                            productItem.status !=='Delivered' &&
+                                                                            productItem.status !=='Returned' ) { %>
+                                                                            <button
+                                                                                onclick="confirmCancellation('<%= orderData._id %>', '<%= productItem.productId %>')"
+                                                                                class="btn btn-danger">Cancel</button>
+                                                                            <% } else
+                                                                                if(productItem.status==='Cancelled' ) {
+                                                                                %>
+                                                                                <span
+                                                                                    class="text-danger">Cancelled</span>
+                                                                                <% } %>
+
+
+                                                                    </td>
+
+                                                                </tr>
+                                                                <td>
+                                                                    <p>Payment Failed</p>
+                                                                    <div class="payment_method">
+                                                                        <div class="mb-25">
+                                                                            <h5>Payment</h5>
+                                                                        </div>
+                                                                        <div class="payment_option">
+                                                                            <div class="custome-radio payment_item ">
+                                                                                <div class="radion_btn">
+                                                                                    <input class="form-check-input"
+                                                                                        type="radio" id="f-option5"
+                                                                                        name="pay" value="wallet"
+                                                                                        checked>
+                                                                                    <label class="form-check-label"
+                                                                                        for="f-option5">Wallet</label>
+                                                                                    <div class="check"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="custome-radio payment_item active">
+                                                                                <div class="radion_btn">
+                                                                                    <input class="form-check-input"
+                                                                                        type="radio" id="f-option6"
+                                                                                        name="pay"
+                                                                                        value="Cash on delevery">
+                                                                                    <label class="form-check-label"
+                                                                                        for="f-option6">Cash on
+                                                                                        delivery</label>
+                                                                                    <div class="check"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="custome-radio payment_item active">
+                                                                                <div class="radion_btn">
+                                                                                    <input class="form-check-input"
+                                                                                        type="radio" id="f-option7"
+                                                                                        name="pay" value="paypal">
+                                                                                    <label class="form-check-label"
+                                                                                        for="f-option7">online</label>
+                                                                                    <div class="check"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <button id="proceedToPayButton" class="btn">
+                                                                        <% if (productItem) { %>
+                                                                            <a class="btn primary-btn text-decoration-none"
+                                                                                href="#" id="proceedToPaypal">Proceed to
+                                                                                Pay</a>
+
+                                                                            <% } else { %>
+                                                                                <button class="btn primary-btn disabled"
+                                                                                    disabled>Proceed to Pay</button>
+                                                                                <% } %>
+                                                                    </button>
+
+
+                                                                </td>
+
+                                                                <% } %>
+
+                                            </tbody>
+                                        </table>
+
+
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
-                    <div class="card mt-4">
-                        <div class="card-body">
-                            <h2 class="mb-4">Order Details</h2>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Product</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Offer</th>
-                                            <th scope="col">Final Price</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <% if (productItem) { %>
-                                        <tr>
-                                            <td>
-                                                <a class="itemside" href="#">
-                                                    <div class="left">
-                                                        <img src="/productimages/<%= productData.image[0] %>" class="img-xs" alt="Item">
-                                                    </div>
-                                                    <div class="info"> <%= productData.name %> </div>
-                                                </a>
-                                            </td>
-                                            <td> ₹<%= productData.price %>.00 </td>
-                                            <td>
-                                                <% if (productData.offer) { %>
-                                                    <%= productData.offer.percentage %>%
-                                                <% } else { %>
-                                                    0%
-                                                <% } %>     
-                                            </td>
-                                            <td> ₹<%= offerPrice ? offerPrice : productData.price %>.00 </td>
-                                            <td> <%= productItem.quantity %></td>
-                                            <td class="text-end" id="fullTotal"> <span id="totalSum">₹<%= offerPrice ? offerPrice * productItem.quantity : productData.price * productItem.quantity %>.00 </span></td>
-                                        </tr>
-                                        <% } %>
-    
-                                        <% if (productItem && orderData.paymentStatus !== "Failed") { %>
-                                            <tr>
-                                                <td colspan="6" class="text-center">
-                                                   
-                                                    <% if (productItem.status !== 'Cancelled' && productItem.status !== 'Delivered' && productItem.status !== 'Returned') { %>
-                                                        <button onclick="confirmCancellation('<%= orderData._id %>', '<%= productItem.productId %>')" class="btn btn-danger">Cancel</button>
-                                                    <% } else if(productItem.status === 'Delivered') { %>
-                                                        <span class="text-success">Delivered</span>
-                                                        <button onclick="confirmReturn('<%= orderData._id %>','<%= productItem.productId %>')" class="btn btn-success">Return</button>
-                                                    <% } else if(productItem.status === 'Cancelled') { %>
-                                                        <span class="text-danger">Cancelled</span>
-                                                    <% } else if(productItem.status === 'Returned') { %>
-                                                        <span class="text-success">Returned</span>
-                                                    <% } %>
+                    <button class="btn btn-warning">
+                        <a href="/account" style="text-decoration: none; color: white;">Back</a>
+                    </button>
+                </div>
+            </section>
 
-                                                </td>
-                                            </tr>
-
-                                            <% } else {%>
-                                                <tr>
-                                                    <td colspan="6" class="text-center">
-                                                       
-                                                        <% if (productItem.status !== 'Cancelled' && productItem.status !== 'Delivered' && productItem.status !== 'Returned') { %>
-                                                            <button onclick="confirmCancellation('<%= orderData._id %>', '<%= productItem.productId %>')" class="btn btn-danger">Cancel</button>
-                                                            <% } else if(productItem.status === 'Cancelled') { %>
-                                                                <span class="text-danger">Cancelled</span><% } %>
-
-
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <td><p>Payment Failed</p>
-                                                    <div class="payment_method">
-                                                        <div class="mb-25">
-                                                            <h5>Payment</h5>
-                                                        </div>
-                                                        <div class="payment_option">
-                                                    <div class="custome-radio payment_item ">
-                                                        <div class="radion_btn">
-                                                            <input class="form-check-input" type="radio" id="f-option5" name="pay" value="wallet" checked>
-                                                            <label class="form-check-label" for="f-option5">Wallet</label>
-                                                            <div class="check"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="custome-radio payment_item active">
-                                                        <div class="radion_btn">
-                                                            <input class="form-check-input" type="radio" id="f-option6" name="pay" value="Cash on delevery">
-                                                            <label class="form-check-label" for="f-option6">Cash on delivery</label>
-                                                            <div class="check"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="custome-radio payment_item active">
-                                                        <div class="radion_btn">
-                                                            <input class="form-check-input" type="radio" id="f-option7" name="pay" value="paypal">
-                                                            <label class="form-check-label" for="f-option7">online</label>
-                                                            <div class="check"></div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                    </div>
-                                                    <button id="proceedToPayButton" class="btn">
-                                                        <% if (productItem) { %>
-                                                            <a class="btn primary-btn text-decoration-none" href="#" id="proceedToPaypal">Proceed to Pay</a>
-                                                      
-                                                            <% } else { %>
-                                                                <button class="btn primary-btn disabled" disabled>Proceed to Pay</button>
-                                                            <% } %>
-                                                    </button>
-                                                    
-                                                    
-                                                </td>
-
-                                        <% } %>
-                                        
-                                    </tbody>
-                                </table>
-
-
-
-
+    </main>
+    <footer class="main">
+        <section class="newsletter p-30 text-white wow fadeIn animated">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-md-3 mb-lg-0">
+                        <div class="row align-items-center">
+                            <div class="col flex-horizontal-center">
+                                <img class="icon-email" src="assets/imgs/theme/icons/icon-email.svg" alt="">
+                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
+                            </div>
+                            <div class="col my-4 my-md-0 des">
+                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first
+                                        shopping.</strong></h5>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <button class="btn btn-warning">
-                <a href="/account" style="text-decoration: none; color: white;">Back</a>
-            </button>
-        </div>
-    </section>
-    
-</main>
-<footer class="main">
-    <section class="newsletter p-30 text-white wow fadeIn animated">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-md-3 mb-lg-0">
-                    <div class="row align-items-center">
-                        <div class="col flex-horizontal-center">
-                            <img class="icon-email" src="assets/imgs/theme/icons/icon-email.svg" alt="">
-                            <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
-                        </div>
-                        <div class="col my-4 my-md-0 des">
-                            <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first shopping.</strong></h5>
-                        </div>
+                    <div class="col-lg-5">
+                        <!-- Subscribe Form -->
+                        <form class="form-subcriber d-flex wow fadeIn animated">
+                            <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
+                            <button class="btn bg-dark text-white" type="submit">Subscribe</button>
+                        </form>
+                        <!-- End Subscribe Form -->
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <!-- Subscribe Form -->
-                    <form class="form-subcriber d-flex wow fadeIn animated">
-                        <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
-                        <button class="btn bg-dark text-white" type="submit">Subscribe</button>
-                    </form>
-                    <!-- End Subscribe Form -->
-                </div>
             </div>
-        </div>
-    </section>
-    <section class="section-padding footer-mid" style="background-color: white;">
-        <div class="container pt-15 pb-20">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="widget-about font-md mb-md-5 mb-lg-0">
-                        <div class="logo logo-width-1 wow fadeIn animated">
-                            <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+        </section>
+        <section class="section-padding footer-mid" style="background-color: white;">
+            <div class="container pt-15 pb-20">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-about font-md mb-md-5 mb-lg-0">
+                            <div class="logo logo-width-1 wow fadeIn animated">
+                                <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                            </div>
+                            <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
+
+                            <p class="wow fadeIn animated">
+                                <strong>Phone: </strong>+01 2222 365 /(+91) 01 2345 6789
+                            </p>
+                            <p class="wow fadeIn animated">
+                                <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
+                            </p>
+
                         </div>
-                        <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
-                      
-                        <p class="wow fadeIn animated">
-                            <strong>Phone: </strong>+01 2222 365 /(+91) 01 2345 6789
-                        </p>
-                        <p class="wow fadeIn animated">
-                            <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
-                        </p>
-                     
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3">
-                    <h5 class="widget-title wow fadeIn animated">About</h5>
-                    <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Support Center</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-3">
-                    <h5 class="widget-title wow fadeIn animated">My Account</h5>
-                    <ul class="footer-list wow fadeIn animated">
-                        <li><a href="#">Sign In</a></li>
-                        <li><a href="#">View Cart</a></li>
-                        <li><a href="#">My Wishlist</a></li>
-                        <li><a href="#">Track My Order</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Order</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
+                    <div class="col-lg-2 col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">About</h5>
+                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Support Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-3">
+                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
+                        <ul class="footer-list wow fadeIn animated">
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">View Cart</a></li>
+                            <li><a href="#">My Wishlist</a></li>
+                            <li><a href="#">Track My Order</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Order</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
                         <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
                             <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
                             <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
@@ -496,59 +569,61 @@
                             <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
                             <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container pb-20 wow fadeIn animated">
+            <div class="row">
+                <div class="col-12 mb-20">
+                    <div class="footer-bottom"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong
+                            class="text-brand">Booktore</strong> - online book shop </p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-lg-end text-start font-sm text-muted mb-0">
+                        Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights
+                        reserved
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
-    <div class="container pb-20 wow fadeIn animated">
-        <div class="row">
-            <div class="col-12 mb-20">
-                <div class="footer-bottom"></div>
-            </div>
-            <div class="col-lg-6">
-                <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong class="text-brand">Booktore</strong> - online book shop </p>
-            </div>
-            <div class="col-lg-6">
-                <p class="text-lg-end text-start font-sm text-muted mb-0">
-                    Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights reserved
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Preloader Start -->
-<div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-            <div class="text-center">
-                <h5 class="mb-5">Now Loading</h5>
-                <div class="loader">
-                    <div class="bar bar1"></div>
-                    <div class="bar bar2"></div>
-                    <div class="bar bar3"></div>
+    </footer>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- html2pdf library -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script> -->
-</script>   
-<script>
-    const radioButtons = document.querySelectorAll('input[type="radio"][name="payment"]');
-    radioButtons.forEach(radioButton => {
-        radioButton.addEventListener('change', (event) => {
-            if (event.target.checked) {
-                radioButtons.forEach(rb => {
-                    if (rb !== event.target) {
-                        rb.checked = false;
-                    }
-                });
-            }
+    <!-- html2pdf library -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script> -->
+    </script>
+    <script>
+        const radioButtons = document.querySelectorAll('input[type="radio"][name="payment"]');
+        radioButtons.forEach(radioButton => {
+            radioButton.addEventListener('change', (event) => {
+                if (event.target.checked) {
+                    radioButtons.forEach(rb => {
+                        if (rb !== event.target) {
+                            rb.checked = false;
+                        }
+                    });
+                }
+            });
         });
-    });
-</script>                                  
-<!-- <script>
+    </script>
+    <!-- <script>
     document.addEventListener('DOMContentLoaded', () => {
         const forms = document.querySelectorAll('[id^="addressForm"]');
         forms.forEach(form => {
@@ -560,317 +635,317 @@
         });
     });
 </script>   -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-<script>
-    document.getElementById('proceedToPayButton').addEventListener('click', function(event) {
-        // const selectedAddressIndex = document.querySelector('input[name="adress"]:checked');
-        // console.log("In ejs",selectedAddressIndex);
-        // if (!selectedAddressIndex) {
-        //     Swal.fire({
-        //         title: 'No Address Selected',
-        //         text: 'Please select an address to proceed.',
-        //         icon: 'warning',
-        //         confirmButtonText: 'OK'
-        //     });
-        //     return;
-        // }
+    <script>
+        document.getElementById('proceedToPayButton').addEventListener('click', function (event) {
+            // const selectedAddressIndex = document.querySelector('input[name="adress"]:checked');
+            // console.log("In ejs",selectedAddressIndex);
+            // if (!selectedAddressIndex) {
+            //     Swal.fire({
+            //         title: 'No Address Selected',
+            //         text: 'Please select an address to proceed.',
+            //         icon: 'warning',
+            //         confirmButtonText: 'OK'
+            //     });
+            //     return;
+            // }
 
-        // const userId = document.getElementById(`userId${selectedAddressIndex.value}`).value;
-        const paymentMethod = document.querySelector('input[name="pay"]:checked').value;
-        const totalAmount = document.getElementById('totalSum');
-        // const totalAmount = parseFloat(totalSumElement.textContent);
-        Swal.fire({
-            title: 'Are you sure you want to proceed?',
-            text: `Total amount: ₹${totalAmount}. Payment method: ${paymentMethod}`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Proceed',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                console.log("In razor");
-                let rzp1;
-            function initiatePayment(orderId, paymentStatus) {             
-                let order = JSON.stringify(orderId);
-                console.log(order);
-                var options = {
-                    "key": "rzp_test_r3vMR559p6z5tE",
-                    "amount": Math.ceil(order.amount),
-                    "currency": "INR",
-                    "name": "Companion Bags",
-                    "description": "Test Transaction",
-                    "order_id": orderId.id,
-                    "handler": function (response) {
-                        console.log("Finall");
-                        afterPaymentSuccess();
-                    },
-                    "theme": {
-                        "color": "#3399cc"
+            // const userId = document.getElementById(`userId${selectedAddressIndex.value}`).value;
+            const paymentMethod = document.querySelector('input[name="pay"]:checked').value;
+            const totalAmount = document.getElementById('totalSum');
+            // const totalAmount = parseFloat(totalSumElement.textContent);
+            Swal.fire({
+                title: 'Are you sure you want to proceed?',
+                text: `Total amount: ₹${totalAmount}. Payment method: ${paymentMethod}`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Proceed',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    console.log("In razor");
+                    let rzp1;
+                    function initiatePayment(orderId, paymentStatus) {
+                        let order = JSON.stringify(orderId);
+                        console.log(order);
+                        var options = {
+                            "key": "rzp_test_r3vMR559p6z5tE",
+                            "amount": Math.ceil(order.amount),
+                            "currency": "INR",
+                            "name": "Companion Bags",
+                            "description": "Test Transaction",
+                            "order_id": orderId.id,
+                            "handler": function (response) {
+                                console.log("Finall");
+                                afterPaymentSuccess();
+                            },
+                            "theme": {
+                                "color": "#3399cc"
+                            }
+                        };
+
+                        rzp1 = new Razorpay(options);
+
+                        rzp1.on('payment.failed', function (response) {
+                            console.log("fail");
+                            alert(response.error.code);
+
+
+                            window.location.reload();
+                        });
+
+                        rzp1.open();
                     }
-                };
+                    if (paymentMethod === 'paypal') {
 
-                rzp1 = new Razorpay(options);
-
-                rzp1.on('payment.failed', function (response) {
-                    console.log("fail");
-                    alert(response.error.code);
-                    
-                    
-                    window.location.reload();
-                });
-
-                rzp1.open();
-            }
-            if(paymentMethod === 'paypal') { 
-
-                const requestOptions = {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            amount: totalAmount
-                        })
-                    };
-
-                    fetch('/onlinepayment', requestOptions)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`HTTP error! Status: ${response.status}`);
-                            }else{
-                                console.log("Response issue");
-                                return response.json();
-
-                            }
-                            
-                        })
-                        .then(data => {
-                            if(data.message == 'Order placed successfully.'){
-                                console.log(data.razorOrderId)
-                                const orderId = data.razorOrderId;
-                                const paymentStatus = data.paymentStatus;
-                                initiatePayment(orderId, paymentStatus);
-                            }else{
-                                Swal.fire({
-                                title: 'Error!',
-                                html: `<p>The book <strong>${data.product}</strong> is out of stock.</p>`,
-                                icon: 'error',
-                                confirmButtonText: 'OK'
-                                });
-                            }
-                            
-                        })
-                        .catch(error => {
-                            console.error("Fetch error:", error);
-                        });
-                    }else if(paymentMethod === 'wallet'){
-                        const walletOption = {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            amount: totalAmount
-                        })
-                    };
-
-                    fetch('/walletpayment', walletOption)
-                        .then(response => {
-                            return response.json()
-                            
-                        }).then(data=>{
-                            if(data.message=="success"){
-                                afterPaymentSuccess()
-                            }else if(data.message=="failed"){
-                                Swal.fire({
-                                title: 'Insufficient Wallet Balance',
-                                text: 'You do not have enough money in your wallet.',
-                                icon: 'error',
-                                confirmButtonText: 'OK'
+                        const requestOptions = {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                amount: totalAmount
                             })
-                            }else{
-                                Swal.fire({
-                                title: 'Error!',
-                                html: `<p>The book <strong>${data.product}</strong> is out of stock.</p>`,
-                                icon: 'error',
-                                confirmButtonText: 'OK'
+                        };
+
+                        fetch('/onlinepayment', requestOptions)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error(`HTTP error! Status: ${response.status}`);
+                                } else {
+                                    console.log("Response issue");
+                                    return response.json();
+
+                                }
+
+                            })
+                            .then(data => {
+                                if (data.message == 'Order placed successfully.') {
+                                    console.log(data.razorOrderId)
+                                    const orderId = data.razorOrderId;
+                                    const paymentStatus = data.paymentStatus;
+                                    initiatePayment(orderId, paymentStatus);
+                                } else {
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        html: `<p>The book <strong>${data.product}</strong> is out of stock.</p>`,
+                                        icon: 'error',
+                                        confirmButtonText: 'OK'
+                                    });
+                                }
+
+                            })
+                            .catch(error => {
+                                console.error("Fetch error:", error);
                             });
-                            }
-                        })
-                        
-                        .catch(error => {
-                            console.log(error);
-                        });
-                    }else if(paymentMethod === 'Cash on delevery'){
-                        if(totalAmount > 1000){
+                    } else if (paymentMethod === 'wallet') {
+                        const walletOption = {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                amount: totalAmount
+                            })
+                        };
+
+                        fetch('/walletpayment', walletOption)
+                            .then(response => {
+                                return response.json()
+
+                            }).then(data => {
+                                if (data.message == "success") {
+                                    afterPaymentSuccess()
+                                } else if (data.message == "failed") {
+                                    Swal.fire({
+                                        title: 'Insufficient Wallet Balance',
+                                        text: 'You do not have enough money in your wallet.',
+                                        icon: 'error',
+                                        confirmButtonText: 'OK'
+                                    })
+                                } else {
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        html: `<p>The book <strong>${data.product}</strong> is out of stock.</p>`,
+                                        icon: 'error',
+                                        confirmButtonText: 'OK'
+                                    });
+                                }
+                            })
+
+                            .catch(error => {
+                                console.log(error);
+                            });
+                    } else if (paymentMethod === 'Cash on delevery') {
+                        if (totalAmount > 1000) {
                             Swal.fire({
                                 title: 'Error!',
                                 text: 'Cash on Delivery is not possible for orders above Rs.1000.Please select another payment option .',
                                 icon: 'error',
                                 confirmButtonText: 'OK'
                             });
-                        }else{
+                        } else {
                             afterPaymentSuccess()
 
                         }
                     }
-            
+
+                }
+            })
+            function afterPaymentSuccess() {
+                // const couponData = document.getElementById('coupondata').textContent.trim();
+
+                fetch('/proceedtoPayment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        // address: userId,
+                        paymentMethod: paymentMethod,
+                        totalAmount: totalAmount,
+                        // couponData: couponData
+                    })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            removeAppliedCoupon();
+                            return response.json();
+                        } else {
+                            throw new Error('Failed to place the order. Please try again later.');
+                        }
+                    })
+                    .then(data => {
+                        if (data && data.message === 'Out of stock') {
+                            Swal.fire({
+                                title: 'Error!',
+                                html: `<p>The book <strong>${data.product}</strong> is out of stock.</p>`,
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        } else if (data && data.message === 'Order placed successfully') {
+                            Swal.fire({
+                                title: 'Order Placed!',
+                                text: 'Your order has been successfully placed.',
+                                icon: 'success',
+                                showCancelButton: true,
+                                showConfirmButton: true,
+                                cancelButtonText: 'Continue Shopping',
+                                confirmButtonText: 'View Order'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+
+
+                                    window.location.href = '/account';
+                                } else if (result.dismiss === Swal.DismissReason.cancel) {
+
+
+                                    window.location.href = '/home';
+                                }
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        Swal.fire('Error!', 'Failed to place the order. Please try again later.', 'error');
+                    });
             }
         })
-        function afterPaymentSuccess() {
-    // const couponData = document.getElementById('coupondata').textContent.trim();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    fetch('/proceedtoPayment', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            // address: userId,
-            paymentMethod: paymentMethod,
-            totalAmount: totalAmount,
-            // couponData: couponData
-        })
-    })
-    .then(response => {
-        if (response.ok) {
-            removeAppliedCoupon();
-            return response.json();
-        } else {
-            throw new Error('Failed to place the order. Please try again later.');
-        }
-    })
-    .then(data => {
-        if(data && data.message === 'Out of stock'){
+    <script>
+        function confirmCancellation(orderId, productId) {
             Swal.fire({
-                title: 'Error!',
-                html: `<p>The book <strong>${data.product}</strong> is out of stock.</p>`,
-                icon: 'error',
-                confirmButtonText: 'OK'
-            });
-        }else if (data && data.message === 'Order placed successfully') {
-            Swal.fire({
-                title: 'Order Placed!',
-                text: 'Your order has been successfully placed.',
-                icon: 'success',
+                title: 'Are you sure?',
+                text: 'You want to cancel this order!',
+                icon: 'warning',
                 showCancelButton: true,
-                showConfirmButton: true,
-                cancelButtonText: 'Continue Shopping',
-                confirmButtonText: 'View Order'
+                confirmButtonColor: 'red',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Yes, cancel it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    
-
-                    window.location.href = '/account';
-                } else if (result.dismiss === Swal.DismissReason.cancel) {
-                   
-
-                    window.location.href = '/home';
+                    Swal.showLoading();
+                    fetch('/orderstatus', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ orderId: orderId, productId: productId })
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                Swal.fire({
+                                    title: 'Cancelled!',
+                                    text: 'Order has been cancelled.',
+                                    icon: 'success'
+                                }).then(() => {
+                                    window.location.href = '/account';
+                                });
+                            } else {
+                                throw new Error('Failed to cancel order');
+                            }
+                        })
+                        .catch(error => {
+                            console.error(error);
+                            Swal.fire({
+                                title: 'Error!',
+                                text: 'Failed to cancel order.',
+                                icon: 'error'
+                            });
+                        });
                 }
             });
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        Swal.fire('Error!', 'Failed to place the order. Please try again later.', 'error');
-    });
-}
-    })
-</script>                     
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-<script>
-    function confirmCancellation(orderId,productId) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'You want to cancel this order!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: 'red',
-            cancelButtonColor: 'gray',
-            confirmButtonText: 'Yes, cancel it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.showLoading(); 
-                fetch('/orderstatus', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ orderId: orderId ,productId:productId})
-                })
-                .then(response => {
-                    if (response.ok) {
-                        Swal.fire({
-                            title: 'Cancelled!',
-                            text: 'Order has been cancelled.',
-                            icon: 'success'
-                        }).then(() => {
-                            window.location.href = '/account';
+        function confirmReturn(orderId, productId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You want to return this products!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'green',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Yes, return it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.showLoading();
+                    fetch('/orderstatus', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ orderId: orderId, productId: productId })
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                Swal.fire({
+                                    title: 'Returned!',
+                                    text: 'Order has been returned.',
+                                    icon: 'success'
+                                }).then(() => {
+                                    window.location.href = '/account';
+                                });
+                            } else {
+                                throw new Error('Failed to cancel order');
+                            }
+                        })
+                        .catch(error => {
+                            console.error(error);
+                            Swal.fire({
+                                title: 'Error!',
+                                text: 'Failed to return order.',
+                                icon: 'error'
+                            });
                         });
-                    } else {
-                        throw new Error('Failed to cancel order');
-                    }
-                })
-                .catch(error => {
-                    console.error(error);
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'Failed to cancel order.',
-                        icon: 'error'
-                    });
-                });
-            }
-        });
-    }
-    function confirmReturn(orderId,productId) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'You want to return this products!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: 'green',
-            cancelButtonColor: 'gray',
-            confirmButtonText: 'Yes, return it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.showLoading();
-                fetch('/orderstatus', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ orderId: orderId ,productId:productId})
-                })
-                .then(response => {
-                    if (response.ok) {
-                        Swal.fire({
-                            title: 'Returned!',
-                            text: 'Order has been returned.',
-                            icon: 'success'
-                        }).then(() => {
-                            window.location.href = '/account';
-                        });
-                    } else {
-                        throw new Error('Failed to cancel order');
-                    }
-                })
-                .catch(error => {
-                    console.error(error);
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'Failed to return order.',
-                        icon: 'error'
-                    });
-                });
-            }
-        });
-    }
-</script>
+                }
+            });
+        }
+    </script>
 
 
-<!-- <script>
+    <!-- <script>
     function generateAndDownloadInvoice() {
         // Extract client details from the HTML template
         const client = {
@@ -926,7 +1001,7 @@
     }
 </script> -->
 
-<!-- <script>
+    <!-- <script>
     // Function to download invoice
     async function downloadInvoice(orderId) {
         try {
@@ -957,7 +1032,7 @@
     }
 </script> -->
 
-<!-- <script>
+    <!-- <script>
     document.getElementById('downloadInvoiceBtn').addEventListener('click', function() {
     const invoiceContent = document.getElementById('invoice'); // Replace 'invoiceContent' with the ID of the container that holds your invoice content
     
@@ -967,4 +1042,4 @@
 });
 
 </script> -->
-<%- include('../layouts/footer.ejs') -%>
+    <%- include('../layouts/footer.ejs') -%>

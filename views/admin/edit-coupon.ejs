@@ -4,10 +4,13 @@
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                    style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
             <div>
-                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
+                </button>
             </div>
         </div>
         <nav>
@@ -53,9 +56,10 @@
                         <!-- <a href="page-seller-detail.html">Seller profile</a> -->
                     </div>
                 </li>
-                
+
                 <li class="menu-item has-submenu active">
-                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                    <a class="menu-link" href="page-transactions-1.html"> <i
+                            class="icon material-icons md-monetization_on"></i>
                         <span class="text">Coupen</span>
                     </a>
                     <div class="submenu">
@@ -69,7 +73,7 @@
                     </a>
                     <div class="submenu">
                         <a href="/admin/offer">Offer Management</a>
-                       
+
                     </div>
                 </li>
                 <li class="menu-item">
@@ -80,18 +84,18 @@
             </ul>
             <hr>
             <ul class="menu-aside">
-               
-            <li class="menu-item">
-                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
-                    <span class="text"> Logout </span>
-                </a>
-            </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                        <span class="text"> Logout </span>
+                    </a>
+                </li>
             </ul>
             <br>
             <br>
         </nav>
     </aside>
-     <main class="main-wrap">
+    <main class="main-wrap">
         <header class="main-header navbar">
             <div class="col-search">
                 <!-- <form class="searchform">
@@ -108,22 +112,26 @@
                 </form> -->
             </div>
             <div class="col-nav">
-                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
                 <ul class="nav">
-                   
+
                     <li class="nav-item">
-                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"><i class="material-icons md-public"></i></a>
-                       
+                        <a href="#" aria-expanded="false"><i class="material-icons md-public"></i></a>
+
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
-                      
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+
                     </li>
                 </ul>
             </div>
@@ -133,56 +141,70 @@
                 <div class="col-9">
                     <div class="content-header">
                         <h2 class="content-title">Edit Coupon</h2>
-                        
+
                     </div>
                 </div>
                 <div class="col-9">
                     <div class="card">
                         <div class="card-body">
                             <div class="row gx-5">
-                                
+
                                 <div class="col-lg-9">
                                     <section class="content-body p-xl-4">
                                         <form action="" id="addingForm" method="POST">
                                             <div class="mb-4">
                                                 <label for="couponname" class="form-label">Coupon Name</label>
-                                                <input type="text" name="couponname" value="<%=couponData.couponCode%>" class="form-control" id="couponname">
-                                                <div id="couponNameError" class="error" style=" color: red; display: none;"></div>
+                                                <input type="text" name="couponname" value="<%=couponData.couponCode%>"
+                                                    class="form-control" id="couponname">
+                                                <div id="couponNameError" class="error"
+                                                    style=" color: red; display: none;"></div>
                                             </div>
-                                        
+
                                             <div class="mb-3">
                                                 <label for="couponDate" class="form-label">Expiry Date</label>
-                                                <%const newDate = new Date(couponData.expiryDate)%>
-                                                <%const year = newDate.getFullYear()%>
-                                                <%const month = newDate.getMonth()+1%>
-                                                <%const day = newDate.getDate()%>
-                                                <%const formattedDate = `${year}-${month<10?0:''}${month}-${day<10?0:''}${day}`%>
-                                                <input type="date" name="expdate" value="<%=formattedDate%>" class="form-control" id="couponDate">
-                                                <div id="expiryDateError" class="error" style=" color: red; display: none;"></div>
+                                                <%const newDate=new Date(couponData.expiryDate)%>
+                                                    <%const year=newDate.getFullYear()%>
+                                                        <%const month=newDate.getMonth()+1%>
+                                                            <%const day=newDate.getDate()%>
+                                                                <%const
+                                                                    formattedDate=`${year}-${month<10?0:''}${month}-${day<10?0:''}${day}`%>
+                                                                    <input type="date" name="expdate"
+                                                                        value="<%=formattedDate%>" class="form-control"
+                                                                        id="couponDate">
+                                                                    <div id="expiryDateError" class="error"
+                                                                        style=" color: red; display: none;"></div>
                                             </div>
                                             <div class="mb-4">
                                                 <label class="form-label">Flat Discount</label>
-                                                <input name="discount" value="<%=couponData.Discount%>" type="text" id="discount" class="form-control">
-                                                <div id="discountError" class="error" style=" color: red; display: none;"></div>
+                                                <input name="discount" value="<%=couponData.Discount%>" type="text"
+                                                    id="discount" class="form-control">
+                                                <div id="discountError" class="error"
+                                                    style=" color: red; display: none;"></div>
                                             </div>
                                             <div class="mb-4">
                                                 <label class="form-label">Limit</label>
-                                                <input type="text" value="<%=couponData.Limit%>" name="limit" class="form-control" id="limit">
-                                                <input type="hidden" value="<%=couponData._id%>" name="id" id="couponid1">
-                                                <div id="limitError" class="error" style=" color: red; display: none;"></div>
+                                                <input type="text" value="<%=couponData.Limit%>" name="limit"
+                                                    class="form-control" id="limit">
+                                                <input type="hidden" value="<%=couponData._id%>" name="id"
+                                                    id="couponid1">
+                                                <div id="limitError" class="error" style=" color: red; display: none;">
+                                                </div>
                                             </div>
                                             <div class="mb-4">
                                                 <label class="form-label">Minimum Purchase</label>
-                                                <input type="text" value="<%=couponData.minPurchase%>" name="minPurchase" class="form-control" id="minPurchase">
-                                                <div id="minPurchaseError" class="error" style=" color: red; display: none;"></div>
+                                                <input type="text" value="<%=couponData.minPurchase%>"
+                                                    name="minPurchase" class="form-control" id="minPurchase">
+                                                <div id="minPurchaseError" class="error"
+                                                    style=" color: red; display: none;"></div>
                                             </div>
-                                        
+
                                             <div class="text-center mt-4">
-                                                <button type="button" onclick="validateForm()" class="btn btn-primary">Submit</button>
+                                                <button type="button" onclick="validateForm()"
+                                                    class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
                                     </section>
-                                     <!-- content-body .// -->
+                                    <!-- content-body .// -->
                                 </div> <!-- col.// -->
                             </div> <!-- row.// -->
                         </div> <!-- card body end// -->
@@ -190,12 +212,14 @@
                 </div>
             </div>
         </section>
-        
+
         <footer class="main-footer font-xs">
             <div class="row pb-30 pt-15">
                 <div class="col-sm-6">
-                    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                    document.write(new Date().getFullYear())
+                    <script data-cfasync="false"
+                        src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <script>
+                        document.write(new Date().getFullYear())
                     </script> ©, BookStore - online book shop .
                 </div>
                 <div class="col-sm-6">
@@ -215,62 +239,62 @@
     <script src="/admin-assets/js/main.js" type="text/javascript"></script>
     <script src="/admin-assets/js/script.js"></script>
     <script>
-        function submitForm(){
+        function submitForm() {
             const couponname = document.getElementById('couponname').value
             const couponDate = document.getElementById('couponDate').value
             const discount = document.getElementById('discount').value
             const minPurchase = document.getElementById('minPurchase').value
             const limit = document.getElementById('limit').value
             const id = document.getElementById('couponid1').value
-            fetch('/admin/editCoupon',{
-                method:'POST',
-                headers:{
-                    'Content-Type':'application/json'
+            fetch('/admin/editCoupon', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
                 },
-                body:JSON.stringify({
-                    
-                    couponname:couponname,
-                    couponDate:couponDate,
-                    discount:discount,
-                    limit:limit,
-                    minPurchase:minPurchase,
-                    id:id
+                body: JSON.stringify({
+
+                    couponname: couponname,
+                    couponDate: couponDate,
+                    discount: discount,
+                    limit: limit,
+                    minPurchase: minPurchase,
+                    id: id
                 })
             })
-            .then(res=>{
-                if(res.ok){
-                    return res.json()
-                }
-            })
-            .then(data => {
-                if (data.message == 'Success') {
-                    console.log("success");
-                    window.location.href = '/admin/coupon';
-                }else if(data.message == 'Failed'){
-                    couponNameError.innerText = 'Coupon Name already exist..';
-                    couponNameError.style.display = 'block';
-                }
-            })
-            .catch(err=>{
-                console.log(err.message)
-            })
+                .then(res => {
+                    if (res.ok) {
+                        return res.json()
+                    }
+                })
+                .then(data => {
+                    if (data.message == 'Success') {
+                        console.log("success");
+                        window.location.href = '/admin/coupon';
+                    } else if (data.message == 'Failed') {
+                        couponNameError.innerText = 'Coupon Name already exist..';
+                        couponNameError.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    console.log(err.message)
+                })
         }
 
         function validateForm() {
             let isValid = true;
-    
+
             const couponName = document.getElementById('couponname');
             const couponDate = document.getElementById('couponDate');
             const discount = document.getElementById('discount');
             const limit = document.getElementById('limit');
             const minPurchase = document.getElementById('minPurchase');
-    
+
             const couponNameError = document.getElementById('couponNameError');
             const expiryDateError = document.getElementById('expiryDateError');
             const discountError = document.getElementById('discountError');
             const limitError = document.getElementById('limitError');
             const minPurchaseError = document.getElementById('minPurchaseError');
-    
+
             if (couponName.value.trim() === '') {
                 couponNameError.innerText = 'Coupon Name is required';
                 couponNameError.style.display = 'block';
@@ -278,8 +302,8 @@
             } else {
                 couponNameError.style.display = 'none';
             }
-    
-    
+
+
             if (couponDate.value === '') {
                 expiryDateError.innerText = 'Expiry Date is required';
                 expiryDateError.style.display = 'block';
@@ -287,8 +311,8 @@
             } else {
                 expiryDateError.style.display = 'none';
             }
-    
-            
+
+
             if (discount.value.trim() === '') {
                 discountError.innerText = 'Flat Discount is required';
                 discountError.style.display = 'block';
@@ -304,8 +328,8 @@
             } else {
                 discountError.style.display = 'none';
             }
-    
-         
+
+
             if (limit.value.trim() === '') {
                 limitError.innerText = 'Limit is required';
                 limitError.style.display = 'block';
@@ -321,7 +345,7 @@
             } else {
                 limitError.style.display = 'none';
             }
-    
+
             if (minPurchase.value.trim() === '') {
                 minPurchaseError.innerText = 'Minimum Purchase is required';
                 minPurchaseError.style.display = 'block';
@@ -334,23 +358,23 @@
                 minPurchaseError.innerText = 'Minimum Purchase cannot be negative';
                 minPurchaseError.style.display = 'block';
                 isValid = false;
-            } else if (parseFloat(minPurchase.value) < parseFloat(discount .value)) {
-            minPurchaseError.innerText = 'Minimum Purchase cannot be less than Discound';
-            minPurchaseError.style.display = 'block';
-            isValid = false;
+            } else if (parseFloat(minPurchase.value) < parseFloat(discount.value)) {
+                minPurchaseError.innerText = 'Minimum Purchase cannot be less than Discound';
+                minPurchaseError.style.display = 'block';
+                isValid = false;
             } else {
                 minPurchaseError.style.display = 'none';
             }
-    
-            if(isValid===true){
+
+            if (isValid === true) {
                 const addingForm = document.getElementById('addingForm')
                 submitForm()
-            }else{
+            } else {
                 return false
             }
         }
     </script>
-</body>
+    </body>
 
 
-</html>
+    </html>

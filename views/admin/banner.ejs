@@ -4,10 +4,13 @@
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                    style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
             <div>
-                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
+                </button>
             </div>
         </div>
         <nav>
@@ -53,9 +56,10 @@
                         <!-- <a href="page-seller-detail.html">Seller profile</a> -->
                     </div>
                 </li>
-                
+
                 <li class="menu-item has-submenu">
-                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                    <a class="menu-link" href="page-transactions-1.html"> <i
+                            class="icon material-icons md-monetization_on"></i>
                         <span class="text">Coupen</span>
                     </a>
                     <div class="submenu">
@@ -69,7 +73,7 @@
                     </a>
                     <div class="submenu">
                         <a href="/admin/offer">Offer Management</a>
-                       
+
                     </div>
                 </li>
                 <li class="menu-item active">
@@ -77,16 +81,16 @@
                         <span class="text">Banner</span>
                     </a>
                 </li>
-                
+
             </ul>
             <hr>
             <ul class="menu-aside">
-               
-            <li class="menu-item">
-                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
-                    <span class="text"> Logout </span>
-                </a>
-            </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                        <span class="text"> Logout </span>
+                    </a>
+                </li>
             </ul>
             <br>
             <br>
@@ -109,103 +113,118 @@
                 </form> -->
             </div>
             <div class="col-nav">
-                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
                     </li>
 
                     <li class="dropdown nav-item">
-                        <a  href="#" aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
                     </li>
                 </ul>
             </div>
         </header>
         <div class="modal fade" id="discountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        
-    </div>
-    
-    <section class="content-main">
-        <div class="content-header">
-            <td>
-                <h2 class="content-title">Banner</h2>
-            </td>
-            <div>
-                <a href="/admin/addbanner" class="btn btn-primary"><i class="material-icons md-plus"></i> Add Banner</a>
-            </div>
-     </div>
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>Banner Name</th>
-                                <th>Expiry Date</th>
-                                <th>Status</th>
-                                <th class="text-end"> Action </th>
-                                <th class="text-end"> Edit </th>
+            aria-hidden="true">
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% if (bannerData && bannerData.length > 0) { %>
-                                <% for (let i = 0; i < bannerData.length; i++) { %>
-                                    <tr>
-                                        <td width="10%">
-                                            <a href="#" class="itemside">
-                                                <div class="info pl-3">
-                                                    <img src="/bannerimages/<%= bannerData[i].Image[0] %>" alt="">                                                   
-                                                </div>
-                                            </a>
-                                        </td>
-                                        <td width="30%"><%= bannerData[i].Name %></td>
-                                        <td><%= bannerData[i].expiryDate.toLocaleDateString() %></td>
-                                        <td>
-                                            <% if (bannerData[i].is_active==1) { %>
-                                                <span class="badge rounded-pill alert-success">Active</span>
-                                            <% } else { %>
-                                                <span class="badge rounded-pill alert-danger">Inactive</span>
-                                            <% } %>
-                                        </td>
-                                        <td class="text-end">
-                                            <input type="hidden" class="bannerId" value="<%= bannerData[i]._id %>">
-                                            <input type="hidden" class="bannerStatus" value="<%= bannerData[i].is_active %>">
-                                            <% if (bannerData[i].is_active==1) { %>
-                                                <button type="button" class="badge badge-sm alert-success coupon-btn">Deactivate</button>
-                                            <% } else { %>
-                                                <button type="button" class="badge badge-sm alert-danger coupon-btn">Activate</button>
-                                            <% } %>                                            
-                                            
-                                        </td>
+        </div>
 
-                                      
-                                        <td>
-                                            <a href="/admin/edit-banner?bannerId=<%= bannerData[i]._id %>" class="badge alert-success">Edit</a>
-                                        </td>
-                                    </tr>
-                                <% } %>
-                            <% } else { %>
-                                <tr>
-                                    <td colspan="6">No Banner Found</td>
-                                 </tr>
-                            <% } %>
-                        </tbody>
-                    </table> 
+        <section class="content-main">
+            <div class="content-header">
+                <td>
+                    <h2 class="content-title">Banner</h2>
+                </td>
+                <div>
+                    <a href="/admin/addbanner" class="btn btn-primary"><i class="material-icons md-plus"></i> Add
+                        Banner</a>
                 </div>
-            </div> 
-        </div> 
-    </section> 
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Banner Name</th>
+                                    <th>Expiry Date</th>
+                                    <th>Status</th>
+                                    <th class="text-end"> Action </th>
+                                    <th class="text-end"> Edit </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (bannerData && bannerData.length> 0) { %>
+                                    <% for (let i=0; i < bannerData.length; i++) { %>
+                                        <tr>
+                                            <td width="10%">
+                                                <a href="#" class="itemside">
+                                                    <div class="info pl-3">
+                                                        <img src="/bannerimages/<%= bannerData[i].Image[0] %>" alt="">
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td width="30%">
+                                                <%= bannerData[i].Name %>
+                                            </td>
+                                            <td>
+                                                <%= bannerData[i].expiryDate.toLocaleDateString() %>
+                                            </td>
+                                            <td>
+                                                <% if (bannerData[i].is_active==1) { %>
+                                                    <span class="badge rounded-pill alert-success">Active</span>
+                                                    <% } else { %>
+                                                        <span class="badge rounded-pill alert-danger">Inactive</span>
+                                                        <% } %>
+                                            </td>
+                                            <td class="text-end">
+                                                <input type="hidden" class="bannerId" value="<%= bannerData[i]._id %>">
+                                                <input type="hidden" class="bannerStatus"
+                                                    value="<%= bannerData[i].is_active %>">
+                                                <% if (bannerData[i].is_active==1) { %>
+                                                    <button type="button"
+                                                        class="badge badge-sm alert-success coupon-btn">Deactivate</button>
+                                                    <% } else { %>
+                                                        <button type="button"
+                                                            class="badge badge-sm alert-danger coupon-btn">Activate</button>
+                                                        <% } %>
+
+                                            </td>
+
+
+                                            <td>
+                                                <a href="/admin/edit-banner?bannerId=<%= bannerData[i]._id %>"
+                                                    class="badge alert-success">Edit</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                            <% } else { %>
+                                                <tr>
+                                                    <td colspan="6">No Banner Found</td>
+                                                </tr>
+                                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer class="main-footer font-xs">
             <div class="row pb-30 pt-15">
                 <div class="col-sm-6">
-                    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                    document.write(new Date().getFullYear())
+                    <script data-cfasync="false"
+                        src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <script>
+                        document.write(new Date().getFullYear())
                     </script> ©, BookStore - online book shop .
                 </div>
                 <div class="col-sm-6">
@@ -216,17 +235,17 @@
             </div>
         </footer>
     </main>
-    
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const couponButtons = document.querySelectorAll('.coupon-btn');
-    
+
             couponButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     const couponId = this.parentNode.querySelector('.bannerId').value;
                     const isActivate = this.textContent === 'Activate';
                     const couponStatus = this.parentNode.querySelector('.bannerStatus').value;
-    
+
                     Swal.fire({
                         title: isActivate ? 'Activate Banner?' : 'Deactivate Banner?',
                         text: isActivate ? 'Do you want to activate this Banner?' : 'Do you want to deactivate this Banner?',
@@ -245,60 +264,60 @@
                                 body: JSON.stringify({ couponId, is_active: couponStatus })
                             }).then(response => {
                                 if (response.ok) {
-                                return Swal.fire(isActivate ? 'Activated!' : 'Deactivated!', `Coupon has been ${isActivate ? 'activated' : 'deactivated'}.`, 'success');
-                            } else {
-                                return Swal.fire('Error!', `banner is expired...! `, 'error');
-                            }
+                                    return Swal.fire(isActivate ? 'Activated!' : 'Deactivated!', `Coupon has been ${isActivate ? 'activated' : 'deactivated'}.`, 'success');
+                                } else {
+                                    return Swal.fire('Error!', `banner is expired...! `, 'error');
+                                }
                             })
-                            .then(response => {
-                                if (result.isConfirmed) {
-                                location.reload()
-                                } 
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                Swal.fire('Error!', `Failed to ${isActivate ? 'activate' : 'deactivate'} banner.`, 'error');
-                            });
+                                .then(response => {
+                                    if (result.isConfirmed) {
+                                        location.reload()
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    Swal.fire('Error!', `Failed to ${isActivate ? 'activate' : 'deactivate'} banner.`, 'error');
+                                });
                         }
                     });
                 });
             });
         });
     </script>
-    
+
     <script>
-    function confirmSubmission(index) {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: 'You want to block this customer.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes !',
-        cancelButtonText: 'Cancel'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          document.getElementById(`myForm_${index}`).submit();
+        function confirmSubmission(index) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You want to block this customer.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes !',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(`myForm_${index}`).submit();
+                }
+            });
         }
-      });
-    }
-    function confirmSubmission1(index) {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: 'You want to unblock this customer.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes  !',
-        cancelButtonText: 'Cancel'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          document.getElementById(`myForm_${index}`).submit();
+        function confirmSubmission1(index) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You want to unblock this customer.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes  !',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(`myForm_${index}`).submit();
+                }
+            });
         }
-      });
-    }
-    
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    
+
     <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
     <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
     <script src="/admin-assets/js/vendors/select2.min.js"></script>

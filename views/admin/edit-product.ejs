@@ -4,10 +4,13 @@
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                    style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
             <div>
-                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
+                </button>
             </div>
         </div>
         <nav>
@@ -53,9 +56,10 @@
                         <!-- <a href="page-seller-detail.html">Seller profile</a> -->
                     </div>
                 </li>
-           
+
                 <li class="menu-item has-submenu">
-                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                    <a class="menu-link" href="page-transactions-1.html"> <i
+                            class="icon material-icons md-monetization_on"></i>
                         <span class="text">Transactions</span>
                     </a>
                     <div class="submenu">
@@ -69,7 +73,7 @@
                     </a>
                     <div class="submenu">
                         <a href="/admin/offer">Offer Management</a>
-                       
+
                     </div>
                 </li>
                 <li class="menu-item">
@@ -80,12 +84,12 @@
             </ul>
             <hr>
             <ul class="menu-aside">
-               
-            <li class="menu-item">
-                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
-                    <span class="text"> Logout </span>
-                </a>
-            </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                        <span class="text"> Logout </span>
+                    </a>
+                </li>
             </ul>
             <br>
             <br>
@@ -108,22 +112,26 @@
                 </form> -->
             </div>
             <div class="col-nav">
-                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
                 <ul class="nav">
-                   
+
                     <li class="nav-item">
-                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"><i class="material-icons md-public"></i></a>
-                       
+                        <a href="#" aria-expanded="false"><i class="material-icons md-public"></i></a>
+
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
-                      
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+
                     </li>
                 </ul>
             </div>
@@ -133,142 +141,179 @@
                 <div class="col-9">
                     <div class="content-header">
                         <h2 class="content-title">Edit Product</h2>
-                        
+
                     </div>
                 </div>
                 <div class="col-9">
                     <div class="card">
                         <div class="card-body">
                             <div class="row gx-5">
-                                
+
                                 <div class="col-lg-9">
                                     <section class="content-body p-xl-4">
-                                        <form action="/admin/edit-product" method="POST" enctype="multipart/form-data" id="productForm">
+                                        <form action="/admin/edit-product" method="POST" enctype="multipart/form-data"
+                                            id="productForm">
                                             <!-- Add a hidden input for the product ID -->
                                             <input type="hidden" name="id" value="<%= product._id %>">
-                                            <% if(typeof message !== 'undefined'){ %> 
-                                                <div class="alert  bg-white text-danger" role="alert" style="text-align: center;">
+                                            <% if(typeof message !=='undefined' ){ %>
+                                                <div class="alert  bg-white text-danger" role="alert"
+                                                    style="text-align: center;">
                                                     <%=message %>
                                                 </div>
-                                            <% } %> 
-                                    
-                                            <label for="name">Product Name:</label>
-                                            <input type="text" id="product_name" name="name" value="<%= product.name %>" >
-                                            <span id="pnameError" class="text-danger"></span>
-                                            <br>
+                                                <% } %>
 
-                                            <label for="name">Author Name:</label>
-                                            <input type="text" id="author" name="author" value="<%= product.author %>" >
-                                            <span id="authorError" class="text-danger"></span>
-                                            <br>
-                                            <label for="name">Discription:</label>
-                                            <input type="text" id="description" name="discription" value="<%= product.discription %>" >
-                                            <span id="descriptionError" class="text-danger"></span>
-                                            <br>
-                                            <label for="name">Publisher:</label>
-                                            <input type="text" id="publisher" name="publisher" value="<%= product.publisher %>" >
-                                            <span id="publisherError" class="text-danger"></span>
-                                            <br>
-                                            <label for="name">About Author:</label>
-                                            <input type="text" id="aabout" name="About_author" value="<%= product.About_author %>" >
-                                            <span id="aaboutError" class="text-danger"></span>
-                                            <br>
-                                            <label for="name">Language:</label>
-                                            <input type="text" id="language" name="language" value="<%= product.language %>" >
-                                            <span id="language-error" class="error"></span>
-                                            <br>
-                                            
-                                            
-                                            <label for="name">Country of Origin:</label>
-                                            <select name="country" class="form-select" id="country">
-                                                <option value="<%= product.country %>" selected disabled>Choose a country</option>
-                                                <option>America</option>
-                                                <option>India</option>
-                                                <option>Russia</option>
-                                                <option>China</option>
-                                            </select>
-                                            <span id="countryError" class="text-danger"></span>
-                                            
-                                            <br>
-                                            
-                                            <label for="name">Item Weight :</label>
-                                            <input type="text" value="<%= product.item_weight %>" id="bweight" name="item_weight"  title="Please enter a valid number">
-                                            <span id="bweightError" class="text-danger"></span>
-                                            <br>
-                                            <label for="name">Paperback:</label>
-                                            <input type="text" value="<%= product.paperback %>"id="pages" name="paperback" >
-                                            <span id="pagesError" class="text-danger"></span>
-                                            <br>
+                                                    <label for="name">Product Name:</label>
+                                                    <input type="text" id="product_name" name="name"
+                                                        value="<%= product.name %>">
+                                                    <span id="pnameError" class="text-danger"></span>
+                                                    <br>
 
-                                            
-                                            
-                                            <div class="card-body" >
-                                                <% if (product && product.image && product.image.length > 0) { %>
-                                                    <% for (let i = 0; i < product.image.length; i++) { %>
-                                                        <div class="input-upload position-relative mb-3" style="max-width: 300px;">
-                                                            <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-                                                                <img src="/productimages/<%= product.image[i] %>" alt="" class="img-fluid rounded" style="width: 100%;">
-                                                                <div style="display: flex; gap: 10px;">
-                                                                    <br><br>
-                                                                    <button type="button" class="btn btn-danger btn-sm" onclick="handleRemove('<%= product.image[i] %>')">Remove</button>
+                                                    <label for="name">Author Name:</label>
+                                                    <input type="text" id="author" name="author"
+                                                        value="<%= product.author %>">
+                                                    <span id="authorError" class="text-danger"></span>
+                                                    <br>
+                                                    <label for="name">Discription:</label>
+                                                    <input type="text" id="description" name="discription"
+                                                        value="<%= product.discription %>">
+                                                    <span id="descriptionError" class="text-danger"></span>
+                                                    <br>
+                                                    <label for="name">Publisher:</label>
+                                                    <input type="text" id="publisher" name="publisher"
+                                                        value="<%= product.publisher %>">
+                                                    <span id="publisherError" class="text-danger"></span>
+                                                    <br>
+                                                    <label for="name">About Author:</label>
+                                                    <input type="text" id="aabout" name="About_author"
+                                                        value="<%= product.About_author %>">
+                                                    <span id="aaboutError" class="text-danger"></span>
+                                                    <br>
+                                                    <label for="name">Language:</label>
+                                                    <input type="text" id="language" name="language"
+                                                        value="<%= product.language %>">
+                                                    <span id="language-error" class="error"></span>
+                                                    <br>
+
+
+                                                    <label for="name">Country of Origin:</label>
+                                                    <select name="country" class="form-select" id="country">
+                                                        <option value="<%= product.country %>" selected disabled>Choose
+                                                            a country</option>
+                                                        <option>America</option>
+                                                        <option>India</option>
+                                                        <option>Russia</option>
+                                                        <option>China</option>
+                                                    </select>
+                                                    <span id="countryError" class="text-danger"></span>
+
+                                                    <br>
+
+                                                    <label for="name">Item Weight :</label>
+                                                    <input type="text" value="<%= product.item_weight %>" id="bweight"
+                                                        name="item_weight" title="Please enter a valid number">
+                                                    <span id="bweightError" class="text-danger"></span>
+                                                    <br>
+                                                    <label for="name">Paperback:</label>
+                                                    <input type="text" value="<%= product.paperback %>" id="pages"
+                                                        name="paperback">
+                                                    <span id="pagesError" class="text-danger"></span>
+                                                    <br>
+
+
+
+                                                    <div class="card-body">
+                                                        <% if (product && product.image && product.image.length> 0) { %>
+                                                            <% for (let i=0; i < product.image.length; i++) { %>
+                                                                <div class="input-upload position-relative mb-3"
+                                                                    style="max-width: 300px;">
+                                                                    <div
+                                                                        style="position: relative; display: flex; align-items: center; justify-content: center;">
+                                                                        <img src="/productimages/<%= product.image[i] %>"
+                                                                            alt="" class="img-fluid rounded"
+                                                                            style="width: 100%;">
+                                                                        <div style="display: flex; gap: 10px;">
+                                                                            <br><br>
+                                                                            <button type="button"
+                                                                                class="btn btn-danger btn-sm"
+                                                                                onclick="handleRemove('<%= product.image[i] %>')">Remove</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    <% } %>
-                                                <% } else { %>
-                                                    <img src="/assets/imgs/theme/upload.svg" alt="">
-                                                <% } %>
-                                                <input class="form-control mt-3" accept="image/*" name="image" id="imageInput" type="file" multiple onchange="displaySelectedImages(event)" >
-                                                <input type="hidden" name="removedImages" id="removedImagesInput">
-                                                <div class="input-upload position-relative mb-3" style="max-width: 300px;">
-                                                    <div id="selectedImagesContainer" style="position: relative;"></div>
-                                                </div>
-                                                <div>
-                                                    <input type="checkbox" value="yes" id="tickOption" name="tickOption">
-                                                    <label for="tickOption">Crop Image</label>
-                                                </div>
-                                                <% if(typeof imgMessage !== 'undefined') { %>
-                                                    <p style="color:red"><%= imgMessage %></p>
-                                                <% } %>
-                                            </div> 
-                                            <br>
-                                            <div class="col-sm-6 mb-3">
-                                                <label class="form-label">Category</label>
-                                                <select name="category" class="form-select" id="category">
-                                                    <% if (product && product.category && product.category.name) { %>
-                                                        <option><%= product.category.name %></option>
-                                                    <% } %>
-                                                    <% if (categoryData.length > 0) { %>
-                                                        <% for (let i = 0; i < categoryData.length; i++) { %>
-                                                            <option><%= categoryData[i].name %></option>
-                                                        <% } %>
-                                                    <% } %>
-                                                </select>
-                                                <span id="categoryError" class="text-danger"></span>
-                                            </div>
-                                            
-                                            
-                                            
-                                            
-                                            <br>
-                                            <label class="form-label">Quantity</label>
-                                            <input value="<%= product.Quantity %>" type="text" name="Quantity" id="Quantity">
-                                            <span id="quantityError" class="text-danger"></span>
+                                                                <% } %>
+                                                                    <% } else { %>
+                                                                        <img src="/assets/imgs/theme/upload.svg" alt="">
+                                                                        <% } %>
+                                                                            <input class="form-control mt-3"
+                                                                                accept="image/*" name="image"
+                                                                                id="imageInput" type="file" multiple
+                                                                                onchange="displaySelectedImages(event)">
+                                                                            <input type="hidden" name="removedImages"
+                                                                                id="removedImagesInput">
+                                                                            <div class="input-upload position-relative mb-3"
+                                                                                style="max-width: 300px;">
+                                                                                <div id="selectedImagesContainer"
+                                                                                    style="position: relative;"></div>
+                                                                            </div>
+                                                                            <div>
+                                                                                <input type="checkbox" value="yes"
+                                                                                    id="tickOption" name="tickOption">
+                                                                                <label for="tickOption">Crop
+                                                                                    Image</label>
+                                                                            </div>
+                                                                            <% if(typeof imgMessage !=='undefined' ) {
+                                                                                %>
+                                                                                <p style="color:red">
+                                                                                    <%= imgMessage %>
+                                                                                </p>
+                                                                                <% } %>
+                                                    </div>
+                                                    <br>
+                                                    <div class="col-sm-6 mb-3">
+                                                        <label class="form-label">Category</label>
+                                                        <select name="category" class="form-select" id="category">
+                                                            <% if (product && product.category && product.category.name)
+                                                                { %>
+                                                                <option>
+                                                                    <%= product.category.name %>
+                                                                </option>
+                                                                <% } %>
+                                                                    <% if (categoryData.length> 0) { %>
+                                                                        <% for (let i=0; i < categoryData.length; i++) {
+                                                                            %>
+                                                                            <option>
+                                                                                <%= categoryData[i].name %>
+                                                                            </option>
+                                                                            <% } %>
+                                                                                <% } %>
+                                                        </select>
+                                                        <span id="categoryError" class="text-danger"></span>
+                                                    </div>
 
-                                            <label for="price">Price:</label>
-                                            <input type="text" value="<%= product.price %>" id="price" name="price" >
-                                            <span id="ppriceError" class="text-danger"></span>
-                                            <label for="price">Sale Price:</label>
-                                           
-                                            <input type="text" value="<%= product.Saleprice %>" id="sprice" name="Saleprice" >
-                                            <span id="spriceError" class="text-danger"></span>
-                                            <br><br>
-                                         
-                                        
-                                            <button type="submit">Edit Product</button>
+
+
+
+                                                    <br>
+                                                    <label class="form-label">Quantity</label>
+                                                    <input value="<%= product.Quantity %>" type="text" name="Quantity"
+                                                        id="Quantity">
+                                                    <span id="quantityError" class="text-danger"></span>
+
+                                                    <label for="price">Price:</label>
+                                                    <input type="text" value="<%= product.price %>" id="price"
+                                                        name="price">
+                                                    <span id="ppriceError" class="text-danger"></span>
+                                                    <label for="price">Sale Price:</label>
+
+                                                    <input type="text" value="<%= product.Saleprice %>" id="sprice"
+                                                        name="Saleprice">
+                                                    <span id="spriceError" class="text-danger"></span>
+                                                    <br><br>
+
+
+                                                    <button type="submit">Edit Product</button>
                                         </form>
                                     </section>
-                                     <!-- content-body .// -->
+                                    <!-- content-body .// -->
                                 </div> <!-- col.// -->
                             </div> <!-- row.// -->
                         </div> <!-- card body end// -->
@@ -280,7 +325,7 @@
             <div class="row pb-30 pt-15">
                 <div class="col-sm-6">
                     <script>
-                    document.write(new Date().getFullYear())
+                        document.write(new Date().getFullYear())
                     </script> ©, BookStore - online book shop .
                 </div>
                 <div class="col-sm-6">
@@ -291,7 +336,7 @@
             </div>
         </footer>
     </main>
-    
+
     <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
     <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
     <script src="/admin-assets/js/vendors/select2.min.js"></script>
@@ -303,59 +348,59 @@
     <script>
         function displaySelectedImages(event) {
             const selectedImagesContainer = document.getElementById('selectedImagesContainer');
-            selectedImagesContainer.innerHTML = ''; 
-    
+            selectedImagesContainer.innerHTML = '';
+
             const files = event.target.files;
-    
+
             if (files && files.length > 0) {
                 for (let i = 0; i < files.length; i++) {
                     const reader = new FileReader();
                     const img = document.createElement('img');
                     img.className = 'img-fluid rounded';
                     img.style.width = '100%';
-    
+
                     reader.onload = function (e) {
                         img.src = e.target.result;
                     };
-    
+
                     reader.readAsDataURL(files[i]);
-    
+
                     selectedImagesContainer.appendChild(img);
-                    
-                    
+
+
                     const lineBreak = document.createElement('br');
                     selectedImagesContainer.appendChild(lineBreak);
                 }
             }
         }
-    
-    </script>
-   
-  
 
-     <script>
+    </script>
+
+
+
+    <script>
         const removedImages = [];
-    
+
         function handleRemove(imageURL) {
             removedImages.push(imageURL);
             console.log('Removed Image URL:', imageURL);
             console.log('Removed Images Array:', removedImages);
-    
+
             const imageElements = document.querySelectorAll(`img[src="/productimages/${imageURL}"]`);
             imageElements.forEach(image => {
                 const parentDiv = image.parentNode.parentNode;
                 parentDiv.remove();
             });
-    
+
             // Update the value of the hidden input
             const hiddenInput = document.getElementById('removedImagesInput');
             hiddenInput.value = JSON.stringify(removedImages);
         }
-    
+
         async function submitForm() {
             const hiddenInput = document.getElementById('removedImagesInput');
             const removedImages = JSON.parse(hiddenInput.value);
-    
+
             try {
                 const response = await fetch('/admin/edit-product/deleteimg', {
                     method: 'POST',
@@ -364,30 +409,30 @@
                     },
                     body: JSON.stringify({ removedImages }),
                 });
-    
+
                 if (response.ok) {
                     console.log('Images deleted successfully.');
-                    return true; 
+                    return true;
                 } else {
                     console.error('Failed to delete images.');
-                    return false; 
+                    return false;
                 }
             } catch (error) {
                 console.error('Error during image deletion:', error);
-                return false; 
+                return false;
             }
         }
-    
-        document.getElementById('productForm').addEventListener('submit', async function(event) {
-            event.preventDefault();2
-    
+
+        document.getElementById('productForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); 2
+
             const formSubmitted = await submitForm(); // Attempt to delete images and submit form
-    
+
             if (formSubmitted) {
                 this.submit(); // If images are deleted successfully, submit the form
             }
         });
     </script>
-    
+
 
     <%- include('../layouts/footer.ejs') -%>

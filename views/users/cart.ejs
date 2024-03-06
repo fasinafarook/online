@@ -2,10 +2,11 @@
 
 
     <!-- Quick view -->
-    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">              
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -47,15 +48,15 @@
                                 </div>
                             </div>
                             <!-- End Gallery -->
-                          
+
                         </div>
-              
-                            <!-- Detail Info -->
-                        </div>
+
+                        <!-- Detail Info -->
                     </div>
-                </div>        
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
     </div>
     <header class="header-area header-style-4 header-height-2">
         <div class="header-top header-top-ptb-1 d-none d-lg-block">
@@ -72,7 +73,8 @@
                         <div class="text-center">
                             <div id="news-flash" class="d-inline-block">
                                 <ul>
-                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a></li>
+                                    <li>Get great Books up to 50% off <a href="shop-grid-right.html">View details</a>
+                                    </li>
                                     <li>Supper Value Deals - Save more with coupons</li>
                                 </ul>
                             </div>
@@ -82,102 +84,108 @@
                         <div class="header-info header-info-right">
                             <ul>
                                 <li>
-                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
+                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i
+                                            class="fi-rs-angle-small-down"></i></a>
                                     <ul class="language-dropdown">
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a></li>
+                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a>
+                                        </li>
                                         <li><a href="#"><img src="assets/imgs/theme/flag-dt.png" alt="">Deutsch</a></li>
                                         <li><a href="#"><img src="assets/imgs/theme/flag-ru.png" alt="">Pусский</a></li>
                                     </ul>
                                 </li>
                                 <li><!-- In your navigation bar or header section -->
-                                    
-                                        <% if (user) { %>
-                                            <!-- If user is logged in, show logout button -->
-                                            <li><a href="/logout">Logout</a></li>
-                                        <% } else { %>
-                                            <!-- If user is not logged in, show login button -->
-                                            <li><a href="/login">Log In / Sign Up</a></li>
-                                        <% } %>
-                                    
-                                    </li>
+
+                                    <% if (user) { %>
+                                        <!-- If user is logged in, show logout button -->
+                                <li><a href="/logout">Logout</a></li>
+                                <% } else { %>
+                                    <!-- If user is not logged in, show login button -->
+                                    <li><a href="/login">Log In / Sign Up</a></li>
+                                    <% } %>
+
+                                        </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header-middle header-middle-ptb-1 d-none d-lg-block"  style="background: white;">
+        <div class="header-middle header-middle-ptb-1 d-none d-lg-block" style="background: white;">
             <div class="container">
-                <div class="container" >
-                <div class="header-wrap">
-                    <div class="logo logo-width-1">
-                        <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
-                        <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
-                    </div>
-                    <div class="header-right">
-                        <div class="search-style-2" >
-                            <form class="d-flex justify-content-between" >
-                                <!-- This input field is initially hidden -->
-                                <input type="text" name="search" class="form-control" id="search_input" placeholder="Search Here" style="display: none;">
-                                <!-- <input type="submit"> -->
-                                <span id="close_search" title="Close Search"></span>
-                            </form>
-                        <div class="header-action-right">
-                            <div class="header-action-2">
-                                <div class="header-action-icon-2">
-                                    <a href="/wishlist">
-                                        <img class="svgInject" alt="Evara" src="assets/imgs/theme/icons/icon-heart.svg">
-                                    </a>
-                                </div>
-                                <div class="header-action-icon-2">
-                                    <a class="mini-cart-icon" href="/cart">
-                                        <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
-                                    </a>
-                         
-                                </div>
-                                <div class="nav-item "><a class="nav-link" href="/account" ><i class="fas fa-user"></i></a></div>
+                <div class="container">
+                    <div class="header-wrap">
+                        <div class="logo logo-width-1">
+                            <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
+                            <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 19px;">BookStore</h2>
+                        </div>
+                        <div class="header-right">
+                            <div class="search-style-2">
+                                <form class="d-flex justify-content-between">
+                                    <!-- This input field is initially hidden -->
+                                    <input type="text" name="search" class="form-control" id="search_input"
+                                        placeholder="Search Here" style="display: none;">
+                                    <!-- <input type="submit"> -->
+                                    <span id="close_search" title="Close Search"></span>
+                                </form>
+                                <div class="header-action-right">
+                                    <div class="header-action-2">
+                                        <div class="header-action-icon-2">
+                                            <a href="/wishlist">
+                                                <img class="svgInject" alt="Evara"
+                                                    src="assets/imgs/theme/icons/icon-heart.svg">
+                                            </a>
+                                        </div>
+                                        <div class="header-action-icon-2">
+                                            <a class="mini-cart-icon" href="/cart">
+                                                <img alt="Evara" src="assets/imgs/theme/icons/icon-cart.svg">
+                                            </a>
 
+                                        </div>
+                                        <div class="nav-item "><a class="nav-link" href="/account"><i
+                                                    class="fas fa-user"></i></a></div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
-            <div class="container" >
-                <div class="header-wrap header-space-between position-relative">
-                    <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
-                    </div>
-                    <div class="header-nav d-none d-lg-flex">
-                       
-                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block" style="margin-left: 300px;">
-                            <nav>
-                                <ul>
-                                    <li><a  href="/">Home </a>
-                                    </li>
-                                    <li>
-                                        <a  href="/product">All Books</a>
-                                    </li>
-                                   
-                                    <!-- <li class="position-static"><a href="#">All Categories </a>
+                <div class="header-bottom header-bottom-bg-color sticky-bar" style="background: whitesmoke;">
+                    <div class="container">
+                        <div class="header-wrap header-space-between position-relative">
+                            <div class="logo logo-width-1 d-block d-lg-none">
+                                <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo"></a>
+                            </div>
+                            <div class="header-nav d-none d-lg-flex">
+
+                                <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block"
+                                    style="margin-left: 300px;">
+                                    <nav>
+                                        <ul>
+                                            <li><a href="/">Home </a>
+                                            </li>
+                                            <li>
+                                                <a href="/product">All Books</a>
+                                            </li>
+
+                                            <!-- <li class="position-static"><a href="#">All Categories </a>
                                         
                                     </li> -->
-                                    <li><a href="/account">Account</a>
-                                        
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="/payment-policy">Privacy-policy</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                                            <li><a href="/account">Account</a>
+
+                                            </li>
+
+                                            <li>
+                                                <a href="/payment-policy">Privacy-policy</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-              
                 </div>
-            </div>
-        </div>
     </header>
     <div class="mobile-header-active mobile-header-wrapper-style">
         <div class="mobile-header-wrapper-inner">
@@ -200,29 +208,30 @@
                     </form> -->
                 </div>
                 <div class="mobile-menu-wrap mobile-header-border">
-                    
+
                     <!-- mobile menu start -->
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="/">Home</a>
-                               
+
                             </li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop-grid-right.html">shop</a>
-                               
-                                    </li>
-                                   
-                                </ul>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="shop-grid-right.html">shop</a>
+
                             </li>
-                           
-                            
-                      
-                           
+
+                        </ul>
+                        </li>
+
+
+
+
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap mobile-header-border">
-                    
+
                     <div class="single-mobile-header-info">
                         <a href="page-login-register.html">Log In / Sign Up </a>
                     </div>
@@ -269,41 +278,52 @@
                                     </tr>
                                 </thead>
                                 <tbody id="cartItems">
-                                    <% if (CartData && CartData.product && CartData.product.length > 0) { %>
-                                        <% CartData.product.forEach(productItem => { %>
+                                    <% if (CartData && CartData.product && CartData.product.length> 0) { %>
+                                        <% CartData.product.forEach(productItem=> { %>
                                             <tr>
                                                 <td class="image product-thumbnail">
                                                     <a href="/product?id=<%= productItem.productId._id %>">
-                                                        <img src="/productimages/<%= productItem.productId.image[0] %>" alt="">
+                                                        <img src="/productimages/<%= productItem.productId.image[0] %>"
+                                                            alt="">
                                                     </a>
                                                 </td>
                                                 <td class="product-des product-name">
                                                     <h5 class="product-name">
-                                                        <a href="shop-product-right.html"><%= productItem.productId.name %></a>
+                                                        <a href="shop-product-right.html">
+                                                            <%= productItem.productId.name %>
+                                                        </a>
                                                     </h5>
-                                                    <p class="font-xs">by <%=productItem.productId.author %></p>
+                                                    <p class="font-xs">by <%=productItem.productId.author %>
+                                                    </p>
                                                 </td>
                                                 <td class="price" data-title="Price">
                                                     <span>₹<%= productItem.productId.price %></span>
                                                 </td>
                                                 <td class="offer-price" data-title="Offer Price">
-                                                    <% if (productItem.offer && productItem.offer.percentage > 0) { %>
-                                                        <% 
-                                                            var offerPrice = productItem.productId.price * (1 - productItem.offer.percentage / 100); 
-                                                        %>
-                                                        <span>₹<%= offerPrice.toFixed(2) %></span>
-                                                    <% } else { %>
-                                                        <p>no offer</p>
-                                                    <% } %>
+                                                    <% if (productItem.offer && productItem.offer.percentage> 0) { %>
+                                                        <% var offerPrice=productItem.productId.price * (1 -
+                                                            productItem.offer.percentage / 100); %>
+                                                            <span>₹<%= offerPrice.toFixed(2) %></span>
+                                                            <% } else { %>
+                                                                <p>no offer</p>
+                                                                <% } %>
                                                 </td>
                                                 <td class="text-center" data-title="Stock">
                                                     <div class="product_count">
                                                         <label for="qty">Quantity:</label>
-                                                        <input type="number" name="qty" id="sst_<%= productItem.productId._id %>" value="<%= productItem.Quantity %>" title="Quantity:" class="input-text qty" readonly style="width: 60px; height: 20px;">
-                                                        <button onclick="incrementQuantity('<%= productItem.productId._id %>')" class="increase items-count" type="button">
+                                                        <input type="number" name="qty"
+                                                            id="sst_<%= productItem.productId._id %>"
+                                                            value="<%= productItem.Quantity %>" title="Quantity:"
+                                                            class="input-text qty" readonly
+                                                            style="width: 60px; height: 20px;">
+                                                        <button
+                                                            onclick="incrementQuantity('<%= productItem.productId._id %>')"
+                                                            class="increase items-count" type="button">
                                                             <i class="lnr lnr-chevron-up"></i>+
-                                                        </button> 
-                                                        <button onclick="decrementQuantity('<%= productItem.productId._id %>')" class="reduced items-count" type="button">
+                                                        </button>
+                                                        <button
+                                                            onclick="decrementQuantity('<%= productItem.productId._id %>')"
+                                                            class="reduced items-count" type="button">
                                                             <i class="lnr lnr-chevron-down"></i>-
                                                         </button>
                                                         <div id="errorMessage_<%= productItem.productId._id %>"></div>
@@ -311,32 +331,36 @@
                                                 </td>
                                                 <td class="text-right" data-title="Cart">
                                                     <span>
-                                                        <h5 id="tPrice_<%= productItem.productId._id %>" name="totalPrice1">
-                                                            <% if (productItem.offer && productItem.offer.percentage > 0) { %>
-                                                                <% 
-                                                                    var Price = productItem.productId.price * (1 - productItem.offer.percentage / 100) * productItem.Quantity; 
-                                                                %>
-                                                                <span>₹<%= Price.toFixed(2) %></span>
-                                                            <% } else { %>
-                                                                ₹<%= productItem.productId.price * productItem.Quantity %>
-                                                            <% } %>
+                                                        <h5 id="tPrice_<%= productItem.productId._id %>"
+                                                            name="totalPrice1">
+                                                            <% if (productItem.offer && productItem.offer.percentage> 0)
+                                                                { %>
+                                                                <% var Price=productItem.productId.price * (1 -
+                                                                    productItem.offer.percentage / 100) *
+                                                                    productItem.Quantity; %>
+                                                                    <span>₹<%= Price.toFixed(2) %></span>
+                                                                    <% } else { %>
+                                                                        ₹<%= productItem.productId.price *
+                                                                            productItem.Quantity %>
+                                                                            <% } %>
                                                         </h5>
                                                     </span>
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-warning" onclick="confirmRemove('<%= productItem.productId._id %>')">Remove</button>
+                                                    <button class="btn btn-warning"
+                                                        onclick="confirmRemove('<%= productItem.productId._id %>')">Remove</button>
                                                 </td>
                                             </tr>
-                                        <% }) %>
-                                    <% } else { %>
-                                        <tr>
-                                            <td colspan="6" class="text-center">
-                                                <p class="text-muted">Cart is empty.</p>
-                                                <!-- Optionally, you can add a link to redirect users to the product listing or shopping page -->
-                                                <a href="/product" class="btn btn-primary">Shop Now</a>
-                                            </td>
-                                        </tr>
-                                    <% } %>
+                                            <% }) %>
+                                                <% } else { %>
+                                                    <tr>
+                                                        <td colspan="6" class="text-center">
+                                                            <p class="text-muted">Cart is empty.</p>
+                                                            <!-- Optionally, you can add a link to redirect users to the product listing or shopping page -->
+                                                            <a href="/product" class="btn btn-primary">Shop Now</a>
+                                                        </td>
+                                                    </tr>
+                                                    <% } %>
                                 </tbody>
                             </table>
                         </div>
@@ -355,24 +379,27 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="cart_total_label">Shipping</td>
-                                                    <td class="cart_total_amount"> <i class="ti-gift mr-5"></i> Free Shipping</td>
+                                                    <td class="cart_total_amount"> <i class="ti-gift mr-5"></i> Free
+                                                        Shipping</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="cart_total_label">Total</td>
                                                     <td class="cart_total_amount">
                                                         <span class="font-lg fw-900 text-brand">
-                                                            <% if (CartData && CartData.product && CartData.product.length > 0) { %> 
+                                                            <% if (CartData && CartData.product &&
+                                                                CartData.product.length> 0) { %>
                                                                 <span id="totalSum"></span>
-                                                            <% } else { %> 
-                                                                <p>Cart is empty</p>
-                                                            <% } %>
+                                                                <% } else { %>
+                                                                    <p>Cart is empty</p>
+                                                                    <% } %>
                                                         </span>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <a href="<%= (CartData && CartData.product && CartData.product.length > 0) ? '/checkout' : '#' %>" class="btn <%= (CartData && CartData.product && CartData.product.length > 0) ? '' : 'disabled' %>">
+                                    <a href="<%= (CartData && CartData.product && CartData.product.length > 0) ? '/checkout' : '#' %>"
+                                        class="btn <%= (CartData && CartData.product && CartData.product.length > 0) ? '' : 'disabled' %>">
                                         <i class="fi-rs-box-alt mr-10"></i> Proceed To CheckOut
                                     </a>
                                 </div>
@@ -394,7 +421,8 @@
                                 <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
                             </div>
                             <div class="col my-4 my-md-0 des">
-                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first shopping.</strong></h5>
+                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first
+                                        shopping.</strong></h5>
                             </div>
                         </div>
                     </div>
@@ -418,14 +446,14 @@
                                 <a href="index.html"><img src="assets/imgs/theme/icons/homelogo.jpeg" alt="logo"></a>
                             </div>
                             <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
-                          
+
                             <p class="wow fadeIn animated">
                                 <strong>Phone: </strong>+01 2222 365 /(+91) 01 2345 6789
                             </p>
                             <p class="wow fadeIn animated">
                                 <strong>Hours: </strong>10:00 - 18:00, Mon - Sat
                             </p>
-                         
+
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3">
@@ -452,13 +480,13 @@
                     </div>
                     <div class="col-lg-4">
                         <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
-                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
-                            </div>
+                        <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                            <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -469,11 +497,13 @@
                     <div class="footer-bottom"></div>
                 </div>
                 <div class="col-lg-6">
-                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong class="text-brand">Booktore</strong> - online book shop </p>
+                    <p class="float-md-left font-sm text-muted mb-0">&copy; 2024, <strong
+                            class="text-brand">Booktore</strong> - online book shop </p>
                 </div>
                 <div class="col-lg-6">
                     <p class="text-lg-end text-start font-sm text-muted mb-0">
-                        Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights reserved
+                        Designed by <a href="http://alithemes.com/" target="_blank">bookstore.com</a>. All rights
+                        reserved
                     </p>
                 </div>
             </div>
@@ -494,9 +524,9 @@
             </div>
         </div>
     </div>
-      <!-- ====================add to cart msg======================== -->
+    <!-- ====================add to cart msg======================== -->
 
-      <!-- <script>
+    <!-- <script>
         async function incrementQuantity(productId, Saleprice) {
             try {
                 const QuantityElement = document.getElementById('sst_' + productId);
@@ -1047,7 +1077,7 @@ function performGetRequest(productId) {
                 }
             });
         }
-    
+
         function decrementQuantity(productId) {
             $.ajax({
                 url: '/quantitymanagement',
@@ -1078,41 +1108,41 @@ function performGetRequest(productId) {
                 }
             });
         }
-    
+
         function updateCart() {
-            $('#cartItems').load('/cart #cartItems > *', function() {
+            $('#cartItems').load('/cart #cartItems > *', function () {
                 updateTotalSum();
             });
         }
-    
+
         function updateTotalPrice(productId, price, offerPercentage, Quantity) {
-        const totalPriceElement = document.getElementById('tPrice_' + productId);
-        if (totalPriceElement) {
-            let totalPrice;
-            if (offerPercentage > 0) {
-                totalPrice = price * (1 - offerPercentage / 100) * Quantity;
-            } else {
-                totalPrice = price * Quantity;
+            const totalPriceElement = document.getElementById('tPrice_' + productId);
+            if (totalPriceElement) {
+                let totalPrice;
+                if (offerPercentage > 0) {
+                    totalPrice = price * (1 - offerPercentage / 100) * Quantity;
+                } else {
+                    totalPrice = price * Quantity;
+                }
+                totalPriceElement.textContent = '₹' + totalPrice.toFixed(2);
             }
-            totalPriceElement.textContent = '₹' + totalPrice.toFixed(2);
         }
-    }
-    
-    function updateTotalSum() {
-        console.log("Updating total sum...");
-    
-        const tPriceElements = document.querySelectorAll('[id^="tPrice_"]');
-        let totalSum = 0;
-        tPriceElements.forEach(element => {
-            const priceText = element.textContent.replace('₹', '');
-            const price = parseFloat(priceText);
-            totalSum += price;
-        });
-        const totalSumElement = document.getElementById('totalSum');
-        if (totalSumElement) {
-            totalSumElement.textContent = '₹' + totalSum.toFixed(2);
+
+        function updateTotalSum() {
+            console.log("Updating total sum...");
+
+            const tPriceElements = document.querySelectorAll('[id^="tPrice_"]');
+            let totalSum = 0;
+            tPriceElements.forEach(element => {
+                const priceText = element.textContent.replace('₹', '');
+                const price = parseFloat(priceText);
+                totalSum += price;
+            });
+            const totalSumElement = document.getElementById('totalSum');
+            if (totalSumElement) {
+                totalSumElement.textContent = '₹' + totalSum.toFixed(2);
+            }
         }
-    }
         function confirmRemove(productId) {
             Swal.fire({
                 title: 'Are you sure?',
@@ -1127,12 +1157,12 @@ function performGetRequest(productId) {
                 }
             });
         }
-    
+
         function performGetRequest(productId) {
             window.location.href = `/deleteCartitem?id=${productId}`;
         }
-    
-        $(document).ready(function() {
+
+        $(document).ready(function () {
             updateTotalSum();
         });
     </script>
@@ -1159,8 +1189,9 @@ function performGetRequest(productId) {
     <!-- Template  JS -->
     <script src="assets/js/maind134.js?v=3.4"></script>
     <script src="assets/js/shopd134.js?v=3.4"></script>
-</body>
+    </body>
 
 
-<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/shop-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
-</html>
+    <!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/shop-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 10:10:07 GMT -->
+
+    </html>

@@ -4,10 +4,13 @@
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
+                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                    style=" margin-left: 15px;">
+                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>
+            </a>
             <div>
-                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+                <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
+                </button>
             </div>
         </div>
         <nav>
@@ -53,9 +56,10 @@
                         <!-- <a href="page-seller-detail.html">Seller profile</a> -->
                     </div>
                 </li>
-             
+
                 <li class="menu-item has-submenu">
-                    <a class="menu-link" href="page-transactions-1.html"> <i class="icon material-icons md-monetization_on"></i>
+                    <a class="menu-link" href="page-transactions-1.html"> <i
+                            class="icon material-icons md-monetization_on"></i>
                         <span class="text">Coupen</span>
                     </a>
                     <div class="submenu">
@@ -69,7 +73,7 @@
                     </a>
                     <div class="submenu">
                         <a href="/admin/offer">Offer Management</a>
-                       
+
                     </div>
                 </li>
                 <li class="menu-item">
@@ -80,12 +84,12 @@
             </ul>
             <hr>
             <ul class="menu-aside">
-               
-            <li class="menu-item">
-                <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
-                    <span class="text"> Logout </span>
-                </a>
-            </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin/logout"> <i class="icon material-icons md-person"></i>
+                        <span class="text"> Logout </span>
+                    </a>
+                </li>
             </ul>
             <br>
             <br>
@@ -108,22 +112,26 @@
                 </form> -->
             </div>
             <div class="col-nav">
-                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                        class="material-icons md-apps"></i> </button>
                 <ul class="nav">
-                   
+
                     <li class="nav-item">
-                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"><i class="material-icons md-public"></i></a>
-                       
+                        <a href="#" aria-expanded="false"><i class="material-icons md-public"></i></a>
+
                     </li>
                     <li class="dropdown nav-item">
-                        <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
-                      
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+
                     </li>
                 </ul>
             </div>
@@ -133,51 +141,57 @@
                 <div class="col-9">
                     <div class="content-header">
                         <h2 class="content-title">Edit Category</h2>
-                       
+
                     </div>
                 </div>
                 <div class="col-9">
                     <div class="card">
                         <div class="card-body">
                             <div class="row gx-5">
-     
+
                                 <div class="col-lg-9">
                                     <section class="content-body p-xl-4">
-                                        <form action="/admin/edit-category" method="POST" enctype="multipart/form-data" id="categoryform">
-                                            <% if(typeof message !== 'undefined'){ %> 
-                                                <div class="alert  bg-white text-danger" role="alert" style="text-align: center;">
+                                        <form action="/admin/edit-category" method="POST" enctype="multipart/form-data"
+                                            id="categoryform">
+                                            <% if(typeof message !=='undefined' ){ %>
+                                                <div class="alert  bg-white text-danger" role="alert"
+                                                    style="text-align: center;">
                                                     <%=message %>
                                                 </div>
-                                            <% } %> 
-                                            <% if (category) { %>
-                                                <label for="name">Category Name:</label>
-                                                <input type="text" id="names" name="name" value="<%= category.name %>" required>
-                                                <span id="names-error" class="error"></span>
-                                                <br>
-                                                <br>
-                                                <label for="image"></label>
-                                                <img src="/categoryimages/<%= category.image %>" alt="" style="max-width: 100px;">
-                                                <br>
-                                                <br>
-                                                <label for="newImage">New Image:</label>
-                                                <input type="file" class="form-control-file" id="newImages" name="image" >
-                                                <input type="hidden" name="id" value="<%= category._id %>">
-                                                <br><br>
+                                                <% } %>
+                                                    <% if (category) { %>
+                                                        <label for="name">Category Name:</label>
+                                                        <input type="text" id="names" name="name"
+                                                            value="<%= category.name %>" required>
+                                                        <span id="names-error" class="error"></span>
+                                                        <br>
+                                                        <br>
+                                                        <label for="image"></label>
+                                                        <img src="/categoryimages/<%= category.image %>" alt=""
+                                                            style="max-width: 100px;">
+                                                        <br>
+                                                        <br>
+                                                        <label for="newImage">New Image:</label>
+                                                        <input type="file" class="form-control-file" id="newImages"
+                                                            name="image">
+                                                        <input type="hidden" name="id" value="<%= category._id %>">
+                                                        <br><br>
 
-                                                <!-- Image Preview for New Image -->
-                                                <div id="imagePreviewContainer" class="mb-3" style="max-width: 300px;">
-                                                    <label for="imagePreview"></label>
-                                                    <img id="imagePreview" alt="" style="max-width: 100px;">
-                                                </div>
-                                                
-                                                
-                                                <button type="submit">Edit Category</button>
-                                            <% } else { %>
-                                                <p>Category not found.</p>
-                                            <% } %>
+                                                        <!-- Image Preview for New Image -->
+                                                        <div id="imagePreviewContainer" class="mb-3"
+                                                            style="max-width: 300px;">
+                                                            <label for="imagePreview"></label>
+                                                            <img id="imagePreview" alt="" style="max-width: 100px;">
+                                                        </div>
+
+
+                                                        <button type="submit">Edit Category</button>
+                                                        <% } else { %>
+                                                            <p>Category not found.</p>
+                                                            <% } %>
                                         </form>
                                     </section>
-                                     <!-- content-body .// -->
+                                    <!-- content-body .// -->
                                 </div> <!-- col.// -->
                             </div> <!-- row.// -->
                         </div> <!-- card body end// -->
@@ -189,7 +203,7 @@
             <div class="row pb-30 pt-15">
                 <div class="col-sm-6">
                     <script>
-                    document.write(new Date().getFullYear())
+                        document.write(new Date().getFullYear())
                     </script> ©, BookStore - online book shop .
                 </div>
                 <div class="col-sm-6">
@@ -209,20 +223,20 @@
     <script src="/admin-assets/js/main.js" type="text/javascript"></script>
     <script src="/admin-assets/js/forms.js" type="text/javascript"></script>
     <script>
-            document.getElementById('newImages').addEventListener('change', function (e) {
-                const imagePreview = document.getElementById('imagePreview');
-                const fileInput = e.target;
+        document.getElementById('newImages').addEventListener('change', function (e) {
+            const imagePreview = document.getElementById('imagePreview');
+            const fileInput = e.target;
 
-                if (fileInput.files && fileInput.files[0]) {
-                    const reader = new FileReader();
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
 
-                    reader.onload = function (e) {
-                        imagePreview.src = e.target.result;
-                    };
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                };
 
-                    reader.readAsDataURL(fileInput.files[0]);
-                }
-            });
-        </script>
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        });
+    </script>
 
     <%- include('../layouts/footer.ejs') -%>

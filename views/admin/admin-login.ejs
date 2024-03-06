@@ -1,107 +1,115 @@
 <%- include('../layouts/header.ejs') -%>
 
-<main>
-    <header class="main-header style-2 navbar">
-        <div class="col-brand">
-            <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore" style=" margin-left: 15px;">
-                <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore</h2>            </a>
-        </div>
-        <div class="col-nav">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
-                </li>
-                <li class="dropdown nav-item">
-                    <a  href="#"  aria-expanded="false"> <img class="img-xs rounded-circle" src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <section class="content-main mt-80 mb-80">
-        <div class="card mx-auto card-login">
-            <div class="card-body">
-                <h4 class="card-title mb-4" style="text-align: center;">Sign in</h4>
-                <form method="post" id="adminForm" onsubmit="return validateForm();" >
-                    <% if(typeof message !== 'undefined'){ %> 
-                        <div class="alert  bg-white text-red" role="alert">
-                            <%=message %>
-                        </div>
-                    <% } %> 
-                    <br>
-                    <div class="mb-3">
-                       <input class="form-control" placeholder="Enter Your email" type="text" name="email" id="email">
-                       <span id="email-error" class="error"></span>
-                    </div><br>
-                 
-                    <div class="mb-3">
-                       <input class="form-control" placeholder="Password" type="password" name="password"  id="password">
-                       <span id="passwordError" class="error-message"></span>
-                    </div><br>
-                 
-                    <div class="mb-4">
-                       <button type="submit" class="btn btn-primary w-100"> Login </button>
-                    </div><br>
-                 </form>
+    <main>
+        <header class="main-header style-2 navbar">
+            <div class="col-brand">
+                <a href="index.html" class="brand-wrap">
+                    <img src="assets/imgs/theme/icons/homelogo.jpeg" class="logo" alt="BookStore"
+                        style=" margin-left: 15px;">
+                    <h2 style="font-size: 23px;margin-top: -38px; padding-bottom: 10px; margin-left: 12px;">BookStore
+                    </h2>
+                </a>
             </div>
-        </div>
-    </section>
-    <footer class="main-footer text-center">
-        <p class="font-xs">
-            <script>
-            document.write(new Date().getFullYear())
-            </script> ©, BookStore - online book shop .
-        </p>
-        <p class="font-xs mb-30">All rights reserved</p>
-    </footer>
-</main>
-<style>
-    .error-message {
-        color: red;
-    }
-</style>
+            <div class="col-nav">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="#" aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="/admin-assets/imgs/people/avatar2.jpg" alt="User"></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main mt-80 mb-80">
+            <div class="card mx-auto card-login">
+                <div class="card-body">
+                    <h4 class="card-title mb-4" style="text-align: center;">Sign in</h4>
+                    <form method="post" id="adminForm" onsubmit="return validateForm();">
+                        <% if(typeof message !=='undefined' ){ %>
+                            <div class="alert  bg-white text-red" role="alert">
+                                <%=message %>
+                            </div>
+                            <% } %>
+                                <br>
+                                <div class="mb-3">
+                                    <input class="form-control" placeholder="Enter Your email" type="text" name="email"
+                                        id="email">
+                                    <span id="email-error" class="error"></span>
+                                </div><br>
 
-<script>
-    const form = document.getElementById('adminForm');
+                                <div class="mb-3">
+                                    <input class="form-control" placeholder="Password" type="password" name="password"
+                                        id="password">
+                                    <span id="passwordError" class="error-message"></span>
+                                </div><br>
 
-  function validateForm() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    let isValid = true;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                <div class="mb-4">
+                                    <button type="submit" class="btn btn-primary w-100"> Login </button>
+                                </div><br>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="main-footer text-center">
+            <p class="font-xs">
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> ©, BookStore - online book shop .
+            </p>
+            <p class="font-xs mb-30">All rights reserved</p>
+        </footer>
+    </main>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
 
-    const emailError = document.getElementById('email-error');
-    const passwordError = document.getElementById('passwordError');
+    <script>
+        const form = document.getElementById('adminForm');
 
-    if (!email.match(emailPattern)) {
-        emailError.innerText = 'Please enter a valid email address.';
-        emailError.classList.add('error-message');
-        isValid = false;
-    } else {
-        emailError.innerText = '';
-        
-    }
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            let isValid = true;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (password.length < 8) {
-        passwordError.innerText = 'Password should be at least 8 characters long.';
-        passwordError.classList.add('error-message');
-        isValid = false;
-    } else {
-        passwordError.innerText = '';
-    }
+            const emailError = document.getElementById('email-error');
+            const passwordError = document.getElementById('passwordError');
 
-    if( isValid ){
-        this.submit()
-    }
-}
+            if (!email.match(emailPattern)) {
+                emailError.innerText = 'Please enter a valid email address.';
+                emailError.classList.add('error-message');
+                isValid = false;
+            } else {
+                emailError.innerText = '';
 
-</script>
-<script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
-<script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
-<script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
-<!-- Main Script -->
-<script src="/admin-assets/js/main.js" type="text/javascript"></script>
-<%- include('../layouts/footer.ejs') -%>
+            }
+
+            if (password.length < 8) {
+                passwordError.innerText = 'Password should be at least 8 characters long.';
+                passwordError.classList.add('error-message');
+                isValid = false;
+            } else {
+                passwordError.innerText = '';
+            }
+
+            if (isValid) {
+                this.submit()
+            }
+        }
+
+    </script>
+    <script src="/admin-assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="/admin-assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin-assets/js/vendors/jquery.fullscreen.min.js"></script>
+    <!-- Main Script -->
+    <script src="/admin-assets/js/main.js" type="text/javascript"></script>
+    <%- include('../layouts/footer.ejs') -%>
