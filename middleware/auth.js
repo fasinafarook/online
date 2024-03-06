@@ -35,7 +35,7 @@ const checkBlock = async (req, res, next) => {
   if (userId) {
     try {
       const user = await User.findOne({ _id: userId });
-      if (user && user.is_verified == 0) {
+      if (user && user.is_verified === 0) {
         return res.redirect('/login');
       }
     } catch (error) {
